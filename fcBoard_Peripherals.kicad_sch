@@ -2918,6 +2918,17 @@
 		)
 		(uuid "02bccf6d-7d86-44be-a923-c580ca95bd22")
 	)
+	(hierarchical_label "RS485_1_RX"
+		(shape bidirectional)
+		(at 50.8 127.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "04469d76-0b8e-4fff-ad72-954bad99f9aa")
+	)
 	(hierarchical_label "+3V3"
 		(shape input)
 		(at 68.58 36.83 180)
@@ -2929,6 +2940,17 @@
 		)
 		(uuid "0e46038e-f62b-451f-860c-35139ad76352")
 	)
+	(hierarchical_label "LED2"
+		(shape bidirectional)
+		(at 50.8 150.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "11d1ec86-4e4c-4255-9959-e5e563a0941d")
+	)
 	(hierarchical_label "+5V"
 		(shape input)
 		(at 68.58 31.75 180)
@@ -2939,6 +2961,17 @@
 			(justify right)
 		)
 		(uuid "148ac8f3-77bb-44a6-9f56-4cbb8e589062")
+	)
+	(hierarchical_label "SDIO_DAT2"
+		(shape bidirectional)
+		(at 50.8 60.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1c1394dc-6bbf-459e-bc60-6009e5ab6c02")
 	)
 	(hierarchical_label "SDIO_CLK"
 		(shape output)
@@ -2962,6 +2995,28 @@
 		)
 		(uuid "1fd03cb1-0651-4749-ac44-0f9fa664bb4e")
 	)
+	(hierarchical_label "LED1"
+		(shape bidirectional)
+		(at 50.8 147.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "20609af7-ecea-419a-9e29-f2b00736ea42")
+	)
+	(hierarchical_label "CAN0_RX"
+		(shape bidirectional)
+		(at 50.8 97.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25bbd048-5b83-4105-97fd-f1a022ae2a88")
+	)
 	(hierarchical_label "CAN0_RX"
 		(shape input)
 		(at 72.39 128.27 180)
@@ -2972,6 +3027,28 @@
 			(justify right)
 		)
 		(uuid "2ba04e96-430d-4264-a93d-b9fff66e1949")
+	)
+	(hierarchical_label "RS485_0_TX"
+		(shape bidirectional)
+		(at 50.8 115 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3706156f-763e-41ac-b6de-b53ffa61171b")
+	)
+	(hierarchical_label "RS485_0_RX"
+		(shape bidirectional)
+		(at 50.8 117.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3964266e-164c-4d73-a8dc-b7addd6d8b5b")
 	)
 	(hierarchical_label "UART0_TX"
 		(shape output)
@@ -2984,6 +3061,17 @@
 		)
 		(uuid "3f1f9001-75f7-4003-9bb2-18309f529a90")
 	)
+	(hierarchical_label "RS485_0_DE"
+		(shape bidirectional)
+		(at 50.8 120.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44142ae5-53b9-4835-85b2-fac63085d407")
+	)
 	(hierarchical_label "GND"
 		(shape passive)
 		(at 68.58 41.91 180)
@@ -2995,6 +3083,50 @@
 		)
 		(uuid "5588aba4-7e7a-482a-ab1a-7e989bf77c38")
 	)
+	(hierarchical_label "SDIO_DAT3"
+		(shape bidirectional)
+		(at 50.8 62.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "564a5ae8-eb53-457e-9e02-20e77a23afa3")
+	)
+	(hierarchical_label "RS485_1_TX"
+		(shape bidirectional)
+		(at 50.8 125.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "58c4e76f-b4ad-4e45-984e-f4f30aac9bd6")
+	)
+	(hierarchical_label "SDIO_DAT0"
+		(shape bidirectional)
+		(at 50.8 55.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5d191b85-f03e-4aa5-ac15-e115c8d2b924")
+	)
+	(hierarchical_label "CAN1_RX"
+		(shape bidirectional)
+		(at 50.8 105.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "75de1c3d-385e-475c-9af7-2592caa35ec5")
+	)
 	(hierarchical_label "USER_LED[0..3]"
 		(shape input)
 		(at 72.39 209.55 180)
@@ -3005,6 +3137,39 @@
 			(justify right)
 		)
 		(uuid "7a3b68b2-187a-4f6a-aea5-2ef99052cae9")
+	)
+	(hierarchical_label "+3V3"
+		(shape input)
+		(at 50.8 175 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "87568fb0-d3b7-41b0-bad5-c88c3db8dbaa")
+	)
+	(hierarchical_label "BTN0"
+		(shape bidirectional)
+		(at 50.8 157.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "986b6314-d43b-4a69-8b58-a9eb2569ad28")
+	)
+	(hierarchical_label "LED0"
+		(shape bidirectional)
+		(at 50.8 145 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9f098d0a-f6e8-47d6-89b4-bd86f8ea8570")
 	)
 	(hierarchical_label "SDIO_DATA[0..3]"
 		(shape bidirectional)
@@ -3019,6 +3184,61 @@
 	)
 	(hierarchical_label "SDIO_CMD"
 		(shape bidirectional)
+		(at 50.8 52.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "add96a0e-95f3-411e-b679-ec07836738f7")
+	)
+	(hierarchical_label "CAN1_TX"
+		(shape bidirectional)
+		(at 50.8 102.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b32ebfc3-5a7d-4e88-8155-6c8e470e5fbd")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 50.8 177.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3d06ac8-c9e7-4954-a63b-0a869d1b8140")
+	)
+	(hierarchical_label "SDIO_CLK"
+		(shape bidirectional)
+		(at 50.8 50 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b66de506-05ad-47cc-8299-ad8da9675234")
+	)
+	(hierarchical_label "CAN0_TX"
+		(shape bidirectional)
+		(at 50.8 95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "baca6bad-ded4-4f17-abaa-8b7c2b2f5373")
+	)
+	(hierarchical_label "SDIO_CMD"
+		(shape bidirectional)
 		(at 72.39 62.23 180)
 		(effects
 			(font
@@ -3027,6 +3247,28 @@
 			(justify right)
 		)
 		(uuid "c56ce614-e732-4479-9c0c-1d8d133c85e2")
+	)
+	(hierarchical_label "UART_TXD"
+		(shape output)
+		(at 50.8 80 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c730bf77-6be8-4cc8-af0d-2dc35ffd0ceb")
+	)
+	(hierarchical_label "RS485_1_DE"
+		(shape bidirectional)
+		(at 50.8 130.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c976bfe9-5cf0-475b-bfc8-468ce826bc0c")
 	)
 	(hierarchical_label "CAN1_RX"
 		(shape input)
@@ -3038,6 +3280,17 @@
 			(justify right)
 		)
 		(uuid "ca79cb02-919f-422e-869f-51409ee45168")
+	)
+	(hierarchical_label "BTN1"
+		(shape bidirectional)
+		(at 50.8 160.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc64db2a-dcff-4338-b720-720cee8d056c")
 	)
 	(hierarchical_label "CAN0_TX"
 		(shape output)
@@ -3060,6 +3313,50 @@
 			(justify left)
 		)
 		(uuid "dab7abdc-0a33-4ac3-897d-0d9ea99e4d27")
+	)
+	(hierarchical_label "UART_RXD"
+		(shape input)
+		(at 50.8 82.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e73ee981-4fdb-46c5-a616-bd8f497a80ee")
+	)
+	(hierarchical_label "SDIO_DAT1"
+		(shape bidirectional)
+		(at 50.8 57.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f2d0a6cf-bba0-4f14-835b-302b86b98714")
+	)
+	(hierarchical_label "SDIO_CD"
+		(shape bidirectional)
+		(at 50.8 65.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f76f8bb0-963b-4a5e-8e68-019ee7535487")
+	)
+	(hierarchical_label "LED3"
+		(shape bidirectional)
+		(at 50.8 152.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ffa4d82a-761f-456d-9739-3f377d0c771b")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -3134,7 +3431,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c31f24b-5da2-4270-8ef8-af80c610e023")
-		(property "Reference" "U24"
+		(property "Reference" "U46"
 			(at 107.95 151.13 0)
 			(effects
 				(font
@@ -3410,7 +3707,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1ed2f5e3-a3f8-4781-a662-b4abf384d6b3")
-		(property "Reference" "D9"
+		(property "Reference" "D17"
 			(at 158.75 204.47 0)
 			(effects
 				(font
@@ -3604,7 +3901,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "31c621d4-5d05-4278-af78-c61c8369c196")
-		(property "Reference" "J11"
+		(property "Reference" "J25"
 			(at 209.55 55.88 0)
 			(effects
 				(font
@@ -3679,7 +3976,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "36dd1396-597b-4860-82be-76311aa4f257")
-		(property "Reference" "R12"
+		(property "Reference" "R25"
 			(at 120.65 207.01 90)
 			(effects
 				(font
@@ -3745,7 +4042,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "37fa16e9-35f6-4785-b403-a81dd3d5a31c")
-		(property "Reference" "J10"
+		(property "Reference" "J26"
 			(at 107.95 46.99 0)
 			(effects
 				(font
@@ -4024,7 +4321,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "526c0441-f5b0-45ec-92b6-1d2fcafce4d5")
-		(property "Reference" "U21"
+		(property "Reference" "U47"
 			(at 257.81 45.72 0)
 			(effects
 				(font
@@ -4114,7 +4411,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "56c39ac3-6dee-410e-874f-438c927cb49c")
-		(property "Reference" "D7"
+		(property "Reference" "D18"
 			(at 107.95 204.47 0)
 			(effects
 				(font
@@ -4244,7 +4541,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "66606e3f-7c7b-4655-b6da-7b1848789e4d")
-		(property "Reference" "J14"
+		(property "Reference" "J27"
 			(at 146.05 153.67 0)
 			(effects
 				(font
@@ -4441,7 +4738,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6ce6447e-18ab-478a-972d-406c40525d33")
-		(property "Reference" "J13"
+		(property "Reference" "J28"
 			(at 247.65 118.11 0)
 			(effects
 				(font
@@ -4510,7 +4807,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6eeea1bb-443b-4b98-ad18-4d1fb3f9444a")
-		(property "Reference" "J12"
+		(property "Reference" "J29"
 			(at 146.05 118.11 0)
 			(effects
 				(font
@@ -4643,7 +4940,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8320aeca-46a5-4b34-b7cc-359dce1ad79b")
-		(property "Reference" "C13"
+		(property "Reference" "C38"
 			(at 242.57 63.5 0)
 			(effects
 				(font
@@ -4711,7 +5008,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "85aa055c-13f8-4cc4-b2ba-28c132e33710")
-		(property "Reference" "R14"
+		(property "Reference" "R26"
 			(at 171.45 207.01 90)
 			(effects
 				(font
@@ -4905,7 +5202,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "96f6d001-7fce-4168-8224-f26cefd6a53b")
-		(property "Reference" "U23"
+		(property "Reference" "U48"
 			(at 209.55 115.57 0)
 			(effects
 				(font
@@ -4989,7 +5286,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "99ecf3fa-c9c5-4127-b120-5a2dab5b4555")
-		(property "Reference" "SW2"
+		(property "Reference" "SW3"
 			(at 257.81 201.93 0)
 			(effects
 				(font
@@ -5247,7 +5544,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aed54291-fcaa-42c0-a3d0-0f8fa1e37c4b")
-		(property "Reference" "D8"
+		(property "Reference" "D19"
 			(at 133.35 204.47 0)
 			(effects
 				(font
@@ -5313,7 +5610,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4b3df98-9073-48b4-9308-2043cb88b2d6")
-		(property "Reference" "J15"
+		(property "Reference" "J30"
 			(at 247.65 153.67 0)
 			(effects
 				(font
@@ -5382,7 +5679,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8ccacb5-73a3-4b5a-8345-b1fbd46d98c0")
-		(property "Reference" "R13"
+		(property "Reference" "R27"
 			(at 146.05 207.01 90)
 			(effects
 				(font
@@ -5448,7 +5745,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b95a66c2-0752-4d67-b634-110a9208e55f")
-		(property "Reference" "D10"
+		(property "Reference" "D20"
 			(at 184.15 204.47 0)
 			(effects
 				(font
@@ -5514,7 +5811,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c399cbc2-3cb7-4402-81f7-64b04b3b28a9")
-		(property "Reference" "SW1"
+		(property "Reference" "SW4"
 			(at 224.79 201.93 0)
 			(effects
 				(font
@@ -5580,7 +5877,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d663934f-6ef1-43ea-b3bd-229c4ca3eaa0")
-		(property "Reference" "U25"
+		(property "Reference" "U49"
 			(at 209.55 151.13 0)
 			(effects
 				(font
@@ -5728,7 +6025,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d8fe1d48-57ed-45aa-bf41-d0127584a716")
-		(property "Reference" "U22"
+		(property "Reference" "U50"
 			(at 107.95 115.57 0)
 			(effects
 				(font
@@ -5876,7 +6173,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e675b6e2-baf7-4e8c-b98a-adaf6f64d2f5")
-		(property "Reference" "R11"
+		(property "Reference" "R28"
 			(at 95.25 207.01 90)
 			(effects
 				(font
@@ -6125,328 +6422,4 @@
 			)
 		)
 	)
-
-	(hierarchical_label "SDIO_CLK"
-		(shape bidirectional)
-		(at 50.8 50.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b66de506-05ad-47cc-8299-ad8da9675234")
-	)
-	(hierarchical_label "SDIO_CMD"
-		(shape bidirectional)
-		(at 50.8 52.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "add96a0e-95f3-411e-b679-ec07836738f7")
-	)
-	(hierarchical_label "SDIO_DAT0"
-		(shape bidirectional)
-		(at 50.8 55.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5d191b85-f03e-4aa5-ac15-e115c8d2b924")
-	)
-	(hierarchical_label "SDIO_DAT1"
-		(shape bidirectional)
-		(at 50.8 57.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f2d0a6cf-bba0-4f14-835b-302b86b98714")
-	)
-	(hierarchical_label "SDIO_DAT2"
-		(shape bidirectional)
-		(at 50.8 60.16 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1c1394dc-6bbf-459e-bc60-6009e5ab6c02")
-	)
-	(hierarchical_label "SDIO_DAT3"
-		(shape bidirectional)
-		(at 50.8 62.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "564a5ae8-eb53-457e-9e02-20e77a23afa3")
-	)
-	(hierarchical_label "SDIO_CD"
-		(shape bidirectional)
-		(at 50.8 65.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f76f8bb0-963b-4a5e-8e68-019ee7535487")
-	)
-	(hierarchical_label "UART_TXD"
-		(shape output)
-		(at 50.8 80.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c730bf77-6be8-4cc8-af0d-2dc35ffd0ceb")
-	)
-	(hierarchical_label "UART_RXD"
-		(shape input)
-		(at 50.8 82.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e73ee981-4fdb-46c5-a616-bd8f497a80ee")
-	)
-	(hierarchical_label "CAN0_TX"
-		(shape bidirectional)
-		(at 50.8 95.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "baca6bad-ded4-4f17-abaa-8b7c2b2f5373")
-	)
-	(hierarchical_label "CAN0_RX"
-		(shape bidirectional)
-		(at 50.8 97.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "25bbd048-5b83-4105-97fd-f1a022ae2a88")
-	)
-	(hierarchical_label "CAN1_TX"
-		(shape bidirectional)
-		(at 50.8 102.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b32ebfc3-5a7d-4e88-8155-6c8e470e5fbd")
-	)
-	(hierarchical_label "CAN1_RX"
-		(shape bidirectional)
-		(at 50.8 105.16 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "75de1c3d-385e-475c-9af7-2592caa35ec5")
-	)
-	(hierarchical_label "RS485_0_TX"
-		(shape bidirectional)
-		(at 50.8 115.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3706156f-763e-41ac-b6de-b53ffa61171b")
-	)
-	(hierarchical_label "RS485_0_RX"
-		(shape bidirectional)
-		(at 50.8 117.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3964266e-164c-4d73-a8dc-b7addd6d8b5b")
-	)
-	(hierarchical_label "RS485_0_DE"
-		(shape bidirectional)
-		(at 50.8 120.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "44142ae5-53b9-4835-85b2-fac63085d407")
-	)
-	(hierarchical_label "RS485_1_TX"
-		(shape bidirectional)
-		(at 50.8 125.16 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "58c4e76f-b4ad-4e45-984e-f4f30aac9bd6")
-	)
-	(hierarchical_label "RS485_1_RX"
-		(shape bidirectional)
-		(at 50.8 127.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "04469d76-0b8e-4fff-ad72-954bad99f9aa")
-	)
-	(hierarchical_label "RS485_1_DE"
-		(shape bidirectional)
-		(at 50.8 130.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c976bfe9-5cf0-475b-bfc8-468ce826bc0c")
-	)
-	(hierarchical_label "LED0"
-		(shape bidirectional)
-		(at 50.8 145.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9f098d0a-f6e8-47d6-89b4-bd86f8ea8570")
-	)
-	(hierarchical_label "LED1"
-		(shape bidirectional)
-		(at 50.8 147.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "20609af7-ecea-419a-9e29-f2b00736ea42")
-	)
-	(hierarchical_label "LED2"
-		(shape bidirectional)
-		(at 50.8 150.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "11d1ec86-4e4c-4255-9959-e5e563a0941d")
-	)
-	(hierarchical_label "LED3"
-		(shape bidirectional)
-		(at 50.8 152.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ffa4d82a-761f-456d-9739-3f377d0c771b")
-	)
-	(hierarchical_label "BTN0"
-		(shape bidirectional)
-		(at 50.8 157.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "986b6314-d43b-4a69-8b58-a9eb2569ad28")
-	)
-	(hierarchical_label "BTN1"
-		(shape bidirectional)
-		(at 50.8 160.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cc64db2a-dcff-4338-b720-720cee8d056c")
-	)
-	(hierarchical_label "+3V3"
-		(shape input)
-		(at 50.8 175.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "87568fb0-d3b7-41b0-bad5-c88c3db8dbaa")
-	)
-	(hierarchical_label "GND"
-		(shape passive)
-		(at 50.8 177.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b3d06ac8-c9e7-4954-a63b-0a869d1b8140")
-	))
+)

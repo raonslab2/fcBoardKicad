@@ -3913,6 +3913,28 @@
 		)
 		(uuid "ff570aed-c3aa-493e-ae0e-35aedac784cf")
 	)
+	(hierarchical_label "HDMI_I2C_SCL"
+		(shape bidirectional)
+		(at 50.8 115 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0798d640-db79-473b-81f2-0c6298a19ad3")
+	)
+	(hierarchical_label "HDMI_TX_G[7:0]"
+		(shape input)
+		(at 50.8 100.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "080ef61d-01e4-45fc-b0d2-541efdf7ee92")
+	)
 	(hierarchical_label "HDMI_TX_PCLK"
 		(shape input)
 		(at 142.24 156.21 180)
@@ -3923,6 +3945,17 @@
 			(justify right)
 		)
 		(uuid "1071bce1-3b50-4ecf-b271-218a0ca931fc")
+	)
+	(hierarchical_label "+3V3"
+		(shape input)
+		(at 50.8 130 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "198e74bd-4c23-454e-9a25-f6f74a530113")
 	)
 	(hierarchical_label "HDMI_TX_DE"
 		(shape input)
@@ -3935,6 +3968,17 @@
 		)
 		(uuid "1a72abad-2812-499a-a572-29e03883e421")
 	)
+	(hierarchical_label "HDMI_RX_DE"
+		(shape output)
+		(at 50.8 52.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1d57146c-aa9c-45ee-b5fa-3783fba1e049")
+	)
 	(hierarchical_label "HDMI_TX_VSYNC"
 		(shape input)
 		(at 142.24 163.83 180)
@@ -3946,6 +3990,17 @@
 		)
 		(uuid "2cab958f-e9bb-4a9b-abf1-22857562a343")
 	)
+	(hierarchical_label "HDMI_RX_G[7:0]"
+		(shape output)
+		(at 50.8 65.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2e19d36b-a2ba-40b1-9ff0-c920e8e1ae46")
+	)
 	(hierarchical_label "HDMI_RX_DATA[23:0]"
 		(shape output)
 		(at 316.23 90.17 0)
@@ -3956,6 +4011,17 @@
 			(justify left)
 		)
 		(uuid "3382377b-c806-4b5a-809d-89c1c27c6f1e")
+	)
+	(hierarchical_label "+1V8"
+		(shape input)
+		(at 50.8 132.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "37d6d70d-d494-4d7c-9916-ab571a967a80")
 	)
 	(hierarchical_label "HDMI_RX_DE"
 		(shape output)
@@ -3979,6 +4045,50 @@
 		)
 		(uuid "4c612f3e-b54b-4d2e-9fcf-687b312df21c")
 	)
+	(hierarchical_label "HDMI_RX_PCLK"
+		(shape output)
+		(at 50.8 50 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f498f3c-e852-4285-8426-4c29e8cbdbc1")
+	)
+	(hierarchical_label "HDMI_TX_VSYNC"
+		(shape input)
+		(at 50.8 92.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f6570e7-20a6-40f1-bf67-b0825b026fa1")
+	)
+	(hierarchical_label "HDMI_RX_B[7:0]"
+		(shape output)
+		(at 50.8 67.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6c32ed7f-3f5c-4d54-9aa5-f53c5cbde12f")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 50.8 135.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6edd0ef4-54da-4916-a9bf-dbba9eb61ff8")
+	)
 	(hierarchical_label "HDMI_RX_HSYNC"
 		(shape output)
 		(at 316.23 82.55 0)
@@ -3989,6 +4099,39 @@
 			(justify left)
 		)
 		(uuid "775c47b1-756b-43ff-89c6-34c1980a2440")
+	)
+	(hierarchical_label "HDMI_RX_HSYNC"
+		(shape output)
+		(at 50.8 55.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "79da1262-b729-487d-b82f-0141005b8391")
+	)
+	(hierarchical_label "HDMI_TX_R[7:0]"
+		(shape input)
+		(at 50.8 97.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7a82b3a9-1644-4543-a821-2c4340d347b1")
+	)
+	(hierarchical_label "HDMI_RX_VSYNC"
+		(shape output)
+		(at 50.8 57.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "96db9828-b6a8-427b-bec0-85f1cfde3d36")
 	)
 	(hierarchical_label "HDMI_RX_PCLK"
 		(shape output)
@@ -4001,6 +4144,28 @@
 		)
 		(uuid "9c635641-d5ef-4774-ab20-ad342a912097")
 	)
+	(hierarchical_label "HDMI_TX_HSYNC"
+		(shape input)
+		(at 50.8 90.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b54b9d37-3e4e-425f-aa91-64ace5c675b7")
+	)
+	(hierarchical_label "HDMI_TX_PCLK"
+		(shape input)
+		(at 50.8 85 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b8ee1843-12a4-4885-835f-fe1584ea32f0")
+	)
 	(hierarchical_label "HDMI_TX_DATA[23:0]"
 		(shape input)
 		(at 142.24 168.91 180)
@@ -4011,6 +4176,28 @@
 			(justify right)
 		)
 		(uuid "badc8c12-b4aa-45ec-9824-777098d0a805")
+	)
+	(hierarchical_label "HDMI_RX_R[7:0]"
+		(shape output)
+		(at 50.8 62.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bda7f24a-c047-4c9d-aa47-4ff03397ca78")
+	)
+	(hierarchical_label "HDMI_I2C_SDA"
+		(shape bidirectional)
+		(at 50.8 117.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cd42f160-e997-45a8-ad6a-5a1013caaa5c")
 	)
 	(hierarchical_label "HDMI_RX_VSYNC"
 		(shape output)
@@ -4034,6 +4221,17 @@
 		)
 		(uuid "d228f702-8599-48cf-884c-da389fba5641")
 	)
+	(hierarchical_label "HDMI_TX_DE"
+		(shape input)
+		(at 50.8 87.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5963d8e-3d4a-41ab-bad0-a2f64cc862c7")
+	)
 	(hierarchical_label "+3V3"
 		(shape input)
 		(at 143.51 46.99 180)
@@ -4044,6 +4242,17 @@
 			(justify right)
 		)
 		(uuid "e1ce1f38-47a6-43bc-937e-379df1fe243f")
+	)
+	(hierarchical_label "HDMI_TX_B[7:0]"
+		(shape input)
+		(at 50.8 102.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e683e771-e2c3-419b-8560-cd2552dcab93")
 	)
 	(hierarchical_label "+1V8"
 		(shape input)
@@ -4065,7 +4274,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01c9a14d-127f-4432-8aa2-403f2316d634")
-		(property "Reference" "U19"
+		(property "Reference" "U41"
 			(at 198.12 144.78 0)
 			(effects
 				(font
@@ -4200,7 +4409,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02664e62-4cbb-41ac-8b46-e47b55dd6e25")
-		(property "Reference" "C11"
+		(property "Reference" "C36"
 			(at 179.07 58.42 0)
 			(effects
 				(font
@@ -4332,7 +4541,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c962f9c-6502-4249-8468-2e137693bbb9")
-		(property "Reference" "R10"
+		(property "Reference" "R24"
 			(at 171.45 104.14 0)
 			(effects
 				(font
@@ -4592,7 +4801,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "27dab08a-d491-4b30-a220-378f15430124")
-		(property "Reference" "Y4"
+		(property "Reference" "Y9"
 			(at 240.03 201.93 0)
 			(effects
 				(font
@@ -4978,7 +5187,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8eebdebc-4a59-47db-9355-c12d6d647f14")
-		(property "Reference" "C12"
+		(property "Reference" "C37"
 			(at 172.72 157.48 0)
 			(effects
 				(font
@@ -5046,7 +5255,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "903575e2-55b5-4af1-a148-33f0447a0c03")
-		(property "Reference" "J9"
+		(property "Reference" "J23"
 			(at 273.05 163.83 0)
 			(effects
 				(font
@@ -5291,7 +5500,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a997feb1-dcce-4bab-99e8-138231a9f921")
-		(property "Reference" "U18"
+		(property "Reference" "U42"
 			(at 293.37 69.85 0)
 			(effects
 				(font
@@ -5399,7 +5608,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b9d7d4ea-9149-4649-9df5-dd4d6bb84599")
-		(property "Reference" "J8"
+		(property "Reference" "J24"
 			(at 109.22 64.77 0)
 			(effects
 				(font
@@ -5516,7 +5725,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c0c3c8e4-9b24-4fac-a3ff-f074e7210cc4")
-		(property "Reference" "Y3"
+		(property "Reference" "Y10"
 			(at 240.03 102.87 0)
 			(effects
 				(font
@@ -5646,7 +5855,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd586180-80ac-45e3-8f8f-13493a5d2500")
-		(property "Reference" "U17"
+		(property "Reference" "U43"
 			(at 204.47 50.8 0)
 			(effects
 				(font
@@ -5906,7 +6115,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "db7fdbb2-b08d-45cc-a5bd-22c9ed31154a")
-		(property "Reference" "U16"
+		(property "Reference" "U44"
 			(at 157.48 66.04 0)
 			(effects
 				(font
@@ -6017,7 +6226,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e901e688-d273-4074-8330-87c39bb45cc0")
-		(property "Reference" "U20"
+		(property "Reference" "U45"
 			(at 252.73 165.1 0)
 			(effects
 				(font
@@ -6183,232 +6392,4 @@
 			)
 		)
 	)
-
-	(hierarchical_label "HDMI_RX_PCLK"
-		(shape output)
-		(at 50.8 50.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4f498f3c-e852-4285-8426-4c29e8cbdbc1")
-	)
-	(hierarchical_label "HDMI_RX_DE"
-		(shape output)
-		(at 50.8 52.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1d57146c-aa9c-45ee-b5fa-3783fba1e049")
-	)
-	(hierarchical_label "HDMI_RX_HSYNC"
-		(shape output)
-		(at 50.8 55.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "79da1262-b729-487d-b82f-0141005b8391")
-	)
-	(hierarchical_label "HDMI_RX_VSYNC"
-		(shape output)
-		(at 50.8 57.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "96db9828-b6a8-427b-bec0-85f1cfde3d36")
-	)
-	(hierarchical_label "HDMI_RX_R[7:0]"
-		(shape output)
-		(at 50.8 62.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bda7f24a-c047-4c9d-aa47-4ff03397ca78")
-	)
-	(hierarchical_label "HDMI_RX_G[7:0]"
-		(shape output)
-		(at 50.8 65.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2e19d36b-a2ba-40b1-9ff0-c920e8e1ae46")
-	)
-	(hierarchical_label "HDMI_RX_B[7:0]"
-		(shape output)
-		(at 50.8 67.78 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6c32ed7f-3f5c-4d54-9aa5-f53c5cbde12f")
-	)
-	(hierarchical_label "HDMI_TX_PCLK"
-		(shape input)
-		(at 50.8 85.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b8ee1843-12a4-4885-835f-fe1584ea32f0")
-	)
-	(hierarchical_label "HDMI_TX_DE"
-		(shape input)
-		(at 50.8 87.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d5963d8e-3d4a-41ab-bad0-a2f64cc862c7")
-	)
-	(hierarchical_label "HDMI_TX_HSYNC"
-		(shape input)
-		(at 50.8 90.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b54b9d37-3e4e-425f-aa91-64ace5c675b7")
-	)
-	(hierarchical_label "HDMI_TX_VSYNC"
-		(shape input)
-		(at 50.8 92.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4f6570e7-20a6-40f1-bf67-b0825b026fa1")
-	)
-	(hierarchical_label "HDMI_TX_R[7:0]"
-		(shape input)
-		(at 50.8 97.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7a82b3a9-1644-4543-a821-2c4340d347b1")
-	)
-	(hierarchical_label "HDMI_TX_G[7:0]"
-		(shape input)
-		(at 50.8 100.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "080ef61d-01e4-45fc-b0d2-541efdf7ee92")
-	)
-	(hierarchical_label "HDMI_TX_B[7:0]"
-		(shape input)
-		(at 50.8 102.78 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e683e771-e2c3-419b-8560-cd2552dcab93")
-	)
-	(hierarchical_label "HDMI_I2C_SCL"
-		(shape bidirectional)
-		(at 50.8 115.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0798d640-db79-473b-81f2-0c6298a19ad3")
-	)
-	(hierarchical_label "HDMI_I2C_SDA"
-		(shape bidirectional)
-		(at 50.8 117.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cd42f160-e997-45a8-ad6a-5a1013caaa5c")
-	)
-	(hierarchical_label "+3V3"
-		(shape input)
-		(at 50.8 130.0 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "198e74bd-4c23-454e-9a25-f6f74a530113")
-	)
-	(hierarchical_label "+1V8"
-		(shape input)
-		(at 50.8 132.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "37d6d70d-d494-4d7c-9916-ab571a967a80")
-	)
-	(hierarchical_label "GND"
-		(shape passive)
-		(at 50.8 135.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6edd0ef4-54da-4916-a9bf-dbba9eb61ff8")
-	))
+)
