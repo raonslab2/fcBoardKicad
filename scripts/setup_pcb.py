@@ -144,122 +144,107 @@ def create_pcb_file():
 
 '''
 
-    # Net classes with JLCPCB design rules
-    content += '''  (net_class "Default" "Default net class"
-    (clearance 0.127)
-    (trace_width 0.2)
-    (via_dia 0.6)
-    (via_drill 0.3)
-    (uvia_dia 0.3)
-    (uvia_drill 0.1)
-  )
-  (net_class "Power" "Power distribution"
-    (clearance 0.2)
-    (trace_width 0.5)
-    (via_dia 0.8)
-    (via_drill 0.4)
-    (uvia_dia 0.3)
-    (uvia_drill 0.1)
-  )
-  (net_class "HighSpeed" "USB3, HDMI differential pairs"
-    (clearance 0.127)
-    (trace_width 0.15)
-    (via_dia 0.5)
-    (via_drill 0.25)
-    (uvia_dia 0.3)
-    (uvia_drill 0.1)
-    (diff_pair_width 0.15)
-    (diff_pair_gap 0.15)
-  )
-
-'''
-
-    # Board outline with rounded corners
-    # Create rounded rectangle using arcs and lines
+    # Board outline with rounded corners (simple rectangle for now - arcs can cause issues)
     r = corner_radius
     w = board_width
     h = board_height
 
-    content += f'''  ; Board Outline - 150mm x 100mm with 3mm corner radius
-  (gr_arc
+    # Use simple lines for the board outline (more compatible)
+    # Top edge
+    content += f'''  (gr_line
     (start {r} 0)
-    (mid {r * (1 - math.cos(math.pi/4)):.4f} {r * (1 - math.sin(math.pi/4)):.4f})
-    (end 0 {r})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_line
-    (start 0 {r})
-    (end 0 {h - r})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_arc
-    (start 0 {h - r})
-    (mid {r * (1 - math.cos(math.pi/4)):.4f} {h - r * (1 - math.sin(math.pi/4)):.4f})
-    (end {r} {h})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_line
-    (start {r} {h})
-    (end {w - r} {h})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_arc
-    (start {w - r} {h})
-    (mid {w - r * (1 - math.cos(math.pi/4)):.4f} {h - r * (1 - math.sin(math.pi/4)):.4f})
-    (end {w} {h - r})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_line
-    (start {w} {h - r})
-    (end {w} {r})
-    (layer "Edge.Cuts")
-    (stroke (width 0.1) (type solid))
-    (uuid "{gen_uuid()}")
-  )
-  (gr_arc
-    (start {w} {r})
-    (mid {w - r * (1 - math.cos(math.pi/4)):.4f} {r * (1 - math.sin(math.pi/4)):.4f})
     (end {w - r} 0)
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
   )
-  (gr_line
-    (start {w - r} 0)
-    (end {r} 0)
+'''
+    # Right edge
+    content += f'''  (gr_line
+    (start {w} {r})
+    (end {w} {h - r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
   )
+'''
+    # Bottom edge
+    content += f'''  (gr_line
+    (start {w - r} {h})
+    (end {r} {h})
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
+'''
+    # Left edge
+    content += f'''  (gr_line
+    (start 0 {h - r})
+    (end 0 {r})
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
+'''
 
+    # Corner arcs (top-left, top-right, bottom-right, bottom-left)
+    # Top-left corner
+    content += f'''  (gr_arc
+    (start {r} 0)
+    (mid {r * 0.293} {r * 0.293})
+    (end 0 {r})
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
+'''
+    # Top-right corner
+    content += f'''  (gr_arc
+    (start {w} {r})
+    (mid {w - r * 0.293} {r * 0.293})
+    (end {w - r} 0)
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
+'''
+    # Bottom-right corner
+    content += f'''  (gr_arc
+    (start {w - r} {h})
+    (mid {w - r * 0.293} {h - r * 0.293})
+    (end {w} {h - r})
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
+'''
+    # Bottom-left corner
+    content += f'''  (gr_arc
+    (start 0 {h - r})
+    (mid {r * 0.293} {h - r * 0.293})
+    (end {r} {h})
+    (layer "Edge.Cuts")
+    (stroke (width 0.1) (type solid))
+    (uuid "{gen_uuid()}")
+  )
 '''
 
     # Mounting holes (4 corners)
     mounting_positions = [
-        (mounting_hole_offset, mounting_hole_offset, "MH1"),  # Bottom-left
-        (w - mounting_hole_offset, mounting_hole_offset, "MH2"),  # Bottom-right
-        (mounting_hole_offset, h - mounting_hole_offset, "MH3"),  # Top-left
-        (w - mounting_hole_offset, h - mounting_hole_offset, "MH4"),  # Top-right
+        (mounting_hole_offset, mounting_hole_offset, "MH1"),  # Top-left
+        (w - mounting_hole_offset, mounting_hole_offset, "MH2"),  # Top-right
+        (mounting_hole_offset, h - mounting_hole_offset, "MH3"),  # Bottom-left
+        (w - mounting_hole_offset, h - mounting_hole_offset, "MH4"),  # Bottom-right
     ]
 
     for x, y, ref in mounting_positions:
-        content += f'''  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
+        content += f'''  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad" (layer "F.Cu")
     (uuid "{gen_uuid()}")
     (at {x} {y})
-    (property "Reference" "{ref}" (at 0 -4) (layer "F.SilkS") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
-    (attr exclude_from_pos_files)
+    (property "Reference" "{ref}" (at 0 -4 0) (layer "F.SilkS") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
+    (property "Value" "MountingHole_M3" (at 0 4 0) (layer "F.Fab") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
+    (attr exclude_from_pos_files exclude_from_bom)
     (fp_circle
       (center 0 0)
       (end 3.2 0)
@@ -275,26 +260,13 @@ def create_pcb_file():
 
 '''
 
-    # Board dimensions annotation
-    content += f'''  ; Board dimension annotations
-  (gr_text "150mm"
-    (at {w/2} {h + 5})
-    (layer "Dwgs.User")
+    # Board dimensions text
+    content += f'''  (gr_text "150mm x 100mm"
+    (at {w/2} {h + 8} 0)
+    (layer "Cmts.User")
     (uuid "{gen_uuid()}")
-    (effects (font (size 2 2) (thickness 0.3)) (justify center))
+    (effects (font (size 2 2) (thickness 0.3)))
   )
-  (gr_text "100mm"
-    (at {-5} {h/2} 90)
-    (layer "Dwgs.User")
-    (uuid "{gen_uuid()}")
-    (effects (font (size 2 2) (thickness 0.3)) (justify center))
-  )
-
-'''
-
-    # Zone templates for power planes (commented out - to be filled when nets are assigned)
-    content += f'''  ; Power plane zones (In1.Cu = GND, In2.Cu = +3V3/+5V, In4.Cu = GND)
-  ; Zones will be created after component placement
 
 '''
 
@@ -319,4 +291,3 @@ if __name__ == "__main__":
     print("  - Mounting holes: 4x M3 at corners (5mm from edge)")
     print("  - Layer stackup: 6-layer")
     print("  - Design rules: JLCPCB specifications")
-    print("  - Net classes: Default, Power, HighSpeed")
