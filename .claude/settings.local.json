@@ -6,7 +6,13 @@
       "Bash(powershell -Command \"Get-ChildItem -Path work -Directory\")",
       "Bash(powershell -Command \"ls -Force | Select Name\")",
       "Bash(powershell -Command:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
