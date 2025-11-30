@@ -1,0 +1,121 @@
+Pin,Signal,Type,Bank,FPGA_Pin,Description,Carrier_Use
+1,B24_L1_P,I/O,BANK24,-,BANK24 Lane1 Positive,RS485_0_TX
+2,B24_L1_N,I/O,BANK24,-,BANK24 Lane1 Negative,RS485_0_RX
+3,B24_L2_P,I/O,BANK24,-,BANK24 Lane2 Positive,RS485_0_DE
+4,B24_L2_N,I/O,BANK24,-,BANK24 Lane2 Negative,RS485_1_TX
+5,GND,PWR,-,-,Ground,Ground
+6,B24_L3_P,I/O,BANK24,-,BANK24 Lane3 Positive,RS485_1_RX
+7,B24_L3_N,I/O,BANK24,-,BANK24 Lane3 Negative,RS485_1_DE
+8,B24_L4_P,I/O,BANK24,-,BANK24 Lane4 Positive,PL_LED0
+9,B24_L4_N,I/O,BANK24,-,BANK24 Lane4 Negative,PL_LED1
+10,B24_L5_P,I/O,BANK24,-,BANK24 Lane5 Positive,PL_KEY0
+11,B24_L5_N,I/O,BANK24,-,BANK24 Lane5 Negative,PL_KEY1
+12,GND,PWR,-,-,Ground,Ground
+13,B24_L6_P,I/O,BANK24,-,BANK24 Lane6 Positive,FAN_PWM
+14,B24_L6_N,I/O,BANK24,-,BANK24 Lane6 Negative,Reserved
+15,B24_L7_P,I/O,BANK24,-,BANK24 Lane7 Positive,Reserved
+16,B24_L7_N,I/O,BANK24,-,BANK24 Lane7 Negative,Reserved
+17,B24_L8_P,I/O,BANK24,-,BANK24 Lane8 Positive,Reserved
+18,GND,PWR,-,-,Ground,Ground
+19,B24_L8_N,I/O,BANK24,-,BANK24 Lane8 Negative,Reserved
+20,B24_L9_P,I/O,BANK24,-,BANK24 Lane9 Positive,Reserved
+21,B24_L9_N,I/O,BANK24,-,BANK24 Lane9 Negative,Reserved
+22,B24_L10_P,I/O,BANK24,-,BANK24 Lane10 Positive,Reserved
+23,B24_L10_N,I/O,BANK24,-,BANK24 Lane10 Negative,Reserved
+24,GND,PWR,-,-,Ground,Ground
+25,B24_L11_P,I/O,BANK24,-,BANK24 Lane11 Positive,Reserved
+26,B24_L11_N,I/O,BANK24,-,BANK24 Lane11 Negative,Reserved
+27,B24_L12_P,I/O,BANK24,-,BANK24 Lane12 Positive,Reserved
+28,B24_L12_N,I/O,BANK24,-,BANK24 Lane12 Negative,Reserved
+29,B24_L13_P,I/O,BANK24,-,BANK24 Lane13 Positive,Reserved
+30,GND,PWR,-,-,Ground,Ground
+31,B24_L13_N,I/O,BANK24,-,BANK24 Lane13 Negative,Reserved
+32,B44_L1_P,I/O,BANK44,-,BANK44 Lane1 Positive,Reserved
+33,B44_L1_N,I/O,BANK44,-,BANK44 Lane1 Negative,Reserved
+34,B44_L2_P,I/O,BANK44,-,BANK44 Lane2 Positive,Reserved
+35,B44_L2_N,I/O,BANK44,-,BANK44 Lane2 Negative,Reserved
+36,GND,PWR,-,-,Ground,Ground
+37,B44_L3_P,I/O,BANK44,-,BANK44 Lane3 Positive,Reserved
+38,B44_L3_N,I/O,BANK44,-,BANK44 Lane3 Negative,Reserved
+39,B44_L4_P,I/O,BANK44,-,BANK44 Lane4 Positive,Reserved
+40,B44_L4_N,I/O,BANK44,-,BANK44 Lane4 Negative,Reserved
+41,B44_L5_P,I/O,BANK44,-,BANK44 Lane5 Positive,Reserved
+42,GND,PWR,-,-,Ground,Ground
+43,B44_L5_N,I/O,BANK44,-,BANK44 Lane5 Negative,Reserved
+44,B44_L6_P,I/O,BANK44,-,BANK44 Lane6 Positive,Reserved
+45,B44_L6_N,I/O,BANK44,-,BANK44 Lane6 Negative,Reserved
+46,B44_L7_P,I/O,BANK44,-,BANK44 Lane7 Positive,Reserved
+47,B44_L7_N,I/O,BANK44,-,BANK44 Lane7 Negative,Reserved
+48,GND,PWR,-,-,Ground,Ground
+49,B44_L8_P,I/O,BANK44,-,BANK44 Lane8 Positive,Reserved
+50,B44_L8_N,I/O,BANK44,-,BANK44 Lane8 Negative,Reserved
+51,B44_L9_P,I/O,BANK44,-,BANK44 Lane9 Positive,Reserved
+52,B44_L9_N,I/O,BANK44,-,BANK44 Lane9 Negative,Reserved
+53,B44_L10_P,I/O,BANK44,-,BANK44 Lane10 Positive,Reserved
+54,GND,PWR,-,-,Ground,Ground
+55,B44_L10_N,I/O,BANK44,-,BANK44 Lane10 Negative,Reserved
+56,B44_L11_P,I/O,BANK44,-,BANK44 Lane11 Positive,Reserved
+57,B44_L11_N,I/O,BANK44,-,BANK44 Lane11 Negative,Reserved
+58,B44_L12_P,I/O,BANK44,-,BANK44 Lane12 Positive,Reserved
+59,B44_L12_N,I/O,BANK44,-,BANK44 Lane12 Negative,Reserved
+60,GND,PWR,-,-,Ground,Ground
+61,B44_L13_P,I/O,BANK44,-,BANK44 Lane13 Positive,Reserved
+62,B44_L13_N,I/O,BANK44,-,BANK44 Lane13 Negative,Reserved
+63,Reserved,NC,-,-,Reserved,NC
+64,Reserved,NC,-,-,Reserved,NC
+65,Reserved,NC,-,-,Reserved,NC
+66,GND,PWR,-,-,Ground,Ground
+67,Reserved,NC,-,-,Reserved,NC
+68,Reserved,NC,-,-,Reserved,NC
+69,Reserved,NC,-,-,Reserved,NC
+70,Reserved,NC,-,-,Reserved,NC
+71,Reserved,NC,-,-,Reserved,NC
+72,GND,PWR,-,-,Ground,Ground
+73,Reserved,NC,-,-,Reserved,NC
+74,Reserved,NC,-,-,Reserved,NC
+75,Reserved,NC,-,-,Reserved,NC
+76,Reserved,NC,-,-,Reserved,NC
+77,Reserved,NC,-,-,Reserved,NC
+78,GND,PWR,-,-,Ground,Ground
+79,Reserved,NC,-,-,Reserved,NC
+80,Reserved,NC,-,-,Reserved,NC
+81,Reserved,NC,-,-,Reserved,NC
+82,Reserved,NC,-,-,Reserved,NC
+83,Reserved,NC,-,-,Reserved,NC
+84,GND,PWR,-,-,Ground,Ground
+85,Reserved,NC,-,-,Reserved,NC
+86,Reserved,NC,-,-,Reserved,NC
+87,Reserved,NC,-,-,Reserved,NC
+88,Reserved,NC,-,-,Reserved,NC
+89,Reserved,NC,-,-,Reserved,NC
+90,GND,PWR,-,-,Ground,Ground
+91,Reserved,NC,-,-,Reserved,NC
+92,Reserved,NC,-,-,Reserved,NC
+93,Reserved,NC,-,-,Reserved,NC
+94,Reserved,NC,-,-,Reserved,NC
+95,Reserved,NC,-,-,Reserved,NC
+96,GND,PWR,-,-,Ground,Ground
+97,Reserved,NC,-,-,Reserved,NC
+98,Reserved,NC,-,-,Reserved,NC
+99,Reserved,NC,-,-,Reserved,NC
+100,Reserved,NC,-,-,Reserved,NC
+101,Reserved,NC,-,-,Reserved,NC
+102,GND,PWR,-,-,Ground,Ground
+103,Reserved,NC,-,-,Reserved,NC
+104,Reserved,NC,-,-,Reserved,NC
+105,Reserved,NC,-,-,Reserved,NC
+106,Reserved,NC,-,-,Reserved,NC
+107,Reserved,NC,-,-,Reserved,NC
+108,GND,PWR,-,-,Ground,Ground
+109,Reserved,NC,-,-,Reserved,NC
+110,Reserved,NC,-,-,Reserved,NC
+111,Reserved,NC,-,-,Reserved,NC
+112,Reserved,NC,-,-,Reserved,NC
+113,Reserved,NC,-,-,Reserved,NC
+114,GND,PWR,-,-,Ground,Ground
+115,Reserved,NC,-,-,Reserved,NC
+116,Reserved,NC,-,-,Reserved,NC
+117,Reserved,NC,-,-,Reserved,NC
+118,Reserved,NC,-,-,Reserved,NC
+119,Reserved,NC,-,-,Reserved,NC
+120,GND,PWR,-,-,Ground,Ground

@@ -1,0 +1,315 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55")
+	(paper "A3")
+	(title_block
+		(title "ACU5EV SoM Carrier Board")
+		(date "2024-11-30")
+		(rev "0.1")
+		(company "fcBoard Project")
+		(comment 1 "Full-featured carrier board for ALINX ACU5EV SoM")
+		(comment 2 "Zynq UltraScale+ MPSoC XCZU5EV")
+	)
+	(lib_symbols)
+	(text "ACU5EV SoM Carrier Board - Main Sheet\n\nHierarchical Design:\n1. Power Supply\n2. SoM Connectors (J29-J32)\n3. USB 3.0 Hub (4 ports)\n4. Gigabit Ethernet (2 ports)\n5. HDMI In/Out\n6. Peripherals"
+		(exclude_from_sim no)
+		(at 25.4 30.48 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "a1b2c3d4-1111-2222-3333-444455556666")
+	)
+	(text "SoM Connectors (ACU5EV)\n\nJ29: BANK65/66 (HDMI, MIPI, ETH PL)\nJ30: MGT505/BANK25/26 (PCIe, SFP)\nJ31: BANK24/44 (RS485, GPIO)\nJ32: PS MIO/Power (USB, ETH PS, SD)"
+		(exclude_from_sim no)
+		(at 152.4 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d1111111-1111-1111-1111-111111111111")
+	)
+	(text "Power Distribution:\n+12V to J32 (pins 107-120)\n+1V8 to J32 VCCO_65/66\nGND to All connectors"
+		(exclude_from_sim no)
+		(at 101.6 111.76 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "d2222222-2222-2222-2222-222222222222")
+	)
+	(sheet
+		(at 25.4 76.2)
+		(size 50.8 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "b1a2c3d4-0001-0001-0001-000000000001")
+		(property "Sheetname" "Power Supply"
+			(at 25.4 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_Power.kicad_sch"
+			(at 25.4 107.2216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+12V" input
+			(at 76.2 81.28 0)
+			(uuid "c1111111-1111-1111-1111-111111111111")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+5V" output
+			(at 76.2 86.36 0)
+			(uuid "c2222222-2222-2222-2222-222222222222")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+3V3" output
+			(at 76.2 91.44 0)
+			(uuid "c3333333-3333-3333-3333-333333333333")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "+1V8" output
+			(at 76.2 96.52 0)
+			(uuid "c4444444-4444-4444-4444-444444444444")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" passive
+			(at 76.2 101.6 0)
+			(uuid "c5555555-5555-5555-5555-555555555555")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 119.38)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 255 194 1.0000)
+		)
+		(uuid "b1a2c3d4-0002-0002-0002-000000000002")
+		(property "Sheetname" "USB 3.0 Hub"
+			(at 25.4 118.6684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_USB.kicad_sch"
+			(at 25.4 145.3216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 154.94)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 224 255 1.0000)
+		)
+		(uuid "b1a2c3d4-0003-0003-0003-000000000003")
+		(property "Sheetname" "Gigabit Ethernet"
+			(at 25.4 154.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_Ethernet.kicad_sch"
+			(at 25.4 180.8816 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 190.5)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 224 1.0000)
+		)
+		(uuid "b1a2c3d4-0004-0004-0004-000000000004")
+		(property "Sheetname" "HDMI In/Out"
+			(at 25.4 189.7884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_HDMI.kicad_sch"
+			(at 25.4 216.4416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 226.06)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 224 194 255 1.0000)
+		)
+		(uuid "b1a2c3d4-0005-0005-0005-000000000005")
+		(property "Sheetname" "Peripherals"
+			(at 25.4 225.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_Peripherals.kicad_sch"
+			(at 25.4 252.0016 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

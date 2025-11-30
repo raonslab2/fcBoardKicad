@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -File | Select-Object -First 50 | % { $_FullName -replace [regex]::Escape($pwd), ''.'' }\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path work -Directory\")",
+      "Bash(powershell -Command \"ls -Force | Select Name\")",
+      "Bash(powershell -Command:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
