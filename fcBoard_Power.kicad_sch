@@ -35,7 +35,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
 				(at 1.27 -1.27 0)
 				(effects
 					(font
@@ -336,7 +336,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
 				(at 0.9652 -3.81 0)
 				(effects
 					(font
@@ -480,7 +480,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Diode_SMD:D_SMA"
 				(at 0 0 0)
 				(effects
 					(font
@@ -611,7 +611,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Inductor_SMD:L_Bourns_SRN8040"
 				(at 0 0 0)
 				(effects
 					(font
@@ -755,7 +755,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 				(at 0 0 0)
 				(effects
 					(font
@@ -934,7 +934,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 				(at -1.778 0 90)
 				(effects
 					(font
@@ -1351,7 +1351,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1467,7 +1467,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Package_TO_SOT_SMD:TO-263-5_TabPin3"
 				(at 0 0 0)
 				(effects
 					(font

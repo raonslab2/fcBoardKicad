@@ -1,4 +1,29 @@
-(kicad_pcb
+#!/usr/bin/env python3
+"""
+PCB Setup Script for fcBoard
+- Board outline: 150mm x 100mm with rounded corners
+- Mounting holes: 4x M3 at corners
+- Design rules: JLCPCB specifications
+"""
+
+import uuid
+import math
+
+def gen_uuid():
+    return str(uuid.uuid4())
+
+def create_pcb_file():
+    """Create PCB file with board outline, mounting holes, and design rules"""
+
+    # Board dimensions
+    board_width = 150.0  # mm
+    board_height = 100.0  # mm
+    corner_radius = 3.0  # mm
+    mounting_hole_offset = 5.0  # mm from edge
+    mounting_hole_diameter = 3.2  # mm (for M3 screws)
+    mounting_hole_pad = 6.0  # mm pad diameter
+
+    content = '''(kicad_pcb
   (version 20231014)
   (generator "pcbnew")
   (generator_version "8.0")
@@ -106,7 +131,10 @@
     )
   )
 
-  (net 0 "")
+'''
+
+    # Power nets
+    content += '''  (net 0 "")
   (net 1 "GND")
   (net 2 "+12V")
   (net 3 "+5V")
@@ -114,7 +142,10 @@
   (net 5 "+1V8")
   (net 6 "+1V2")
 
-  (net_class "Default" "Default net class"
+'''
+
+    # Net classes with JLCPCB design rules
+    content += '''  (net_class "Default" "Default net class"
     (clearance 0.127)
     (trace_width 0.2)
     (via_dia 0.6)
@@ -141,163 +172,151 @@
     (diff_pair_gap 0.15)
   )
 
-  ; Board Outline - 150mm x 100mm with 3mm corner radius
+'''
+
+    # Board outline with rounded corners
+    # Create rounded rectangle using arcs and lines
+    r = corner_radius
+    w = board_width
+    h = board_height
+
+    content += f'''  ; Board Outline - 150mm x 100mm with 3mm corner radius
   (gr_arc
-    (start 3.0 0)
-    (mid 0.8787 0.8787)
-    (end 0 3.0)
+    (start {r} 0)
+    (mid {r * (1 - math.cos(math.pi/4)):.4f} {r * (1 - math.sin(math.pi/4)):.4f})
+    (end 0 {r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "4706628c-c03d-4f8d-810a-1f50779f809a")
+    (uuid "{gen_uuid()}")
   )
   (gr_line
-    (start 0 3.0)
-    (end 0 97.0)
+    (start 0 {r})
+    (end 0 {h - r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "fcafae0d-2611-4034-a468-889c2a7f0e27")
+    (uuid "{gen_uuid()}")
   )
   (gr_arc
-    (start 0 97.0)
-    (mid 0.8787 99.1213)
-    (end 3.0 100.0)
+    (start 0 {h - r})
+    (mid {r * (1 - math.cos(math.pi/4)):.4f} {h - r * (1 - math.sin(math.pi/4)):.4f})
+    (end {r} {h})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "9bb92f14-e92e-4091-946d-74e38bf68bbd")
+    (uuid "{gen_uuid()}")
   )
   (gr_line
-    (start 3.0 100.0)
-    (end 147.0 100.0)
+    (start {r} {h})
+    (end {w - r} {h})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "14d96e85-edac-4c3e-a85d-6413c769d66c")
+    (uuid "{gen_uuid()}")
   )
   (gr_arc
-    (start 147.0 100.0)
-    (mid 149.1213 99.1213)
-    (end 150.0 97.0)
+    (start {w - r} {h})
+    (mid {w - r * (1 - math.cos(math.pi/4)):.4f} {h - r * (1 - math.sin(math.pi/4)):.4f})
+    (end {w} {h - r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "08a808b7-8ea0-4f84-b33c-ee5da44f7f5b")
+    (uuid "{gen_uuid()}")
   )
   (gr_line
-    (start 150.0 97.0)
-    (end 150.0 3.0)
+    (start {w} {h - r})
+    (end {w} {r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "3ee18e8a-fe01-400b-b92b-e2075cf7bf5e")
+    (uuid "{gen_uuid()}")
   )
   (gr_arc
-    (start 150.0 3.0)
-    (mid 149.1213 0.8787)
-    (end 147.0 0)
+    (start {w} {r})
+    (mid {w - r * (1 - math.cos(math.pi/4)):.4f} {r * (1 - math.sin(math.pi/4)):.4f})
+    (end {w - r} 0)
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "f75eec2f-e887-4401-87c2-2c75d759a902")
+    (uuid "{gen_uuid()}")
   )
   (gr_line
-    (start 147.0 0)
-    (end 3.0 0)
+    (start {w - r} 0)
+    (end {r} 0)
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
-    (uuid "969c0375-13bd-46fd-b02f-5f341608510d")
+    (uuid "{gen_uuid()}")
   )
 
-  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
-    (uuid "80e32455-f9dd-4493-98b5-df2a0c2c5262")
-    (at 5.0 5.0)
-    (property "Reference" "MH1" (at 0 -4) (layer "F.SilkS") (uuid "0ed87878-30f2-4641-a447-92bdaa381316") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "3c18a4f6-756e-4f45-b9fe-3b9dba8962ab") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "74d080d3-c135-4549-bb0f-417eb8193fdc") (effects (font (size 1 1) (thickness 0.15))))
+'''
+
+    # Mounting holes (4 corners)
+    mounting_positions = [
+        (mounting_hole_offset, mounting_hole_offset, "MH1"),  # Bottom-left
+        (w - mounting_hole_offset, mounting_hole_offset, "MH2"),  # Bottom-right
+        (mounting_hole_offset, h - mounting_hole_offset, "MH3"),  # Top-left
+        (w - mounting_hole_offset, h - mounting_hole_offset, "MH4"),  # Top-right
+    ]
+
+    for x, y, ref in mounting_positions:
+        content += f'''  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
+    (uuid "{gen_uuid()}")
+    (at {x} {y})
+    (property "Reference" "{ref}" (at 0 -4) (layer "F.SilkS") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
+    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "{gen_uuid()}") (effects (font (size 1 1) (thickness 0.15))))
     (attr exclude_from_pos_files)
     (fp_circle
       (center 0 0)
       (end 3.2 0)
       (layer "F.CrtYd")
       (stroke (width 0.05) (type solid))
-      (uuid "7660de37-80cd-4e96-a081-3198c39f6067")
+      (uuid "{gen_uuid()}")
     )
-    (pad "1" thru_hole circle (at 0 0) (size 6.0 6.0) (drill 3.2) (layers "*.Cu" "*.Mask")
+    (pad "1" thru_hole circle (at 0 0) (size {mounting_hole_pad} {mounting_hole_pad}) (drill {mounting_hole_diameter}) (layers "*.Cu" "*.Mask")
       (net 1 "GND")
-      (uuid "b18fc2ae-bcec-4d43-b0be-7c1b36e4ce2b")
+      (uuid "{gen_uuid()}")
     )
   )
 
-  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
-    (uuid "3fd8eee5-4aa1-4d97-ac7d-1cf2accf06c9")
-    (at 145.0 5.0)
-    (property "Reference" "MH2" (at 0 -4) (layer "F.SilkS") (uuid "da9b7645-e0dd-4bce-a692-05a19a466cb2") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "b7f95a20-1bb2-4ede-a93c-f6e57cf094f7") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "22658beb-6586-4b20-95b3-8a5f53c3d847") (effects (font (size 1 1) (thickness 0.15))))
-    (attr exclude_from_pos_files)
-    (fp_circle
-      (center 0 0)
-      (end 3.2 0)
-      (layer "F.CrtYd")
-      (stroke (width 0.05) (type solid))
-      (uuid "23c971e7-d182-4124-b0e2-959d6405b72e")
-    )
-    (pad "1" thru_hole circle (at 0 0) (size 6.0 6.0) (drill 3.2) (layers "*.Cu" "*.Mask")
-      (net 1 "GND")
-      (uuid "22cb8128-ec3a-4776-89f9-789bec5e692e")
-    )
-  )
+'''
 
-  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
-    (uuid "e1755e31-d88a-44fb-a370-6af01a9a2b04")
-    (at 5.0 95.0)
-    (property "Reference" "MH3" (at 0 -4) (layer "F.SilkS") (uuid "aa00d964-3015-466e-ae3b-c37faf824cb7") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "4d1441a5-9a6e-4c3b-84f9-b5694748df33") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "c7cc5cc1-4b52-4fa2-847f-eff441e5941d") (effects (font (size 1 1) (thickness 0.15))))
-    (attr exclude_from_pos_files)
-    (fp_circle
-      (center 0 0)
-      (end 3.2 0)
-      (layer "F.CrtYd")
-      (stroke (width 0.05) (type solid))
-      (uuid "5472cd9c-bf11-4ac9-b592-02005e418198")
-    )
-    (pad "1" thru_hole circle (at 0 0) (size 6.0 6.0) (drill 3.2) (layers "*.Cu" "*.Mask")
-      (net 1 "GND")
-      (uuid "711a5b65-e359-40f6-a224-ce51180a69ca")
-    )
-  )
-
-  (footprint "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (layer "F.Cu")
-    (uuid "c4e105b6-c4c9-460f-881d-a5b798b31aab")
-    (at 145.0 95.0)
-    (property "Reference" "MH4" (at 0 -4) (layer "F.SilkS") (uuid "861c53f4-92eb-428f-8bb8-cddc0e4cf93d") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Value" "MountingHole_3.2mm_M3" (at 0 4) (layer "F.Fab") (uuid "6e7eb56d-8d3c-486d-94a4-63c8013070d8") (effects (font (size 1 1) (thickness 0.15))))
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad_Via" (at 0 0 0) (unlocked yes) (layer "F.Fab") (hide yes) (uuid "24f7d819-0cf3-455c-a1e1-8c24901a7fc2") (effects (font (size 1 1) (thickness 0.15))))
-    (attr exclude_from_pos_files)
-    (fp_circle
-      (center 0 0)
-      (end 3.2 0)
-      (layer "F.CrtYd")
-      (stroke (width 0.05) (type solid))
-      (uuid "d8601ee5-dd10-4deb-8314-ddecf48a7420")
-    )
-    (pad "1" thru_hole circle (at 0 0) (size 6.0 6.0) (drill 3.2) (layers "*.Cu" "*.Mask")
-      (net 1 "GND")
-      (uuid "a8f169a7-974e-47ef-bd98-35e9ebfbc939")
-    )
-  )
-
-  ; Board dimension annotations
+    # Board dimensions annotation
+    content += f'''  ; Board dimension annotations
   (gr_text "150mm"
-    (at 75.0 105.0)
+    (at {w/2} {h + 5})
     (layer "Dwgs.User")
-    (uuid "f9ba4061-c253-4aab-9c63-3cb72d3c3d1d")
+    (uuid "{gen_uuid()}")
     (effects (font (size 2 2) (thickness 0.3)) (justify center))
   )
   (gr_text "100mm"
-    (at -5 50.0 90)
+    (at {-5} {h/2} 90)
     (layer "Dwgs.User")
-    (uuid "5d37b652-33e1-469a-9a07-7c35b3c26a28")
+    (uuid "{gen_uuid()}")
     (effects (font (size 2 2) (thickness 0.3)) (justify center))
   )
 
-  ; Power plane zones (In1.Cu = GND, In2.Cu = +3V3/+5V, In4.Cu = GND)
+'''
+
+    # Zone templates for power planes (commented out - to be filled when nets are assigned)
+    content += f'''  ; Power plane zones (In1.Cu = GND, In2.Cu = +3V3/+5V, In4.Cu = GND)
   ; Zones will be created after component placement
 
-)
+'''
+
+    # Close PCB file
+    content += ''')\n'''
+
+    return content
+
+
+if __name__ == "__main__":
+    output_path = r"D:\git2\fcBoardKicad\fcBoard.kicad_pcb"
+
+    content = create_pcb_file()
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"Generated: {output_path}")
+    print("PCB setup completed:")
+    print("  - Board size: 150mm x 100mm")
+    print("  - Corner radius: 3mm")
+    print("  - Mounting holes: 4x M3 at corners (5mm from edge)")
+    print("  - Layer stackup: 6-layer")
+    print("  - Design rules: JLCPCB specifications")
+    print("  - Net classes: Default, Power, HighSpeed")
