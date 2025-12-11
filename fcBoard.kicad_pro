@@ -639,6 +639,18 @@
     [
       "b1a2c3d4-0005-0005-0005-000000000005",
       "Peripherals"
+    ],
+    [
+      "193d61ac-afe4-4655-80db-d5c4ab29e08d",
+      "connector Sheet"
+    ],
+    [
+      "b1a2c3d4-0006-0006-0006-000000000006",
+      "GPIO Test Headers"
+    ],
+    [
+      "4e9283c4-d89d-4551-a9c8-728ae8a5dc03",
+      "Reset Circuit"
     ]
   ],
   "text_variables": {}

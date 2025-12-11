@@ -47,6 +47,90 @@
 		(uuid "d2222222-2222-2222-2222-222222222222")
 	)
 	(sheet
+		(at 106.68 139.7)
+		(size 63.5 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "193d61ac-afe4-4655-80db-d5c4ab29e08d")
+		(property "Sheetname" "connector Sheet"
+			(at 106.68 138.9884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "connector.kicad_sch"
+			(at 106.68 163.1446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 254)
+		(size 25.4 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1.0000)
+		)
+		(uuid "4e9283c4-d89d-4551-a9c8-728ae8a5dc03")
+		(property "Sheetname" "Reset Circuit"
+			(at 88.9 253.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "fcBoard_Reset.kicad_sch"
+			(at 88.9 280.0016 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 25.4 76.2)
 		(size 50.8 30.48)
 		(exclude_from_sim no)
@@ -302,6 +386,48 @@
 			(project "fcBoard"
 				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
 					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 226.06)
+		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 255 224 1.0000)
+		)
+		(uuid "b1a2c3d4-0006-0006-0006-000000000006")
+		(property "Sheetname" "GPIO Test Headers"
+			(at 88.9 225.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "gpio.kicad_sch"
+			(at 88.9 252.0016 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "fcBoard"
+				(path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
+					(page "8")
 				)
 			)
 		)

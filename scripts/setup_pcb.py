@@ -23,6 +23,10 @@ def create_pcb_file():
     mounting_hole_diameter = 3.2  # mm (for M3 screws)
     mounting_hole_pad = 6.0  # mm pad diameter
 
+    # Board position offset (move away from origin for better workspace)
+    offset_x = 100.0  # mm
+    offset_y = 100.0  # mm
+
     content = '''(kicad_pcb
   (version 20231014)
   (generator "pcbnew")
@@ -144,16 +148,17 @@ def create_pcb_file():
 
 '''
 
-    # Board outline with rounded corners (simple rectangle for now - arcs can cause issues)
+    # Board outline with rounded corners
     r = corner_radius
     w = board_width
     h = board_height
+    ox = offset_x
+    oy = offset_y
 
-    # Use simple lines for the board outline (more compatible)
     # Top edge
     content += f'''  (gr_line
-    (start {r} 0)
-    (end {w - r} 0)
+    (start {ox + r} {oy})
+    (end {ox + w - r} {oy})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -161,8 +166,8 @@ def create_pcb_file():
 '''
     # Right edge
     content += f'''  (gr_line
-    (start {w} {r})
-    (end {w} {h - r})
+    (start {ox + w} {oy + r})
+    (end {ox + w} {oy + h - r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -170,8 +175,8 @@ def create_pcb_file():
 '''
     # Bottom edge
     content += f'''  (gr_line
-    (start {w - r} {h})
-    (end {r} {h})
+    (start {ox + w - r} {oy + h})
+    (end {ox + r} {oy + h})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -179,8 +184,8 @@ def create_pcb_file():
 '''
     # Left edge
     content += f'''  (gr_line
-    (start 0 {h - r})
-    (end 0 {r})
+    (start {ox} {oy + h - r})
+    (end {ox} {oy + r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -190,9 +195,9 @@ def create_pcb_file():
     # Corner arcs (top-left, top-right, bottom-right, bottom-left)
     # Top-left corner
     content += f'''  (gr_arc
-    (start {r} 0)
-    (mid {r * 0.293} {r * 0.293})
-    (end 0 {r})
+    (start {ox + r} {oy})
+    (mid {ox + r * 0.293} {oy + r * 0.293})
+    (end {ox} {oy + r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -200,9 +205,9 @@ def create_pcb_file():
 '''
     # Top-right corner
     content += f'''  (gr_arc
-    (start {w} {r})
-    (mid {w - r * 0.293} {r * 0.293})
-    (end {w - r} 0)
+    (start {ox + w} {oy + r})
+    (mid {ox + w - r * 0.293} {oy + r * 0.293})
+    (end {ox + w - r} {oy})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -210,9 +215,9 @@ def create_pcb_file():
 '''
     # Bottom-right corner
     content += f'''  (gr_arc
-    (start {w - r} {h})
-    (mid {w - r * 0.293} {h - r * 0.293})
-    (end {w} {h - r})
+    (start {ox + w - r} {oy + h})
+    (mid {ox + w - r * 0.293} {oy + h - r * 0.293})
+    (end {ox + w} {oy + h - r})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -220,9 +225,9 @@ def create_pcb_file():
 '''
     # Bottom-left corner
     content += f'''  (gr_arc
-    (start 0 {h - r})
-    (mid {r * 0.293} {h - r * 0.293})
-    (end {r} {h})
+    (start {ox} {oy + h - r})
+    (mid {ox + r * 0.293} {oy + h - r * 0.293})
+    (end {ox + r} {oy + h})
     (layer "Edge.Cuts")
     (stroke (width 0.1) (type solid))
     (uuid "{gen_uuid()}")
@@ -231,10 +236,10 @@ def create_pcb_file():
 
     # Mounting holes (4 corners)
     mounting_positions = [
-        (mounting_hole_offset, mounting_hole_offset, "MH1"),  # Top-left
-        (w - mounting_hole_offset, mounting_hole_offset, "MH2"),  # Top-right
-        (mounting_hole_offset, h - mounting_hole_offset, "MH3"),  # Bottom-left
-        (w - mounting_hole_offset, h - mounting_hole_offset, "MH4"),  # Bottom-right
+        (ox + mounting_hole_offset, oy + mounting_hole_offset, "MH1"),
+        (ox + w - mounting_hole_offset, oy + mounting_hole_offset, "MH2"),
+        (ox + mounting_hole_offset, oy + h - mounting_hole_offset, "MH3"),
+        (ox + w - mounting_hole_offset, oy + h - mounting_hole_offset, "MH4"),
     ]
 
     for x, y, ref in mounting_positions:
@@ -262,7 +267,7 @@ def create_pcb_file():
 
     # Board dimensions text
     content += f'''  (gr_text "150mm x 100mm"
-    (at {w/2} {h + 8} 0)
+    (at {ox + w/2} {oy + h + 8} 0)
     (layer "Cmts.User")
     (uuid "{gen_uuid()}")
     (effects (font (size 2 2) (thickness 0.3)))

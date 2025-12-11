@@ -23,23 +23,23 @@ fcBoardKicad/
 ├── fcBoard_BOM.csv            # Bill of Materials (generated)
 ├── fcBoard_BOM.txt            # BOM text format
 ├── libraries/                  # Project-specific libraries
-│   ├── fcBoard.kicad_sym      # Custom symbol library
-│   ├── fcBoard.pretty/        # Custom footprint library
-│   ├── symbols/               # SoM connector symbols (J29-J32)
-│   └── 3dmodels/              # 3D models for components
+│   └── fcBoard.kicad_sym      # Custom symbol library
+├── footprints.pretty/          # Custom footprint library
+├── 3dmodels/                   # 3D models for components
 ├── docs/
 │   ├── pinmap/                # SoM connector pinout CSVs
 │   │   ├── J29_BANK65_66.csv  # HDMI, MIPI, Ethernet PL
 │   │   ├── J30_BANK25_26_MGT.csv # PCIe, SFP
 │   │   ├── J31_BANK24_44.csv  # RS485, GPIO
 │   │   └── J32_MIO_POWER.csv  # PS MIO, Power
-│   └── work/                  # Working documents/images
+│   ├── ACU5EV/                # ALINX SoM reference materials
+│   └── AXU4EV/                # Carrier board reference
 ├── scripts/                    # Python automation tools
 │   ├── kicad_tools.py         # Annotation, footprint assignment
 │   ├── generate_*.py          # Schematic generators
+│   ├── setup_pcb.py           # PCB setup automation
 │   └── verify_connections.py  # Connection verification
-├── down/                       # Downloaded component files
-│   └── AXK6A2337YG/           # Panasonic connector resources
+├── out/                        # Generated outputs (ERC, DRC, Gerber)
 ├── fcBoard-backups/           # KiCad auto-backup files
 ├── sym-lib-table              # Symbol library configuration
 └── fp-lib-table               # Footprint library configuration
@@ -75,20 +75,21 @@ fcBoardKicad/
 ### Key ICs and Interfaces
 
 - **USB Hub:** Microchip USB5744 (4-port USB 3.0)
+- **USB PHY:** Microchip USB3320 (ULPI)
 - **Ethernet PHY:** Realtek RTL8211F-CG (RGMII)
 - **HDMI Input:** ITE IT6801FN
 - **HDMI Output:** ITE IT66121FN
 - **USB-UART:** Silicon Labs CP2102N
-- **Power:** TPS54360 (12V→5V), TPS62827 (5V→3.3V/1.8V)
+- **Power:** LM2596S-5 (12V→5V), LM2596S-ADJ (12V→3.3V, 12V→1.8V)
 
 ### Power Rails
 
 | Rail | Voltage | Source |
 |------|---------|--------|
 | Input | +12V DC | External supply (5A min) |
-| +5V | 5.0V | TPS54360 buck converter |
-| +3V3 | 3.3V | TPS62827 from 5V |
-| +1V8 | 1.8V | TPS73118 LDO / carrier supply |
+| +5V | 5.0V | LM2596S-5 buck converter (U28) |
+| +3V3 | 3.3V | LM2596S-ADJ buck converter (U26) |
+| +1V8 | 1.8V | LM2596S-ADJ buck converter (U27) |
 | VCCO_65/66 | 1.8V | Carrier board supplies to SoM |
 
 ## Development Workflow

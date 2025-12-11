@@ -7,16 +7,19 @@ ACU5EV (Zynq UltraScale+ XCZU5EV) SoM용 캐리어 보드 KiCad 프로젝트
 ```
 fcBoardKicad/
 ├── fcBoard.kicad_pro          # KiCad 프로젝트 파일
-├── fcBoard.kicad_sch          # 메인 회로도
+├── fcBoard.kicad_sch          # 메인 회로도 (계층적)
+├── fcBoard_*.kicad_sch        # 서브 회로도
 ├── fcBoard.kicad_pcb          # PCB 레이아웃
-├── libraries/                  # 커스텀 라이브러리
-│   ├── fcBoard.kicad_sym      # 심볼 라이브러리
-│   └── fcBoard.pretty/        # 풋프린트 라이브러리
-├── datasheets/                # 데이터시트
-├── docs/                      # 설계 문서
-│   └── pinmap/                # SoM 커넥터 핀맵
-├── gerber/                    # 거버 출력
-└── production/                # 생산 파일 (BOM, PnP)
+├── libraries/                  # 심볼 라이브러리
+│   └── fcBoard.kicad_sym      # 커스텀 심볼
+├── footprints.pretty/          # 커스텀 풋프린트
+├── 3dmodels/                   # 3D 모델
+├── docs/                       # 설계 문서
+│   ├── pinmap/                 # SoM 커넥터 핀맵
+│   ├── ACU5EV/                 # SoM 참조 자료
+│   └── AXU4EV/                 # 캐리어 보드 참조
+├── scripts/                    # Python 자동화 스크립트
+└── out/                        # 생성 파일 (Gerber, BOM, ERC/DRC)
 ```
 
 ## SoM 커넥터 정보
@@ -60,9 +63,9 @@ fcBoardKicad/
 
 ## 참조 자료
 
-- [ACU5EV SoM 회로도](../ACU2CG_ACU3EG_ACU4EV_ACU5EV/Schematics/ACU5EV_SCH.pdf)
-- [AXU5EV-P 캐리어 보드 참조](../AXU4EV-P_AXU5EV-P/hardware/Schematics/)
-- [ACU5EV 사용자 매뉴얼](../ACU2CG_ACU3EG_ACU4EV_ACU5EV/Technical_Reference_Manual/)
+- `docs/ACU5EV/ACU5EV_Schematic.pdf` - SoM 회로도
+- `docs/ACU5EV/ACU5EV_UG.pdf` - SoM 사용자 가이드
+- `docs/AXU4EV/` - 캐리어 보드 참조 자료
 
 ## 핀맵 파일
 
@@ -73,11 +76,10 @@ fcBoardKicad/
 
 ## 설계 시작하기
 
-1. KiCad 8.0 이상 설치
+1. KiCad 9.0 설치
 2. `fcBoard.kicad_pro` 열기
-3. 라이브러리 경로 설정 (libraries/ 폴더)
-4. 핀맵 CSV 참조하여 회로도 작성
-5. PCB 레이아웃 (6층 권장)
+3. 회로도 검토 (계층 구조)
+4. PCB 레이아웃 (6층 권장)
 
 ## PCB 권장 사양
 
