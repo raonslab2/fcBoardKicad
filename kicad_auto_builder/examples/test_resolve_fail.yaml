@@ -1,0 +1,30 @@
+# 리졸브 실패 테스트용 YAML
+# 존재하지 않는 LCSC 부품번호를 사용하여 리졸브 실패 유도
+
+project:
+  name: "TestResolveFail"
+  kicad_version: 9
+  out_dir: "out/test_resolve_fail"
+
+net_presets:
+  GND: "GND"
+  VCC: "+5V"
+
+parts:
+  # 정상 케이스: 내장 매핑이 있는 role
+  - ref: "R1"
+    role: "resistor"
+    value: "10k"
+    nets:
+      "1": "NET_A"
+      "2": "GND"
+
+  # 실패 케이스: LCSC 부품번호가 잘못됨 (optional=false)
+  # easyeda2kicad가 없거나 실패하면 role 매핑으로 폴백
+  - ref: "U1"
+    role: "unknown_role_xyz"  # 존재하지 않는 role = 리졸브 실패
+    value: "Unknown IC"
+    optional: false  # 필수 부품이므로 에러 발생
+    nets:
+      VIN: "+5V"
+      GND: "GND"

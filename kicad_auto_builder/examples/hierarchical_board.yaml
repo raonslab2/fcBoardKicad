@@ -1,0 +1,156 @@
+# 계층 시트 테스트 - Power + USB 보드 (v1.3)
+# sheets 키를 사용하여 계층 구조 정의
+# v1.3: MPN, manufacturer, dnp, description 필드 예제 추가
+
+project:
+  name: "HierarchicalBoard"
+  kicad_version: 9
+  out_dir: "out/hierarchical_board"
+
+net_presets:
+  VIN: "+12V"
+  V5: "+5V"
+  V3V3: "+3V3"
+  GND: "GND"
+
+sheets:
+  # ============================================
+  # Power Sheet - 전원 공급 회로
+  # ============================================
+  - name: "Power"
+    filename: "Power.kicad_sch"
+    ports:
+      - "+12V"
+      - "+5V"
+      - "+3V3"
+      - "GND"
+    parts:
+      # 입력 커넥터
+      - ref: "J1"
+        role: "input_conn"
+        value: "DC Jack 12V"
+        nets:
+          "+": "+12V"
+          "-": "GND"
+
+      # 5V Buck Converter
+      - ref: "U1"
+        role: "buck_5v"
+        value: "LM2596S-5.0"
+        mpn: "LM2596S-5.0/NOPB"
+        manufacturer: "Texas Instruments"
+        description: "5V 3A Step-Down Regulator"
+        nets:
+          VIN: "+12V"
+          OUT: "+5V"
+          GND: "GND"
+          FB: "FB1"
+          "ON/OFF": "GND"
+
+      - ref: "C1"
+        role: "capacitor_pol"
+        value: "220uF"
+        lcsc: "C134799"
+        manufacturer: "Nichicon"
+        nets:
+          "1": "+12V"
+          "2": "GND"
+
+      - ref: "C2"
+        role: "capacitor_pol"
+        value: "220uF"
+        lcsc: "C134799"
+        manufacturer: "Nichicon"
+        nets:
+          "1": "+5V"
+          "2": "GND"
+
+      - ref: "L1"
+        role: "inductor"
+        value: "33uH"
+        nets:
+          "1": "SW1"
+          "2": "+5V"
+
+      - ref: "D1"
+        role: "diode"
+        value: "SS34"
+        nets:
+          K: "SW1"
+          A: "GND"
+
+      # 5V LED Indicator (DNP example - optional)
+      - ref: "D2"
+        role: "led"
+        value: "Green"
+        dnp: true
+        description: "Optional power indicator LED"
+        nets:
+          A: "+5V"
+          K: "LED1_R"
+
+      - ref: "R1"
+        role: "resistor"
+        value: "1k"
+        dnp: true
+        description: "LED current limiting resistor"
+        nets:
+          "1": "LED1_R"
+          "2": "GND"
+
+  # ============================================
+  # USB Sheet - USB 인터페이스
+  # ============================================
+  - name: "USB"
+    filename: "USB.kicad_sch"
+    ports:
+      - "+5V"
+      - "GND"
+      - "USB_DP"
+      - "USB_DM"
+    parts:
+      # USB Type-A Connector
+      - ref: "J2"
+        role: "usb_a"
+        value: "USB-A"
+        nets:
+          VBUS: "+5V"
+          "D+": "USB_DP"
+          "D-": "USB_DM"
+          GND: "GND"
+
+      # USB ESD Protection (optional)
+      - ref: "C3"
+        role: "capacitor"
+        value: "100nF"
+        nets:
+          "1": "+5V"
+          "2": "GND"
+
+      - ref: "C4"
+        role: "capacitor"
+        value: "10uF"
+        nets:
+          "1": "+5V"
+          "2": "GND"
+
+      # USB Signal Resistors (same value for quantity grouping)
+      - ref: "R2"
+        role: "resistor"
+        value: "22R"
+        lcsc: "C17560"
+        mpn: "RC0402FR-0722RL"
+        manufacturer: "Yageo"
+        nets:
+          "1": "USB_DP"
+          "2": "USB_DP_INT"
+
+      - ref: "R3"
+        role: "resistor"
+        value: "22R"
+        lcsc: "C17560"
+        mpn: "RC0402FR-0722RL"
+        manufacturer: "Yageo"
+        nets:
+          "1": "USB_DM"
+          "2": "USB_DM_INT"

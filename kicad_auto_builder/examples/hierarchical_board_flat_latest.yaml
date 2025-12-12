@@ -1,0 +1,109 @@
+# Auto-flattened from hierarchical_board.yaml (sheets -> parts)
+# Note: current kicad_auto_builder v1.0/v1.1 reads root 'parts' only.
+
+project:
+  name: HierarchicalBoard
+  kicad_version: 9
+  out_dir: out/hierarchical_board
+net_presets:
+  VIN: +12V
+  V5: +5V
+  V3V3: +3V3
+  GND: GND
+parts:
+- ref: J1
+  role: input_conn
+  value: DC Jack 12V
+  nets:
+    +: +12V
+    '-': GND
+  _sheet: Power
+- ref: U1
+  role: buck_5v
+  value: LM2596S-5.0
+  nets:
+    VIN: +12V
+    OUT: +5V
+    GND: GND
+    FB: FB1
+    ON/OFF: GND
+  _sheet: Power
+- ref: C1
+  role: capacitor_pol
+  value: 220uF
+  nets:
+    '1': +12V
+    '2': GND
+  _sheet: Power
+- ref: C2
+  role: capacitor_pol
+  value: 220uF
+  nets:
+    '1': +5V
+    '2': GND
+  _sheet: Power
+- ref: L1
+  role: inductor
+  value: 33uH
+  nets:
+    '1': SW1
+    '2': +5V
+  _sheet: Power
+- ref: D1
+  role: diode
+  value: SS34
+  nets:
+    K: SW1
+    A: GND
+  _sheet: Power
+- ref: D2
+  role: led
+  value: Green
+  nets:
+    A: +5V
+    K: LED1_R
+  _sheet: Power
+- ref: R1
+  role: resistor
+  value: 1k
+  nets:
+    '1': LED1_R
+    '2': GND
+  _sheet: Power
+- ref: J2
+  role: usb_a
+  value: USB-A
+  nets:
+    VBUS: +5V
+    D+: USB_DP
+    D-: USB_DM
+    GND: GND
+  _sheet: USB
+- ref: C3
+  role: capacitor
+  value: 100nF
+  nets:
+    '1': +5V
+    '2': GND
+  _sheet: USB
+- ref: C4
+  role: capacitor
+  value: 10uF
+  nets:
+    '1': +5V
+    '2': GND
+  _sheet: USB
+- ref: R2
+  role: resistor
+  value: 22R
+  nets:
+    '1': USB_DP
+    '2': USB_DP_INT
+  _sheet: USB
+- ref: R3
+  role: resistor
+  value: 22R
+  nets:
+    '1': USB_DM
+    '2': USB_DM_INT
+  _sheet: USB

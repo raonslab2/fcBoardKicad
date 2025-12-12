@@ -1,0 +1,262 @@
+# fcBoard Power Supply - ACU5EV SoM Carrier Board
+# 12V → 5V → 3.3V → 1.8V 전원 공급 회로
+
+project:
+  name: "fcBoard_Power_Auto"
+  kicad_version: 9
+  out_dir: "out/fcboard_power"
+  cache_dir: "cache"
+
+net_presets:
+  VIN: "+12V"
+  V5: "+5V"
+  V3V3: "+3V3"
+  V1V8: "+1V8"
+  GND: "GND"
+
+parts:
+  # ============================================
+  # 입력 전원
+  # ============================================
+  - ref: "J1"
+    role: "input_conn"
+    value: "DC Jack 12V"
+    nets:
+      "+": "+12V"
+      "-": "GND"
+
+  # ============================================
+  # 5V 벅 컨버터 (12V → 5V)
+  # ============================================
+  - ref: "U1"
+    role: "buck_5v"
+    value: "LM2596S-5.0"
+    nets:
+      VIN: "+12V"
+      OUT: "+5V"
+      GND: "GND"
+      FB: "FB1"
+      "ON/OFF": "GND"
+
+  # U1 입력 전해 커패시터
+  - ref: "C1"
+    role: "capacitor_pol"
+    value: "220uF/25V"
+    nets:
+      "1": "+12V"
+      "2": "GND"
+
+  # U1 출력 전해 커패시터
+  - ref: "C2"
+    role: "capacitor_pol"
+    value: "220uF/10V"
+    nets:
+      1: "+5V"
+      2: "GND"
+
+  # U1 인덕터
+  - ref: "L1"
+    role: "inductor"
+    value: "33uH"
+    nets:
+      1: "SW1"
+      2: "+5V"
+
+  # U1 프리휠 다이오드
+  - ref: "D1"
+    role: "diode"
+    value: "SS34"
+    nets:
+      K: "SW1"
+      A: "GND"
+
+  # 5V 전원 표시 LED
+  - ref: "D2"
+    role: "led"
+    value: "Green"
+    nets:
+      A: "+5V"
+      K: "LED1_R"
+
+  - ref: "R1"
+    role: "resistor"
+    value: "1k"
+    nets:
+      1: "LED1_R"
+      2: "GND"
+
+  # ============================================
+  # 3.3V 벅 컨버터 (5V → 3.3V)
+  # ============================================
+  - ref: "U2"
+    role: "buck_3v3"
+    value: "LM2596S-ADJ"
+    nets:
+      VIN: "+5V"
+      OUT: "+3V3"
+      GND: "GND"
+      FB: "FB2"
+      "ON/OFF": "GND"
+
+  # U2 피드백 저항 (상단)
+  - ref: "R2"
+    role: "resistor"
+    value: "3.3k"
+    nets:
+      1: "+3V3"
+      2: "FB2"
+
+  # U2 피드백 저항 (하단)
+  - ref: "R3"
+    role: "resistor"
+    value: "1k"
+    nets:
+      1: "FB2"
+      2: "GND"
+
+  # U2 입력 커패시터
+  - ref: "C3"
+    role: "capacitor"
+    value: "10uF"
+    nets:
+      1: "+5V"
+      2: "GND"
+
+  # U2 출력 전해 커패시터
+  - ref: "C4"
+    role: "capacitor_pol"
+    value: "220uF/10V"
+    nets:
+      1: "+3V3"
+      2: "GND"
+
+  # U2 인덕터
+  - ref: "L2"
+    role: "inductor"
+    value: "33uH"
+    nets:
+      1: "SW2"
+      2: "+3V3"
+
+  # U2 프리휠 다이오드
+  - ref: "D3"
+    role: "diode"
+    value: "SS34"
+    nets:
+      K: "SW2"
+      A: "GND"
+
+  # 3.3V 전원 표시 LED
+  - ref: "D4"
+    role: "led"
+    value: "Yellow"
+    nets:
+      A: "+3V3"
+      K: "LED2_R"
+
+  - ref: "R4"
+    role: "resistor"
+    value: "470"
+    nets:
+      1: "LED2_R"
+      2: "GND"
+
+  # ============================================
+  # 1.8V 벅 컨버터 (3.3V → 1.8V)
+  # ============================================
+  - ref: "U3"
+    role: "buck_1v8"
+    value: "LM2596S-ADJ"
+    nets:
+      VIN: "+3V3"
+      OUT: "+1V8"
+      GND: "GND"
+      FB: "FB3"
+      "ON/OFF": "GND"
+
+  # U3 피드백 저항 (상단)
+  - ref: "R5"
+    role: "resistor"
+    value: "1.5k"
+    nets:
+      1: "+1V8"
+      2: "FB3"
+
+  # U3 피드백 저항 (하단)
+  - ref: "R6"
+    role: "resistor"
+    value: "1k"
+    nets:
+      1: "FB3"
+      2: "GND"
+
+  # U3 입력 커패시터
+  - ref: "C5"
+    role: "capacitor"
+    value: "10uF"
+    nets:
+      1: "+3V3"
+      2: "GND"
+
+  # U3 출력 전해 커패시터
+  - ref: "C6"
+    role: "capacitor_pol"
+    value: "100uF/10V"
+    nets:
+      1: "+1V8"
+      2: "GND"
+
+  # U3 인덕터
+  - ref: "L3"
+    role: "inductor"
+    value: "33uH"
+    nets:
+      1: "SW3"
+      2: "+1V8"
+
+  # U3 프리휠 다이오드
+  - ref: "D5"
+    role: "diode"
+    value: "SS34"
+    nets:
+      K: "SW3"
+      A: "GND"
+
+  # 1.8V 전원 표시 LED
+  - ref: "D6"
+    role: "led"
+    value: "Red"
+    nets:
+      A: "+1V8"
+      K: "LED3_R"
+
+  - ref: "R7"
+    role: "resistor"
+    value: "100"
+    nets:
+      1: "LED3_R"
+      2: "GND"
+
+  # ============================================
+  # 디커플링 캡 (SoM 전원 입력용)
+  # ============================================
+  - ref: "C7"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      1: "+5V"
+      2: "GND"
+
+  - ref: "C8"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      1: "+3V3"
+      2: "GND"
+
+  - ref: "C9"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      1: "+1V8"
+      2: "GND"

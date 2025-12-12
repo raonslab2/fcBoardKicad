@@ -1,0 +1,192 @@
+# fcBoard USB Subsystem - USB 3.0 Hub + USB 2.0 PHY
+# USB5744 4-port Hub + USB3320 ULPI PHY
+
+project:
+  name: "fcBoard_USB_Auto"
+  kicad_version: 9
+  out_dir: "out/fcboard_usb"
+  cache_dir: "cache"
+
+net_presets:
+  V5: "+5V"
+  V3V3: "+3V3"
+  V1V8: "+1V8"
+  GND: "GND"
+  VBUS: "VBUS"
+
+parts:
+  # ============================================
+  # USB 3.0 4-Port Hub Controller (USB5744)
+  # ============================================
+  - ref: "U1"
+    role: "usb_hub"
+    lcsc: "C132563"  # USB5744
+    value: "USB5744"
+    nets:
+      VDD33: "+3V3"
+      GND: "GND"
+      USB_DM_UP: "USB_UP_DM"
+      USB_DP_UP: "USB_UP_DP"
+      XTALIN: "XTAL_24M_IN"
+      XTALOUT: "XTAL_24M_OUT"
+      RESET_N: "USB_HUB_RST_N"
+      USB_DM_DN1: "USB_DN1_DM"
+      USB_DP_DN1: "USB_DN1_DP"
+      USB_DM_DN2: "USB_DN2_DM"
+      USB_DP_DN2: "USB_DN2_DP"
+      USB_DM_DN3: "USB_DN3_DM"
+      USB_DP_DN3: "USB_DN3_DP"
+      USB_DM_DN4: "USB_DN4_DM"
+      USB_DP_DN4: "USB_DN4_DP"
+
+  # USB Hub 24MHz Crystal
+  - ref: "Y1"
+    role: "crystal"
+    value: "24MHz"
+    nets:
+      PIN1: "XTAL_24M_IN"
+      PIN2: "XTAL_24M_OUT"
+
+  # Crystal Load Capacitors
+  - ref: "C1"
+    role: "capacitor"
+    value: "18pF"
+    nets:
+      PIN1: "XTAL_24M_IN"
+      PIN2: "GND"
+
+  - ref: "C2"
+    role: "capacitor"
+    value: "18pF"
+    nets:
+      PIN1: "XTAL_24M_OUT"
+      PIN2: "GND"
+
+  # USB Hub Reset Pull-up
+  - ref: "R1"
+    role: "resistor"
+    value: "10k"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "USB_HUB_RST_N"
+
+  # USB Hub Decoupling Caps
+  - ref: "C3"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "GND"
+
+  - ref: "C4"
+    role: "capacitor"
+    value: "10uF"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "GND"
+
+  # ============================================
+  # USB Type-A Connectors (4 ports)
+  # ============================================
+  - ref: "J1"
+    role: "usb_a"
+    value: "USB-A Port 1"
+    nets:
+      VBUS: "VBUS"
+      D_MINUS: "USB_DN1_DM"
+      D_PLUS: "USB_DN1_DP"
+      GND: "GND"
+
+  - ref: "J2"
+    role: "usb_a"
+    value: "USB-A Port 2"
+    nets:
+      VBUS: "VBUS"
+      D_MINUS: "USB_DN2_DM"
+      D_PLUS: "USB_DN2_DP"
+      GND: "GND"
+
+  - ref: "J3"
+    role: "usb_a"
+    value: "USB-A Port 3"
+    nets:
+      VBUS: "VBUS"
+      D_MINUS: "USB_DN3_DM"
+      D_PLUS: "USB_DN3_DP"
+      GND: "GND"
+
+  - ref: "J4"
+    role: "usb_a"
+    value: "USB-A Port 4"
+    nets:
+      VBUS: "VBUS"
+      D_MINUS: "USB_DN4_DM"
+      D_PLUS: "USB_DN4_DP"
+      GND: "GND"
+
+  # ============================================
+  # USB 2.0 ULPI PHY (USB3320)
+  # ============================================
+  - ref: "U2"
+    role: "usb_phy"
+    lcsc: "C132942"  # USB3320
+    value: "USB3320"
+    nets:
+      VDD33: "+3V3"
+      GND: "GND"
+      DP: "ULPI_DP"
+      DM: "ULPI_DM"
+      REFCLK: "ULPI_REFCLK"
+      RESET_N: "ULPI_RST_N"
+      DATA0: "ULPI_D0"
+      DATA1: "ULPI_D1"
+      DATA2: "ULPI_D2"
+      DATA3: "ULPI_D3"
+      DATA4: "ULPI_D4"
+      DATA5: "ULPI_D5"
+      DATA6: "ULPI_D6"
+      DATA7: "ULPI_D7"
+      DIR: "ULPI_DIR"
+      NXT: "ULPI_NXT"
+      STP: "ULPI_STP"
+      CLK: "ULPI_CLK"
+
+  # ULPI PHY Reset Pull-up
+  - ref: "R2"
+    role: "resistor"
+    value: "10k"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "ULPI_RST_N"
+
+  # ULPI PHY Decoupling Caps
+  - ref: "C5"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "GND"
+
+  - ref: "C6"
+    role: "capacitor"
+    value: "10uF"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "GND"
+
+  # ============================================
+  # VBUS Power
+  # ============================================
+  - ref: "C7"
+    role: "capacitor_pol"
+    value: "100uF"
+    nets:
+      PIN1: "VBUS"
+      PIN2: "GND"
+
+  - ref: "C8"
+    role: "capacitor"
+    value: "100nF"
+    nets:
+      PIN1: "VBUS"
+      PIN2: "GND"

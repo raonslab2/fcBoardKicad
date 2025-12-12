@@ -1,0 +1,127 @@
+# 계층 시트 테스트 - Ports 객체 형식 예제 (v1.3)
+# ports를 문자열이 아닌 객체로 정의하여 shape/side 제어
+# 좌/우 핀 배치를 테스트하기 위한 예제
+
+project:
+  name: "HierarchicalPortsObj"
+  kicad_version: 9
+  out_dir: "out/hierarchical_ports_obj"
+  # v1.3: 타이틀 블록 옵션
+  title_block:
+    rev: "2.0"
+    company: "My Company Inc."
+    date: "auto"  # "auto" 또는 "YYYY-MM-DD"
+    comment1: "Ports Object Format Example"
+    comment2: "Left/Right pin placement test"
+
+net_presets:
+  VIN: "+12V"
+  VOUT5: "+5V"
+  VOUT3V3: "+3V3"
+  GND: "GND"
+
+sheets:
+  # ============================================
+  # Power Sheet - 전원 입력/출력
+  # ============================================
+  - name: "Power"
+    filename: "Power.kicad_sch"
+    # v1.3: ports 객체 형식 - 좌/우 배치 지정
+    ports:
+      # 왼쪽 핀 (입력 계열)
+      - name: "+12V"
+        shape: "input"
+        side: "left"
+      - name: "GND"
+        shape: "passive"
+        side: "left"
+      # 오른쪽 핀 (출력 계열)
+      - name: "+5V"
+        shape: "output"
+        side: "right"
+      - name: "+3V3"
+        shape: "output"
+        side: "right"
+    parts:
+      - ref: "J1"
+        role: "input_conn"
+        value: "DC Jack"
+        nets:
+          "+": "+12V"
+          "-": "GND"
+
+      - ref: "U1"
+        role: "buck_5v"
+        value: "LM2596S-5.0"
+        mpn: "LM2596S-5.0/NOPB"
+        manufacturer: "Texas Instruments"
+        nets:
+          VIN: "+12V"
+          OUT: "+5V"
+          GND: "GND"
+          FB: "FB1"
+          "ON/OFF": "GND"
+
+      - ref: "C1"
+        role: "capacitor_pol"
+        value: "220uF"
+        nets:
+          "1": "+12V"
+          "2": "GND"
+
+      - ref: "C2"
+        role: "capacitor_pol"
+        value: "220uF"
+        nets:
+          "1": "+5V"
+          "2": "GND"
+
+  # ============================================
+  # Digital Sheet - 디지털 신호
+  # ============================================
+  - name: "Digital"
+    filename: "Digital.kicad_sch"
+    ports:
+      # 왼쪽: 전원 입력
+      - name: "+5V"
+        shape: "input"
+        side: "left"
+      - name: "+3V3"
+        shape: "input"
+        side: "left"
+      - name: "GND"
+        shape: "passive"
+        side: "left"
+      # 오른쪽: 데이터 신호 (양방향)
+      - name: "DATA0"
+        shape: "bidirectional"
+        side: "right"
+      - name: "DATA1"
+        shape: "bidirectional"
+        side: "right"
+      - name: "CLK"
+        shape: "output"
+        side: "right"
+    parts:
+      - ref: "R1"
+        role: "resistor"
+        value: "10k"
+        lcsc: "C17414"
+        nets:
+          "1": "+3V3"
+          "2": "DATA0"
+
+      - ref: "R2"
+        role: "resistor"
+        value: "10k"
+        lcsc: "C17414"
+        nets:
+          "1": "+3V3"
+          "2": "DATA1"
+
+      - ref: "C3"
+        role: "capacitor"
+        value: "100nF"
+        nets:
+          "1": "+3V3"
+          "2": "GND"

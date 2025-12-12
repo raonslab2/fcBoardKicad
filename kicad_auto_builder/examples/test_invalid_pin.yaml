@@ -1,0 +1,27 @@
+# 핀-넷 검증 실패 테스트용 YAML
+# R 심볼에는 1, 2 핀만 있음
+
+project:
+  name: "TestInvalidPin"
+  kicad_version: 9
+  out_dir: "out/test_invalid"
+
+net_presets:
+  GND: "GND"
+
+parts:
+  # 정상 케이스: 1, 2는 R 심볼에 존재
+  - ref: "R1"
+    role: "resistor"
+    value: "10k"
+    nets:
+      "1": "NET_A"
+      "2": "GND"
+
+  # 실패 케이스: WRONG_PIN은 R 심볼에 없음
+  - ref: "R2"
+    role: "resistor"
+    value: "4.7k"
+    nets:
+      WRONG_PIN: "NET_B"  # 이 핀은 존재하지 않음!
+      "2": "GND"

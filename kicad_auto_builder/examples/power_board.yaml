@@ -1,0 +1,135 @@
+# Power Board 예제 설정 파일
+# 5V/3.3V 전원 공급 회로
+
+project:
+  name: "PowerBoard_5V_3V3"
+  kicad_version: 8
+  out_dir: "out/power_board"
+  cache_dir: "cache"
+
+net_presets:
+  VIN: "VIN"
+  V5: "+5V"
+  V3V3: "+3V3"
+  GND: "GND"
+
+parts:
+  # 입력 커넥터
+  - ref: "J1"
+    role: "input_conn"
+    value: "DC Jack 12V"
+    nets:
+      PIN1: "VIN"
+      PIN2: "GND"
+
+  # 5V 벅 컨버터
+  - ref: "U1"
+    role: "buck_5v"
+    value: "LM2596S-5.0"
+    nets:
+      VIN: "VIN"
+      VOUT: "+5V"
+      GND: "GND"
+
+  # 입력 커패시터 (U1)
+  - ref: "C1"
+    role: "capacitor_pol"
+    value: "100uF"
+    nets:
+      PIN1: "VIN"
+      PIN2: "GND"
+
+  # 출력 커패시터 (U1)
+  - ref: "C2"
+    role: "capacitor_pol"
+    value: "220uF"
+    nets:
+      PIN1: "+5V"
+      PIN2: "GND"
+
+  # 인덕터 (U1)
+  - ref: "L1"
+    role: "inductor"
+    value: "33uH"
+    nets:
+      PIN1: "SW1"
+      PIN2: "+5V"
+
+  # 다이오드 (U1)
+  - ref: "D1"
+    role: "diode"
+    value: "SS34"
+    nets:
+      K: "SW1"
+      A: "GND"
+
+  # 전원 LED (5V)
+  - ref: "D2"
+    role: "led"
+    value: "Green"
+    nets:
+      A: "+5V"
+      K: "LED_R1"
+
+  - ref: "R1"
+    role: "resistor"
+    value: "1k"
+    nets:
+      PIN1: "LED_R1"
+      PIN2: "GND"
+
+  # 3.3V LDO (5V에서)
+  - ref: "U2"
+    role: "buck_3v3"
+    value: "LM2596S-ADJ"
+    nets:
+      VIN: "+5V"
+      VOUT: "+3V3"
+      GND: "GND"
+
+  # 입력 커패시터 (U2)
+  - ref: "C3"
+    role: "capacitor"
+    value: "10uF"
+    nets:
+      PIN1: "+5V"
+      PIN2: "GND"
+
+  # 출력 커패시터 (U2)
+  - ref: "C4"
+    role: "capacitor_pol"
+    value: "100uF"
+    nets:
+      PIN1: "+3V3"
+      PIN2: "GND"
+
+  # 인덕터 (U2)
+  - ref: "L2"
+    role: "inductor"
+    value: "33uH"
+    nets:
+      PIN1: "SW2"
+      PIN2: "+3V3"
+
+  # 다이오드 (U2)
+  - ref: "D3"
+    role: "diode"
+    value: "SS34"
+    nets:
+      K: "SW2"
+      A: "GND"
+
+  # 전원 LED (3.3V)
+  - ref: "D4"
+    role: "led"
+    value: "Yellow"
+    nets:
+      A: "+3V3"
+      K: "LED_R2"
+
+  - ref: "R2"
+    role: "resistor"
+    value: "330"
+    nets:
+      PIN1: "LED_R2"
+      PIN2: "GND"
