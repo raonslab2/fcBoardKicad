@@ -1,0 +1,6 @@
+Comment,Designator,Footprint,JLCPCB Part #
+DC Jack,J1,,
+LM2596S-5.0,U1,,
+220uF,"C1,C2",,
+10k,"R1,R2",,C17414
+100nF,C3,,

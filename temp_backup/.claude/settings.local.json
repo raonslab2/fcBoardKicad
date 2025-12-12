@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -File | Select-Object -First 50 | % { $_FullName -replace [regex]::Escape($pwd), ''.'' }\")",
+      "Bash(powershell -Command \"Get-ChildItem -Path work -Directory\")",
+      "Bash(powershell -Command \"ls -Force | Select Name\")",
+      "Bash(powershell -Command:*)",
+      "Bash(tree:*)",
+      "Bash(pip show:*)",
+      "WebSearch",
+      "Bash(pip install:*)",
+      "Bash(C:UsersminbyAppDataRoamingPythonPython313Scriptseasyeda2kicad.exe --help)",
+      "Bash(python -m easyeda2kicad:*)",
+      "Bash(python scripts/gen_jlc_lib.py:*)",
+      "Bash(python scripts/generate_power_jlc.py:*)",
+      "Bash(where:*)",
+      "Bash(findstr:*)",
+      "Bash(python scripts/generate_usb_embedded.py:*)",
+      "Bash(python scripts/generate_ethernet_embedded.py:*)",
+      "Bash(python scripts/generate_hdmi_embedded.py:*)",
+      "Bash(python scripts/generate_peripherals_embedded.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

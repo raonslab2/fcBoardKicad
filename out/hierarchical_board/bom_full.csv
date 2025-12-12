@@ -1,0 +1,12 @@
+Designator,Value,Footprint,LCSC,MPN,Manufacturer,Description,DNP,Qty
+J1,DC Jack 12V,,,,,,,1
+U1,LM2596S-5.0,,,LM2596S-5.0/NOPB,Texas Instruments,5V 3A Step-Down Regulator,,1
+"C1,C2",220uF,,C134799,,Nichicon,,,2
+L1,33uH,,,,,,,1
+D1,SS34,,,,,,,1
+D2,Green,,,,,Optional power indicator LED,Yes,1
+R1,1k,,,,,LED current limiting resistor,Yes,1
+J2,USB-A,,,,,,,1
+C3,100nF,,,,,,,1
+C4,10uF,,,,,,,1
+"R2,R3",22R,,C17560,RC0402FR-0722RL,Yageo,,,2

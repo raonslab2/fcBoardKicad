@@ -1,0 +1,6 @@
+Designator,Value,Footprint,LCSC,MPN,Manufacturer,Description,DNP,Qty
+J1,DC Jack,,,,,,,1
+U1,LM2596S-5.0,,,LM2596S-5.0/NOPB,Texas Instruments,,,1
+"C1,C2",220uF,,,,,,,2
+"R1,R2",10k,,C17414,,,,,2
+C3,100nF,,,,,,,1

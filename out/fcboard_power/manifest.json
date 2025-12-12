@@ -1,0 +1,247 @@
+{
+  "version": "1.1",
+  "project": "fcBoard_Power_Auto",
+  "generated_at": "2025-12-12T08:59:06.402676",
+  "kicad_version": 9,
+  "parts_count": 29,
+  "parts": [
+    {
+      "ref": "J1",
+      "role": "input_conn",
+      "symbol": "Barrel_Jack",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "U1",
+      "role": "buck_5v",
+      "symbol": "LM2596S-5",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C1",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C2",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "L1",
+      "role": "inductor",
+      "symbol": "L",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D1",
+      "role": "diode",
+      "symbol": "D_Schottky",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D2",
+      "role": "led",
+      "symbol": "LED",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R1",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "U2",
+      "role": "buck_3v3",
+      "symbol": "LM2596S-ADJ",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R2",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R3",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C3",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C4",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "L2",
+      "role": "inductor",
+      "symbol": "L",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D3",
+      "role": "diode",
+      "symbol": "D_Schottky",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D4",
+      "role": "led",
+      "symbol": "LED",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R4",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "U3",
+      "role": "buck_1v8",
+      "symbol": "LM2596S-ADJ",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R5",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R6",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C5",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C6",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "L3",
+      "role": "inductor",
+      "symbol": "L",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D5",
+      "role": "diode",
+      "symbol": "D_Schottky",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "D6",
+      "role": "led",
+      "symbol": "LED",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R7",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C7",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C8",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C9",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    }
+  ],
+  "warnings": [],
+  "files": {
+    "symbol_lib": "out\\fcboard_power\\lib\\custom.kicad_sym",
+    "schematic": "out\\fcboard_power\\fcBoard_Power_Auto.kicad_sch",
+    "bom": "out\\fcboard_power\\bom_jlc.csv"
+  }
+}

@@ -1,0 +1,299 @@
+ERC report (2025-12-01T14:13:33+0900, Encoding UTF8)
+
+***** Sheet /
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(65.00 mm, 57.46 mm): Symbol #PWR01 Pin 1 [+12V_IN, Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(65.00 mm, 62.54 mm): Symbol #PWR02 Pin 1 [GND, Power input, Line]
+[pin_not_connected]: Pin not connected
+    ; error
+    @(49.84 mm, 102.54 mm): Symbol U28 Pin 5 [ON/OFF, Input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(75.00 mm, 97.46 mm): Symbol #PWR04 Pin 1 [+5V, Power input, Line]
+[pin_not_connected]: Pin not connected
+    ; error
+    @(70.16 mm, 102.54 mm): Symbol U28 Pin 4 [FB, Input, Line]
+[wire_dangling]: Wires not connected to anything
+    ; error
+    @(63.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[pin_not_connected]: Pin not connected
+    ; error
+    @(149.84 mm, 102.54 mm): Symbol U26 Pin 5 [ON/OFF, Input, Line]
+[label_dangling]: Label not connected to anything
+    ; error
+    @(30.00 mm, 180.00 mm): Hierarchical Label '+12V_IN'
+[pin_not_connected]: Hierarchical label "+12V_IN" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(30.00 mm, 180.00 mm): Hierarchical Label '+12V_IN'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(30.00 mm, 185.00 mm): Hierarchical Label '+5V'
+[pin_not_connected]: Hierarchical label "+5V" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(30.00 mm, 185.00 mm): Hierarchical Label '+5V'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(30.00 mm, 190.00 mm): Hierarchical Label '+3V3'
+[pin_not_connected]: Hierarchical label "+3V3" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(30.00 mm, 190.00 mm): Hierarchical Label '+3V3'
+[label_dangling]: Label not connected to anything
+    ; error
+    @(30.00 mm, 195.00 mm): Hierarchical Label '+1V8'
+[pin_not_connected]: Hierarchical label "+1V8" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(30.00 mm, 195.00 mm): Hierarchical Label '+1V8'
+[pin_not_connected]: Pin not connected
+    ; error
+    @(170.16 mm, 102.54 mm): Symbol U26 Pin 4 [FB, Input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(175.00 mm, 97.46 mm): Symbol #PWR07 Pin 1 [+3V3, Power input, Line]
+[label_dangling]: Label not connected to anything
+    ; error
+    @(30.00 mm, 200.00 mm): Hierarchical Label 'GND'
+[pin_not_connected]: Hierarchical label "GND" in root sheet cannot be connected to non-existent parent sheet
+    ; error
+    @(30.00 mm, 200.00 mm): Hierarchical Label 'GND'
+[wire_dangling]: Wires not connected to anything
+    ; error
+    @(163.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[pin_not_connected]: Pin not connected
+    ; error
+    @(249.84 mm, 102.54 mm): Symbol U27 Pin 5 [ON/OFF, Input, Line]
+[pin_not_connected]: Pin not connected
+    ; error
+    @(270.16 mm, 102.54 mm): Symbol U27 Pin 4 [FB, Input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(275.00 mm, 97.46 mm): Symbol #PWR10 Pin 1 [+1V8, Power input, Line]
+[wire_dangling]: Wires not connected to anything
+    ; error
+    @(263.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[lib_symbol_mismatch]: Symbol 'Barrel_Jack_Switch' doesn't match copy in library 'Connector'
+    ; warning
+    @(50.00 mm, 60.00 mm): Symbol J16 [Barrel_Jack_Switch]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(57.62 mm, 57.46 mm): Symbol J16 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(57.62 mm, 57.46 mm): Horizontal Wire, length 7.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(57.62 mm, 62.54 mm): Horizontal Wire, length 7.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(65.00 mm, 57.46 mm): Symbol #PWR01 Pin 1 [+12V_IN, Power input, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'fcBoard'
+    ; warning
+    @(65.00 mm, 57.46 mm): Symbol #PWR01 [+12V_IN]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(65.00 mm, 62.54 mm): Symbol #PWR02 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(65.00 mm, 62.54 mm): Symbol #PWR02 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(45.00 mm, 97.46 mm): Symbol #PWR03 Pin 1 [+12V_IN, Power input, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(45.00 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[lib_symbol_issues]: The current configuration does not include the symbol library 'fcBoard'
+    ; warning
+    @(45.00 mm, 97.46 mm): Symbol #PWR03 [+12V_IN]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(49.84 mm, 97.46 mm): Symbol U28 Pin 1 [VIN, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'LM2596S-5' doesn't match copy in library 'Regulator_Switching'
+    ; warning
+    @(60.00 mm, 100.00 mm): Symbol U28 [LM2596S-5]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(70.16 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(75.00 mm, 97.46 mm): Symbol #PWR04 Pin 1 [+5V, Power input, Line]
+[lib_symbol_mismatch]: Symbol '+5V' doesn't match copy in library 'power'
+    ; warning
+    @(75.00 mm, 97.46 mm): Symbol #PWR04 [+5V]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(60.00 mm, 107.62 mm): Vertical Wire, length 2.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(60.00 mm, 110.00 mm): Symbol #PWR05 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(60.00 mm, 110.00 mm): Symbol #PWR05 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(50.00 mm, 155.00 mm): Symbol #PWR12 Pin 1 [+5V, Power input, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(50.00 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[lib_symbol_mismatch]: Symbol '+5V' doesn't match copy in library 'power'
+    ; warning
+    @(50.00 mm, 155.00 mm): Symbol #PWR12 [+5V]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(56.19 mm, 155.00 mm): Symbol D12 Pin 1 [K, Passive, Line]
+[lib_symbol_mismatch]: Symbol 'LED' doesn't match copy in library 'Device'
+    ; warning
+    @(60.00 mm, 155.00 mm): Symbol D12 [LED]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(63.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(71.19 mm, 155.00 mm): Symbol R21 Pin 1 [Passive, Line]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(75.00 mm, 155.00 mm): Symbol R21 [R]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(78.81 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(145.00 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(145.00 mm, 97.46 mm): Symbol #PWR06 Pin 1 [+12V_IN, Power input, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'fcBoard'
+    ; warning
+    @(145.00 mm, 97.46 mm): Symbol #PWR06 [+12V_IN]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(85.00 mm, 155.00 mm): Symbol #PWR13 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(85.00 mm, 155.00 mm): Symbol #PWR13 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(149.84 mm, 97.46 mm): Symbol U26 Pin 1 [VIN, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'LM2596S-ADJ' doesn't match copy in library 'Regulator_Switching'
+    ; warning
+    @(160.00 mm, 100.00 mm): Symbol U26 [LM2596S-ADJ]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(160.00 mm, 107.62 mm): Vertical Wire, length 2.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(160.00 mm, 110.00 mm): Symbol #PWR08 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(160.00 mm, 110.00 mm): Symbol #PWR08 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(170.16 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(175.00 mm, 97.46 mm): Symbol #PWR07 Pin 1 [+3V3, Power input, Line]
+[lib_symbol_mismatch]: Symbol '+3V3' doesn't match copy in library 'power'
+    ; warning
+    @(175.00 mm, 97.46 mm): Symbol #PWR07 [+3V3]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(150.00 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(150.00 mm, 155.00 mm): Symbol #PWR14 Pin 1 [+3V3, Power input, Line]
+[lib_symbol_mismatch]: Symbol '+3V3' doesn't match copy in library 'power'
+    ; warning
+    @(150.00 mm, 155.00 mm): Symbol #PWR14 [+3V3]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(156.19 mm, 155.00 mm): Symbol D15 Pin 1 [K, Passive, Line]
+[lib_symbol_mismatch]: Symbol 'LED' doesn't match copy in library 'Device'
+    ; warning
+    @(160.00 mm, 155.00 mm): Symbol D15 [LED]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(163.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(171.19 mm, 155.00 mm): Symbol R18 Pin 1 [Passive, Line]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(175.00 mm, 155.00 mm): Symbol R18 [R]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(178.81 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(185.00 mm, 155.00 mm): Symbol #PWR15 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(185.00 mm, 155.00 mm): Symbol #PWR15 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(245.00 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(245.00 mm, 97.46 mm): Symbol #PWR09 Pin 1 [+12V_IN, Power input, Line]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'fcBoard'
+    ; warning
+    @(245.00 mm, 97.46 mm): Symbol #PWR09 [+12V_IN]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(249.84 mm, 97.46 mm): Symbol U27 Pin 1 [VIN, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'LM2596S-ADJ' doesn't match copy in library 'Regulator_Switching'
+    ; warning
+    @(260.00 mm, 100.00 mm): Symbol U27 [LM2596S-ADJ]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(260.00 mm, 107.62 mm): Vertical Wire, length 2.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(260.00 mm, 110.00 mm): Symbol #PWR11 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(260.00 mm, 110.00 mm): Symbol #PWR11 [GND]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(270.16 mm, 97.46 mm): Horizontal Wire, length 4.84 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(275.00 mm, 97.46 mm): Symbol #PWR10 Pin 1 [+1V8, Power input, Line]
+[lib_symbol_mismatch]: Symbol '+1V8' doesn't match copy in library 'power'
+    ; warning
+    @(275.00 mm, 97.46 mm): Symbol #PWR10 [+1V8]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(250.00 mm, 155.00 mm): Symbol #PWR16 Pin 1 [+1V8, Power input, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(250.00 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[lib_symbol_mismatch]: Symbol '+1V8' doesn't match copy in library 'power'
+    ; warning
+    @(250.00 mm, 155.00 mm): Symbol #PWR16 [+1V8]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(256.19 mm, 155.00 mm): Symbol D16 Pin 1 [K, Passive, Line]
+[lib_symbol_mismatch]: Symbol 'LED' doesn't match copy in library 'Device'
+    ; warning
+    @(260.00 mm, 155.00 mm): Symbol D16 [LED]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(263.81 mm, 155.00 mm): Horizontal Wire, length 7.38 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(271.19 mm, 155.00 mm): Symbol R19 Pin 1 [Passive, Line]
+[lib_symbol_mismatch]: Symbol 'R' doesn't match copy in library 'Device'
+    ; warning
+    @(275.00 mm, 155.00 mm): Symbol R19 [R]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(278.81 mm, 155.00 mm): Horizontal Wire, length 6.19 mm
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(285.00 mm, 155.00 mm): Symbol #PWR17 Pin 1 [GND, Power input, Line]
+[lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
+    ; warning
+    @(285.00 mm, 155.00 mm): Symbol #PWR17 [GND]
+
+ ** ERC messages: 98  Errors 24  Warnings 74

@@ -1,0 +1,114 @@
+(kicad_sch
+	(version 20250114)
+	(generator "kicad_auto_builder")
+	(generator_version "1.3.0")
+	(uuid "dc0dd212-ac69-40a9-8c0e-99c4917371e7")
+	(paper "A3")
+	(title_block
+		(title "HierarchicalPortsObj")
+		(date "2025-12-12")
+		(rev "2.0")
+		(company "My Company Inc.")
+		(comment 1 "Ports Object Format Example")
+		(comment 2 "Left/Right pin placement test")
+	)
+	(lib_symbols
+
+	)
+	(sheet
+		(at 50.0 50.0)
+		(size 30.0 20.0)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "3cfb4b97-b792-40be-b22f-e4cfac7f9270")
+		(property "Sheetname" "Power"
+			(at 50.0 47.46 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 50.0 72.54 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "+12V" input
+			(at 50.0 52.54 180)
+			(effects (font (size 1.27 1.27)) (justify right))
+			(uuid "809e31fa-19c9-415c-9571-dd06c43fe1c0")
+		)
+		(pin "GND" passive
+			(at 50.0 55.08 180)
+			(effects (font (size 1.27 1.27)) (justify right))
+			(uuid "67e82e79-baa7-4715-8091-cfed2da53f42")
+		)
+		(pin "+5V" output
+			(at 80.0 52.54 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+			(uuid "8d10d905-7ee4-42c3-a623-998401719a64")
+		)
+		(pin "+3V3" output
+			(at 80.0 55.08 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+			(uuid "bce67618-b1c9-4262-935d-86066144023f")
+		)
+	)
+	(sheet
+		(at 100.0 50.0)
+		(size 30.0 20.32)
+		(fields_autoplaced yes)
+		(stroke (width 0.1524) (type solid))
+		(fill (color 0 0 0 0.0000))
+		(uuid "ea3621b7-d252-48b0-916e-951262f27174")
+		(property "Sheetname" "Digital"
+			(at 100.0 47.46 0)
+			(effects (font (size 1.27 1.27)) (justify left bottom))
+		)
+		(property "Sheetfile" "Digital.kicad_sch"
+			(at 100.0 72.86 0)
+			(effects (font (size 1.27 1.27)) (justify left top))
+		)
+		(pin "+5V" input
+			(at 100.0 52.54 180)
+			(effects (font (size 1.27 1.27)) (justify right))
+			(uuid "660ed04d-de6f-42f7-8e1b-904eed518652")
+		)
+		(pin "+3V3" input
+			(at 100.0 55.08 180)
+			(effects (font (size 1.27 1.27)) (justify right))
+			(uuid "ae77480f-878b-40d2-948c-e622f4d745a7")
+		)
+		(pin "GND" passive
+			(at 100.0 57.62 180)
+			(effects (font (size 1.27 1.27)) (justify right))
+			(uuid "9e9e72ed-bdda-491b-9f0f-fbfdd6ff87aa")
+		)
+		(pin "DATA0" bidirectional
+			(at 130.0 52.54 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+			(uuid "df20265d-0232-4f7b-b355-bae10a88123c")
+		)
+		(pin "DATA1" bidirectional
+			(at 130.0 55.08 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+			(uuid "061e6f2f-6ee6-431b-9a8c-394e47b384e2")
+		)
+		(pin "CLK" output
+			(at 130.0 57.62 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+			(uuid "6ea5e59e-88d0-48c9-a133-829727d1ed3a")
+		)
+	)
+	(text "HierarchicalPortsObj\n\nHierarchical Design\nSheets: 2"
+		(exclude_from_sim no)
+		(at 25.0 25.0 0)
+		(effects
+			(font (size 1.27 1.27))
+			(justify left)
+		)
+		(uuid "fc8fe15e-5369-41aa-874f-6c7c3ce81fe2")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

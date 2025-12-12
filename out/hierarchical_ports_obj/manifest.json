@@ -1,0 +1,73 @@
+{
+  "version": "1.3.0",
+  "project": "HierarchicalPortsObj",
+  "generated_at": "2025-12-12T09:22:37.753103",
+  "kicad_version": 9,
+  "parts_count": 7,
+  "parts": [
+    {
+      "ref": "J1",
+      "role": "input_conn",
+      "symbol": "Barrel_Jack",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "U1",
+      "role": "buck_5v",
+      "symbol": "LM2596S-5",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C1",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C2",
+      "role": "capacitor_pol",
+      "symbol": "CP",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R1",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "C17414",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "R2",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "C17414",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "C3",
+      "role": "capacitor",
+      "symbol": "C",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    }
+  ],
+  "warnings": [],
+  "files": {
+    "symbol_lib": "out\\hierarchical_ports_obj\\lib\\custom.kicad_sym",
+    "schematic": "out\\hierarchical_ports_obj\\HierarchicalPortsObj.kicad_sch",
+    "bom_jlc": "out\\hierarchical_ports_obj\\bom_jlc.csv",
+    "bom_full": "out\\hierarchical_ports_obj\\bom_full.csv",
+    "report": "out\\hierarchical_ports_obj\\report.md"
+  }
+}

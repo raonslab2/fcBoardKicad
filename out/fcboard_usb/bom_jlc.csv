@@ -1,0 +1,18 @@
+Comment,Designator,Footprint,JLCPCB Part #
+USB5744,U1,,C132563
+24MHz,Y1,,
+18pF,C1,,
+18pF,C2,,
+10k,R1,,
+100nF,C3,,
+10uF,C4,,
+USB-A Port 1,J1,,
+USB-A Port 2,J2,,
+USB-A Port 3,J3,,
+USB-A Port 4,J4,,
+USB3320,U2,,C132942
+10k,R2,,
+100nF,C5,,
+10uF,C6,,
+100uF,C7,,
+100nF,C8,,

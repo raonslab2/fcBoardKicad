@@ -1,0 +1,19 @@
+lcsc_id,ref_prefix,comment,footprint_hint,notes
+C25804,R,10k 0402 1%,0402,Basic resistor
+C25752,R,4.7k 0402 1%,0402,Basic resistor
+C25905,R,1k 0402 1%,0402,Basic resistor
+C11702,C,100nF 0402 X7R 16V,0402,Decoupling cap
+C19702,C,10uF 0805 X5R 25V,0805,Bulk cap
+C14663,C,1uF 0402 X5R 16V,0402,Decoupling cap
+C347421,U,LM2596S-5.0 TO-263,TO-263-5,5V Buck regulator
+C29781,U,LM2596S-ADJ TO-263,TO-263-5,Adjustable Buck regulator
+C35722,D,SS34 Schottky SMA,SMA,3A 40V Schottky
+C90748,L,33uH 3A Inductor,12x12mm,Power inductor
+C72505,C,470uF 25V Electrolytic,8x10.5mm,Input cap
+C72499,C,220uF 25V Electrolytic,6.3x7.7mm,Output cap
+C2286,D,LED Green 0603,0603,Power LED
+C2290,D,LED Red 0603,0603,Power LED
+C72038,R,330R 0402 1%,0402,LED resistor
+C25077,R,1.5k 0402 1%,0402,Feedback resistor
+C25087,R,470R 0402 1%,0402,Feedback resistor
+C381125,J,DC Jack 5.5x2.1mm,Through-hole,12V input

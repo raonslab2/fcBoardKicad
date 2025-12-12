@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "fcBoard")(type "KiCad")(uri "${KIPRJMOD}/libraries/fcBoard.pretty")(options "")(descr "ACU5EV SoM Carrier Board Footprints"))
+  (lib (name "jlc_components")(type "KiCad")(uri "${KIPRJMOD}/jlc_lib_output/jlc_components.pretty")(options "")(descr "JLCPCB/LCSC Footprints"))
+)

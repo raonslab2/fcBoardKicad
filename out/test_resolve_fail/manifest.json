@@ -1,0 +1,33 @@
+{
+  "version": "1.1",
+  "project": "TestResolveFail",
+  "generated_at": "2025-12-12T08:50:44.772420",
+  "kicad_version": 9,
+  "parts_count": 2,
+  "parts": [
+    {
+      "ref": "R1",
+      "role": "resistor",
+      "symbol": "R",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "builtin"
+    },
+    {
+      "ref": "U1",
+      "role": "unknown_role_xyz",
+      "symbol": "unknown_role_xyz",
+      "footprint": "",
+      "lcsc": "",
+      "resolve_source": "role_mapping"
+    }
+  ],
+  "warnings": [
+    "핀정보 없음, 검증 스킵: U1 (unknown_role_xyz) symbol=unknown_role_xyz"
+  ],
+  "files": {
+    "symbol_lib": "out\\test_resolve_fail\\lib\\custom.kicad_sym",
+    "schematic": "out\\test_resolve_fail\\TestResolveFail.kicad_sch",
+    "bom": "out\\test_resolve_fail\\bom_jlc.csv"
+  }
+}
