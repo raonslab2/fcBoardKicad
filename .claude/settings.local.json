@@ -29,7 +29,9 @@
       "Bash(python scripts/generate_main.py:*)",
       "Bash(python scripts/add_basic_symbols.py:*)",
       "Bash(python scripts/add_ic_symbols.py:*)",
-      "Bash(python -m kicad_auto_builder.cli build:*)"
+      "Bash(python -m kicad_auto_builder.cli build:*)",
+      "Bash(python:*)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []
