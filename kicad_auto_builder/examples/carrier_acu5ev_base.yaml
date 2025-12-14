@@ -1,0 +1,33 @@
+# ACU5EV SoM Carrier Board - 기본 구성
+# 1차 구현: Breakout 회로도 + 최소 PCB
+
+project:
+  name: "ACU5EV_Carrier_Base"
+  kicad_version: 9
+  out_dir: "out/carrier_acu5ev"
+
+som:
+  name: "ACU5EV"
+  connectors:
+    - ref: "J29"
+      pins_csv: "docs/pinmap/J29_BANK65_66.csv"
+    - ref: "J30"
+      pins_csv: "docs/pinmap/J30_BANK25_26_MGT.csv"
+    - ref: "J31"
+      pins_csv: "docs/pinmap/J31_BANK24_44.csv"
+    - ref: "J32"
+      pins_csv: "docs/pinmap/J32_MIO_POWER.csv"
+
+pcb:
+  board_width: 150.0
+  board_height: 100.0
+  connectors:
+    J29: {x: 20, y: 30}
+    J30: {x: 20, y: 60}
+    J31: {x: 120, y: 30}
+    J32: {x: 120, y: 60}
+  mounting_holes:
+    - {x: 5, y: 5}
+    - {x: 145, y: 5}
+    - {x: 5, y: 95}
+    - {x: 145, y: 95}
