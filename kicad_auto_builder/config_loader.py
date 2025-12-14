@@ -1,10 +1,11 @@
 """
-Config Loader - YAML/JSON 설정 파일 파서 v1.4
+Config Loader - YAML/JSON 설정 파일 파서 v1.5
 
 YAML 파일에서 프로젝트 설정과 부품 목록을 로드합니다.
 v1.2: sheets 지원 추가 (계층 시트 생성)
 v1.3: BOM 고도화, title_block 옵션, ports 확장
 v1.4: 스키마 검증 강화, 친절한 에러 메시지
+v1.5: SoM 커넥터 + PCB 생성 지원
 """
 
 import logging
@@ -74,6 +75,30 @@ class TitleBlockSpec:
         return self.date
 
 
+# v1.5: SoM 커넥터 지원
+@dataclass
+class SoMConnectorSpec:
+    """SoM 커넥터 명세 (v1.5)."""
+    ref: str                          # Reference (J29, J30 등)
+    pins_csv: str                     # CSV 파일 경로
+
+
+@dataclass
+class SoMSpec:
+    """SoM 전체 명세 (v1.5)."""
+    name: str                         # SoM 이름 (ACU5EV)
+    connectors: list = field(default_factory=list)  # SoMConnectorSpec 리스트
+
+
+@dataclass
+class PCBSpec:
+    """PCB 생성 명세 (v1.5)."""
+    board_width: float = 150.0        # 보드 너비 (mm)
+    board_height: float = 100.0       # 보드 높이 (mm)
+    mounting_holes: int = 4           # 마운팅 홀 개수
+    connectors: dict = field(default_factory=dict)  # 커넥터별 좌표
+
+
 @dataclass
 class ProjectConfig:
     """프로젝트 설정."""
@@ -87,6 +112,10 @@ class ProjectConfig:
     # v1.3: 타이틀 블록 옵션
     title_block: TitleBlockSpec = field(default_factory=TitleBlockSpec)
 
+    # v1.5: SoM 및 PCB 설정
+    som: Optional[SoMSpec] = None     # SoM 커넥터 설정
+    pcb: Optional[PCBSpec] = None     # PCB 생성 설정
+
     # 추가 옵션
     cache_dir: str = "cache"          # easyeda2kicad 캐시 디렉토리
     prefer_kicad_lib: bool = False    # KiCad 기본 라이브러리 우선
@@ -95,6 +124,11 @@ class ProjectConfig:
     def is_hierarchical(self) -> bool:
         """계층 시트 모드인지 확인."""
         return len(self.sheets) > 0
+
+    @property
+    def is_som_mode(self) -> bool:
+        """SoM 커넥터 모드인지 확인 (v1.5)."""
+        return self.som is not None and len(self.som.connectors) > 0
 
     @property
     def all_parts(self) -> list:
@@ -263,6 +297,45 @@ def load_config(config_path: str | Path) -> ProjectConfig:
         logger.warning("sheets와 parts가 동시 정의됨. sheets 모드로 동작합니다.")
         parts = []  # sheets 우선
 
+    # v1.5: SoM 커넥터 파싱
+    som_spec = None
+    som_data = data.get('som')
+    if som_data:
+        connectors = []
+        for conn_data in som_data.get('connectors', []):
+            conn = SoMConnectorSpec(
+                ref=conn_data.get('ref', ''),
+                pins_csv=conn_data.get('pins_csv', ''),
+            )
+            connectors.append(conn)
+        som_spec = SoMSpec(
+            name=som_data.get('name', 'SoM'),
+            connectors=connectors,
+        )
+        logger.info(f"SoM 모드: {som_spec.name} ({len(connectors)}개 커넥터)")
+
+    # v1.5: PCB 설정 파싱
+    pcb_spec = None
+    pcb_data = data.get('pcb')
+    if pcb_data:
+        # mounting_holes 파싱: 숫자 또는 좌표 리스트
+        mounting_holes_data = pcb_data.get('mounting_holes', 4)
+        if isinstance(mounting_holes_data, int):
+            mounting_holes = mounting_holes_data
+        else:
+            mounting_holes = len(mounting_holes_data)  # 좌표 리스트의 경우 개수만
+
+        pcb_spec = PCBSpec(
+            board_width=float(pcb_data.get('board_width', 150.0)),
+            board_height=float(pcb_data.get('board_height', 100.0)),
+            mounting_holes=mounting_holes,
+            connectors=pcb_data.get('connectors', {}),
+        )
+        # mounting_holes 좌표 저장 (나중에 사용)
+        if isinstance(mounting_holes_data, list):
+            pcb_spec._mounting_hole_positions = mounting_holes_data
+        logger.info(f"PCB 생성 활성화: {pcb_spec.board_width}x{pcb_spec.board_height}mm")
+
     config = ProjectConfig(
         name=project_data['name'],
         kicad_version=project_data.get('kicad_version', 8),
@@ -271,12 +344,17 @@ def load_config(config_path: str | Path) -> ProjectConfig:
         parts=parts,
         sheets=sheets,
         title_block=title_block,
+        som=som_spec,
+        pcb=pcb_spec,
         cache_dir=project_data.get('cache_dir', 'cache'),
         prefer_kicad_lib=project_data.get('prefer_kicad_lib', False),
     )
 
     logger.info(f"프로젝트: {config.name}")
-    logger.info(f"부품 수: {len(config.parts)}")
+    if config.is_som_mode:
+        logger.info(f"SoM 커넥터: {len(config.som.connectors)}개")
+    else:
+        logger.info(f"부품 수: {len(config.parts)}")
 
     return config
 
@@ -325,15 +403,33 @@ def validate_yaml_schema(data: dict) -> list[str]:
     if "prefer_kicad_lib" in project and not isinstance(project["prefer_kicad_lib"], bool):
         errors.append(f"project.prefer_kicad_lib은 bool이어야 합니다")
 
-    # parts 또는 sheets 필수
+    # parts, sheets, 또는 som 중 하나 필수 (v1.5)
     has_parts = "parts" in data and data["parts"]
     has_sheets = "sheets" in data and data["sheets"]
+    has_som = "som" in data and data["som"]
 
-    if not has_parts and not has_sheets:
+    if not has_parts and not has_sheets and not has_som:
         raise ConfigValidationError(
-            "'parts' 또는 'sheets' 중 하나는 필수입니다",
-            hint="parts:\n  - ref: 'U1'\n    role: 'buck_5v'"
+            "'parts', 'sheets', 또는 'som' 중 하나는 필수입니다",
+            hint="parts:\n  - ref: 'U1'\n    role: 'buck_5v'\n\n또는 SoM 모드:\nsom:\n  name: 'ACU5EV'\n  connectors:\n    - ref: 'J29'\n      pins_csv: 'pinmap.csv'"
         )
+
+    # v1.5: SoM 섹션 검증
+    if has_som:
+        som_data = data["som"]
+        if not isinstance(som_data, dict):
+            errors.append("'som'은 객체여야 합니다")
+        else:
+            if not som_data.get("connectors"):
+                errors.append("som.connectors는 필수입니다")
+            else:
+                for i, conn in enumerate(som_data.get("connectors", [])):
+                    if not isinstance(conn, dict):
+                        errors.append(f"som.connectors[{i}]는 객체여야 합니다")
+                    elif not conn.get("ref"):
+                        errors.append(f"som.connectors[{i}].ref는 필수입니다")
+                    elif not conn.get("pins_csv"):
+                        errors.append(f"som.connectors[{i}].pins_csv는 필수입니다")
 
     # parts 검증
     for i, part in enumerate(data.get("parts", [])):

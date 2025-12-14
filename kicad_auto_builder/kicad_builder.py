@@ -1,10 +1,11 @@
 """
-KiCad Builder - 라이브러리 및 회로도 생성 v1.3
+KiCad Builder - 라이브러리 및 회로도 생성 v1.5
 
 심볼/풋프린트 라이브러리 병합 및 회로도 자동 생성.
 와이어 자동 생성 기능 포함 (그리드 스냅 + L자 라우팅).
 v1.2: 계층 시트 지원
 v1.3: BOM 고도화, 버전 통합, 타이틀 블록 동적 생성, ports 확장
+v1.5: SoM 커넥터 Breakout 시트 생성 지원
 """
 
 import csv
@@ -22,6 +23,7 @@ from .config_loader import ProjectConfig
 from .part_resolver import ResolvedPart
 from .templates.symbol import SymbolTemplate, BUILTIN_SYMBOLS
 from .templates.schematic import SchematicTemplate, TitleBlockInfo
+from .som_loader import load_pinmap_csv, generate_connector_symbol, generate_connector_library, sanitize_signal_name
 
 logger = logging.getLogger(__name__)
 
@@ -81,6 +83,10 @@ class KicadBuilder:
         logger.info("=" * 60)
         logger.info(f"프로젝트 빌드: {self.config.name}")
         logger.info("=" * 60)
+
+        # v1.5: SoM 모드 처리
+        if self.config.is_som_mode:
+            return self._build_som_mode(warnings)
 
         # 1. 심볼 라이브러리 생성
         sym_path = self.build_symbol_library()
