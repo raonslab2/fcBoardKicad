@@ -71,6 +71,34 @@ fcBoardKicad/
 - `docs/pinmap/J31_BANK24_44.csv` - RS485, GPIO
 - `docs/pinmap/J32_MIO_POWER.csv` - PS MIO, 전원
 
+## KiCad Auto Builder (회로도 자동 생성)
+
+YAML 설정 파일로 KiCad 회로도를 자동 생성합니다.
+
+### Quickstart
+
+```bash
+# 1. 설정 검증
+python -m kicad_auto_builder.cli validate kicad_auto_builder/examples/fcboard_power.yaml
+
+# 2. 빌드 실행
+python -m kicad_auto_builder.cli build kicad_auto_builder/examples/fcboard_power.yaml
+
+# 3. 출력 확인
+# out/fcboard_power/
+#   ├── fcBoard_Power_Auto.kicad_sch
+#   ├── lib/custom.kicad_sym
+#   ├── lib/custom.pretty/
+#   ├── bom_jlc.csv
+#   └── report.md
+```
+
+### YAML 예제
+
+- `kicad_auto_builder/examples/fcboard_power.yaml` - 전원 공급 회로
+- `kicad_auto_builder/examples/fcboard_usb.yaml` - USB 인터페이스
+- `kicad_auto_builder/examples/hierarchical_board.yaml` - 계층 시트 예제
+
 ## 설계 시작하기
 
 1. KiCad 8.0 이상 설치
