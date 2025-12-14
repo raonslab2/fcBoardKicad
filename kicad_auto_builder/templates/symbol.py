@@ -2,10 +2,16 @@
 Symbol Templates - KiCad 심볼 템플릿
 
 기본 심볼 정의 및 라이브러리 생성 기능.
+
+NOTE: 이 모듈은 호환성을 위해 유지됩니다.
+      새로운 심볼은 kicad_auto_builder.symbols 패키지에 추가하세요.
 """
 
 import uuid
+import logging
 from typing import Optional
+
+logger = logging.getLogger(__name__)
 
 
 def gen_uuid() -> str:
@@ -13,8 +19,80 @@ def gen_uuid() -> str:
     return str(uuid.uuid4())
 
 
-# 기본 심볼 정의 (KiCad 8 포맷)
-BUILTIN_SYMBOLS = {
+# ============================================================================
+# 레거시 호환 래퍼
+# ============================================================================
+class _BuiltinSymbolsProxy(dict):
+    """SymbolRegistry를 dict처럼 사용할 수 있게 하는 프록시 클래스.
+
+    기존 BUILTIN_SYMBOLS 딕셔너리 사용 코드와 호환성 유지.
+    """
+
+    _registry = None
+    _fallback_symbols = None  # 레지스트리 로드 실패 시 폴백
+
+    def __init__(self, fallback_symbols: dict):
+        super().__init__()
+        self._fallback_symbols = fallback_symbols
+
+    def _get_registry(self):
+        """지연 로딩으로 SymbolRegistry 가져오기."""
+        if self._registry is None:
+            try:
+                from ..symbols import SymbolRegistry
+                self._registry = SymbolRegistry.instance()
+            except ImportError as e:
+                logger.warning(f"SymbolRegistry 로드 실패, 폴백 사용: {e}")
+                self._registry = False  # 실패 표시
+        return self._registry if self._registry else None
+
+    def __getitem__(self, key: str) -> str:
+        registry = self._get_registry()
+        if registry:
+            symbol = registry.get_kicad_symbol(key)
+            if symbol:
+                return symbol
+        # 레지스트리에 없으면 폴백에서 찾기
+        if key in self._fallback_symbols:
+            return self._fallback_symbols[key]
+        raise KeyError(key)
+
+    def __contains__(self, key) -> bool:
+        registry = self._get_registry()
+        if registry and registry.has(key):
+            return True
+        return key in self._fallback_symbols
+
+    def get(self, key: str, default=None):
+        try:
+            return self[key]
+        except KeyError:
+            return default
+
+    def keys(self):
+        registry = self._get_registry()
+        if registry:
+            all_keys = set(registry.list_all())
+        else:
+            all_keys = set()
+        all_keys.update(self._fallback_symbols.keys())
+        return all_keys
+
+    def values(self):
+        return [self[k] for k in self.keys()]
+
+    def items(self):
+        return [(k, self[k]) for k in self.keys()]
+
+    def __iter__(self):
+        return iter(self.keys())
+
+    def __len__(self):
+        return len(self.keys())
+
+
+# 폴백용 기본 심볼 (레지스트리 로드 실패 시 사용)
+_FALLBACK_SYMBOLS = {
     "R": '''(symbol "R"
     (pin_numbers hide)
     (pin_names (offset 0))
@@ -496,6 +574,11 @@ BUILTIN_SYMBOLS = {
     )
 )''',
 }
+
+# BUILTIN_SYMBOLS를 프록시 객체로 대체 (하위 호환성 유지)
+# 기존: BUILTIN_SYMBOLS = {...}
+# 변경: SymbolRegistry에서 심볼을 가져오되, 실패 시 _FALLBACK_SYMBOLS 사용
+BUILTIN_SYMBOLS = _BuiltinSymbolsProxy(_FALLBACK_SYMBOLS)
 
 
 class SymbolTemplate:

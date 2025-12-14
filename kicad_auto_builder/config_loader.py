@@ -1,18 +1,21 @@
 """
-Config Loader - YAML/JSON 설정 파일 파서 v1.3
+Config Loader - YAML/JSON 설정 파일 파서 v1.4
 
 YAML 파일에서 프로젝트 설정과 부품 목록을 로드합니다.
 v1.2: sheets 지원 추가 (계층 시트 생성)
 v1.3: BOM 고도화, title_block 옵션, ports 확장
+v1.4: 스키마 검증 강화, 친절한 에러 메시지
 """
 
 import logging
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Optional, Union
+from typing import Optional, Union, Any
 
 import yaml
+
+from .exceptions import ConfigError, ConfigValidationError
 
 logger = logging.getLogger(__name__)
 
@@ -171,11 +174,31 @@ def load_config(config_path: str | Path) -> ProjectConfig:
 
     logger.info(f"설정 파일 로드: {config_path}")
 
-    with open(config_path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        raise ConfigError(
+            f"YAML 파싱 오류: {e}",
+            error_code="YAML_PARSE",
+            hint="YAML 문법을 확인하세요 (들여쓰기, 콜론 등)"
+        )
 
     if not data:
-        raise ValueError("설정 파일이 비어있습니다")
+        raise ConfigError(
+            "설정 파일이 비어있습니다",
+            error_code="EMPTY_CONFIG",
+            hint="project와 parts 섹션을 추가하세요"
+        )
+
+    # 스키마 검증 (v1.4)
+    schema_errors = validate_yaml_schema(data)
+    if schema_errors:
+        error_list = "\n  - ".join(schema_errors)
+        raise ConfigValidationError(
+            f"설정 파일 검증 실패:\n  - {error_list}",
+            hint="위의 오류들을 수정하세요"
+        )
 
     # 프로젝트 설정 파싱
     project_data = data.get('project', {})
@@ -256,6 +279,128 @@ def load_config(config_path: str | Path) -> ProjectConfig:
     logger.info(f"부품 수: {len(config.parts)}")
 
     return config
+
+
+def validate_yaml_schema(data: dict) -> list[str]:
+    """YAML 데이터의 스키마를 검증합니다.
+
+    Args:
+        data: 파싱된 YAML 데이터
+
+    Returns:
+        에러 메시지 목록
+
+    Raises:
+        ConfigValidationError: 필수 필드 누락 등 치명적 오류 시
+    """
+    errors = []
+
+    # project 섹션 검증
+    if "project" not in data:
+        raise ConfigValidationError(
+            "필수 섹션 'project'가 없습니다",
+            hint="YAML 파일에 'project:' 섹션을 추가하세요"
+        )
+
+    project = data.get("project", {})
+    if not isinstance(project, dict):
+        raise ConfigValidationError(
+            "'project'는 객체 형태여야 합니다",
+            field="project",
+            value=type(project).__name__,
+            hint="project:\n  name: '프로젝트명'"
+        )
+
+    if "name" not in project:
+        raise ConfigValidationError(
+            "프로젝트 이름이 없습니다",
+            field="project.name",
+            hint="project:\n  name: '프로젝트명'"
+        )
+
+    # project 필드 타입 검증
+    if "kicad_version" in project and not isinstance(project["kicad_version"], int):
+        errors.append(f"project.kicad_version은 정수여야 합니다 (현재: {project['kicad_version']})")
+
+    if "prefer_kicad_lib" in project and not isinstance(project["prefer_kicad_lib"], bool):
+        errors.append(f"project.prefer_kicad_lib은 bool이어야 합니다")
+
+    # parts 또는 sheets 필수
+    has_parts = "parts" in data and data["parts"]
+    has_sheets = "sheets" in data and data["sheets"]
+
+    if not has_parts and not has_sheets:
+        raise ConfigValidationError(
+            "'parts' 또는 'sheets' 중 하나는 필수입니다",
+            hint="parts:\n  - ref: 'U1'\n    role: 'buck_5v'"
+        )
+
+    # parts 검증
+    for i, part in enumerate(data.get("parts", [])):
+        part_errors = _validate_part_schema(part, f"parts[{i}]")
+        errors.extend(part_errors)
+
+    # sheets 검증
+    for i, sheet in enumerate(data.get("sheets", [])):
+        if not isinstance(sheet, dict):
+            errors.append(f"sheets[{i}]는 객체여야 합니다")
+            continue
+
+        if "name" not in sheet:
+            errors.append(f"sheets[{i}].name은 필수입니다")
+
+        # 시트 내 parts 검증
+        for j, part in enumerate(sheet.get("parts", [])):
+            part_errors = _validate_part_schema(part, f"sheets[{i}].parts[{j}]")
+            errors.extend(part_errors)
+
+    return errors
+
+
+def _validate_part_schema(part: Any, path: str) -> list[str]:
+    """개별 부품의 스키마를 검증합니다.
+
+    Args:
+        part: 부품 데이터
+        path: 필드 경로 (에러 메시지용)
+
+    Returns:
+        에러 메시지 목록
+    """
+    errors = []
+
+    if not isinstance(part, dict):
+        errors.append(f"{path}는 객체여야 합니다 (현재: {type(part).__name__})")
+        return errors
+
+    # 필수 필드
+    if "ref" not in part:
+        errors.append(f"{path}.ref는 필수입니다 (예: 'U1', 'R1')")
+    elif not isinstance(part["ref"], str):
+        errors.append(f"{path}.ref는 문자열이어야 합니다")
+
+    if "role" not in part:
+        errors.append(f"{path}.role은 필수입니다 (예: 'buck_5v', 'resistor')")
+    elif not isinstance(part["role"], str):
+        errors.append(f"{path}.role은 문자열이어야 합니다")
+
+    # 선택 필드 타입 검증
+    if "nets" in part and not isinstance(part["nets"], dict):
+        errors.append(f"{path}.nets는 객체여야 합니다 (예: {{VIN: '+12V', GND: 'GND'}})")
+
+    if "optional" in part and not isinstance(part["optional"], bool):
+        errors.append(f"{path}.optional은 bool이어야 합니다")
+
+    if "dnp" in part and not isinstance(part["dnp"], bool):
+        errors.append(f"{path}.dnp는 bool이어야 합니다")
+
+    # LCSC 형식 검증 (있는 경우)
+    if "lcsc" in part and part["lcsc"]:
+        lcsc = str(part["lcsc"])
+        if not lcsc.upper().startswith("C") or not lcsc[1:].isdigit():
+            errors.append(f"{path}.lcsc 형식이 올바르지 않습니다: '{lcsc}' (예: 'C12345')")
+
+    return errors
 
 
 def validate_config(config: ProjectConfig) -> list[str]:

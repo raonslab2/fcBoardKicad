@@ -1,5 +1,5 @@
 """
-CLI - 커맨드라인 인터페이스
+CLI - 커맨드라인 인터페이스 v1.4
 
 Usage:
     python -m kicad_auto_builder.cli build power_board.yaml
@@ -17,19 +17,65 @@ from .config_loader import load_config, validate_config
 from .part_resolver import PartResolver
 from .kicad_builder import KicadBuilder
 from .net_validator import validate_nets
-
-# 로깅 설정
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    datefmt='%H:%M:%S',
+from .exceptions import (
+    KicadAutoBuilderError,
+    ConfigError,
+    ConfigValidationError,
+    EasyEDAError,
+    NetworkError,
+    CacheError,
 )
+
 logger = logging.getLogger(__name__)
+
+
+def setup_logging(verbose: bool = False, log_file: Path = None):
+    """로깅을 설정합니다.
+
+    Args:
+        verbose: 상세 로그 출력 여부
+        log_file: 로그 파일 경로 (None이면 파일 로깅 비활성화)
+    """
+    level = logging.DEBUG if verbose else logging.INFO
+
+    # 포맷 설정
+    detailed_format = '%(asctime)s [%(levelname)s] %(name)s:%(lineno)d - %(message)s'
+    simple_format = '%(asctime)s [%(levelname)s] %(message)s'
+
+    # 루트 로거 설정
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG)
+    root_logger.handlers = []
+
+    # 콘솔 핸들러
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(level)
+    console_handler.setFormatter(logging.Formatter(
+        detailed_format if verbose else simple_format,
+        datefmt='%H:%M:%S'
+    ))
+    root_logger.addHandler(console_handler)
+
+    # 파일 핸들러 (옵션)
+    if log_file:
+        log_file.parent.mkdir(parents=True, exist_ok=True)
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(logging.Formatter(detailed_format))
+        root_logger.addHandler(file_handler)
+        logger.info(f"로그 파일: {log_file}")
 
 
 def build_command(args):
     """build 명령어 실행."""
     config_path = Path(args.config)
+
+    # 로깅 설정
+    log_file = None
+    if hasattr(args, 'log') and args.log:
+        output_dir = Path(args.output) if args.output else Path('out')
+        log_file = output_dir / 'build.log'
+    setup_logging(args.verbose, log_file)
 
     logger.info("=" * 60)
     logger.info(f"KiCad Auto Builder v{__version__}")
@@ -39,8 +85,20 @@ def build_command(args):
     logger.info(f"설정 파일 로드: {config_path}")
     try:
         config = load_config(config_path)
+    except ConfigValidationError as e:
+        logger.error(f"설정 검증 실패:\n{e}")
+        sys.exit(1)
+    except ConfigError as e:
+        logger.error(f"설정 파일 오류: {e}")
+        sys.exit(1)
+    except FileNotFoundError as e:
+        logger.error(f"파일을 찾을 수 없습니다: {config_path}")
+        sys.exit(1)
     except Exception as e:
         logger.error(f"설정 파일 로드 실패: {e}")
+        if args.verbose:
+            import traceback
+            traceback.print_exc()
         sys.exit(1)
 
     logger.info(f"프로젝트: {config.name}")
@@ -103,6 +161,15 @@ def build_command(args):
 
     try:
         resolved_parts = resolver.resolve_all(all_parts)
+    except EasyEDAError as e:
+        logger.error(f"LCSC 부품 다운로드 실패: {e}")
+        sys.exit(1)
+    except NetworkError as e:
+        logger.error(f"네트워크 오류: {e}")
+        sys.exit(1)
+    except CacheError as e:
+        logger.error(f"캐시 오류: {e}")
+        sys.exit(1)
     except ValueError as e:
         logger.error(str(e))
         sys.exit(1)
@@ -133,10 +200,16 @@ def build_command(args):
 
     try:
         result = builder.build_all(warnings=net_warnings)
+    except KicadAutoBuilderError as e:
+        logger.error(f"빌드 실패: {e}")
+        sys.exit(1)
     except Exception as e:
         logger.error(f"빌드 실패: {e}")
-        import traceback
-        traceback.print_exc()
+        if args.verbose:
+            import traceback
+            traceback.print_exc()
+        else:
+            logger.info("상세 정보는 --verbose 옵션을 사용하세요")
         sys.exit(1)
 
     # 7. 결과 출력
@@ -275,6 +348,11 @@ def main():
         "-v", "--verbose",
         action="store_true",
         help="상세 로그 출력",
+    )
+    build_parser.add_argument(
+        "--log",
+        action="store_true",
+        help="빌드 로그를 파일로 저장 (out/build.log)",
     )
 
     # validate 명령어 (v1.3)

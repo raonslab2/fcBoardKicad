@@ -288,6 +288,131 @@ class SchematicTemplate:
 
         return Position(x=x, y=y)
 
+    # ========== v1.4: 기능별 그룹 배치 ==========
+
+    # 역할별 기능 그룹 매핑
+    ROLE_GROUPS = {
+        # 전원부 그룹
+        "power": [
+            "buck_5v", "buck_3v3", "buck_1v8", "buck_adj", "buck_xl1509",
+            "ldo_3v3", "ldo_5v", "ldo_1v8", "ldo_ap2112",
+            "reg_7805", "reg_7812", "reg_317",
+        ],
+        # 커넥터 그룹
+        "connector": [
+            "input_conn", "barrel_jack", "screw_2p", "screw_3p",
+            "usb_a", "usb_c", "rj45", "hdmi",
+            "conn_2p", "conn_3p", "conn_4p", "conn_6p",
+        ],
+        # 인터페이스 IC 그룹
+        "interface": [
+            "usb_hub", "usb_phy", "usb_uart", "ch340", "cp2102", "ft232",
+            "rs232", "max232", "can_transceiver", "can_controller",
+        ],
+        # 패시브 그룹
+        "passive": [
+            "resistor", "capacitor", "capacitor_pol", "inductor",
+            "ferrite", "fuse",
+        ],
+        # 반도체 그룹
+        "semiconductor": [
+            "led", "diode", "schottky", "zener", "tvs",
+            "nmos", "pmos", "nmos_dgs", "pmos_dgs", "npn", "pnp",
+        ],
+        # OpAmp 그룹
+        "opamp": [
+            "opamp", "opamp_dual", "opamp_quad", "comparator",
+            "tl072", "ne5532",
+        ],
+        # 기타
+        "misc": [
+            "crystal", "button", "testpoint",
+        ],
+    }
+
+    # 그룹별 시작 위치
+    GROUP_POSITIONS = {
+        "connector": Position(50.0, 50.0),    # 왼쪽 상단 - 입력
+        "power": Position(50.0, 120.0),       # 왼쪽 중단 - 전원부
+        "interface": Position(200.0, 50.0),   # 오른쪽 상단 - IC
+        "opamp": Position(200.0, 120.0),      # 오른쪽 중단 - 아날로그
+        "semiconductor": Position(50.0, 190.0),  # 왼쪽 하단
+        "passive": Position(200.0, 190.0),    # 오른쪽 하단 - 패시브
+        "misc": Position(350.0, 50.0),        # 맨 오른쪽
+    }
+
+    @classmethod
+    def get_group_for_role(cls, role: str) -> str:
+        """역할에 해당하는 그룹을 반환합니다.
+
+        Args:
+            role: 부품 역할 (예: "buck_5v", "resistor")
+
+        Returns:
+            그룹 이름 또는 "misc"
+        """
+        role_lower = role.lower()
+        for group, roles in cls.ROLE_GROUPS.items():
+            if role_lower in roles:
+                return group
+        return "misc"
+
+    @classmethod
+    def calculate_grouped_positions(cls, parts: list) -> dict:
+        """부품들을 기능 그룹별로 배치 위치를 계산합니다.
+
+        Args:
+            parts: ResolvedPart 목록 (role 속성 필요)
+
+        Returns:
+            {ref: Position, ...}
+        """
+        # 그룹별 부품 분류
+        group_parts = {group: [] for group in cls.GROUP_POSITIONS.keys()}
+
+        for part in parts:
+            group = cls.get_group_for_role(part.role)
+            group_parts[group].append(part)
+
+        # 그룹별 위치 계산
+        positions = {}
+        for group, parts_in_group in group_parts.items():
+            if not parts_in_group:
+                continue
+
+            base_pos = cls.GROUP_POSITIONS.get(group, Position(50.0, 50.0))
+            for i, part in enumerate(parts_in_group):
+                row = i // 4  # 그룹당 4열
+                col = i % 4
+                x = base_pos.x + col * cls.PART_SPACING_X
+                y = base_pos.y + row * cls.PART_SPACING_Y
+                positions[part.ref] = Position(x=x, y=y)
+
+        return positions
+
+    @classmethod
+    def calculate_power_symbol_position(cls, component_pos: Position, pin_side: str = "bottom") -> Position:
+        """부품에 인접한 전원 심볼 위치를 계산합니다.
+
+        Args:
+            component_pos: 부품 위치
+            pin_side: 전원 핀 위치 ("top", "bottom", "left", "right")
+
+        Returns:
+            전원 심볼 Position
+        """
+        offsets = {
+            "top": (0, -15.0),
+            "bottom": (0, 15.0),
+            "left": (-15.0, 0),
+            "right": (15.0, 0),
+        }
+        dx, dy = offsets.get(pin_side, (0, 15.0))
+        return Position(
+            x=component_pos.x + dx,
+            y=component_pos.y + dy
+        )
+
     # ========== v1.2/v1.3: 계층 시트 관련 ==========
 
     @staticmethod

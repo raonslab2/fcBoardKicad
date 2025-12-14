@@ -1872,6 +1872,26 @@
 		)
 		(uuid "d807687f-6abe-4492-8c11-e15c68c4ba96")
 	)
+	(wire
+		(pts
+			(xy 148.59 71.12) (xy 147.32 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f939d2-5995-412e-a1c6-66ae26eab54c")
+	)
+	(wire
+		(pts
+			(xy 146.05 45.72) (xy 147.32 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d448abdc-485a-4049-9ed2-2fe203d832d9")
+	)
 	(hierarchical_label "USB_SSRX_N"
 		(shape bidirectional)
 		(at 50.8 78.74 180)
@@ -2067,7 +2087,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 104.14 0)
+			(at 79.248 110.236 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2245,7 +2265,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:USB_A")
-		(at 139.7 50.8 0)
+		(at 138.43 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2253,7 +2273,7 @@
 		(dnp no)
 		(uuid "320bcc5d-e7d4-404c-b2d5-00e69ba2f15f")
 		(property "Reference" "J2"
-			(at 139.7 45.72 0)
+			(at 138.43 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2261,7 +2281,7 @@
 			)
 		)
 		(property "Value" "USB_A"
-			(at 139.7 55.88 0)
+			(at 138.43 41.656 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2269,7 +2289,7 @@
 			)
 		)
 		(property "Footprint" "jlc_components:USB-A-TH_USB-A-F-90"
-			(at 139.7 50.8 0)
+			(at 138.43 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2278,7 +2298,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 50.8 0)
+			(at 138.43 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2287,7 +2307,7 @@
 			)
 		)
 		(property "Description" "USB Type-A Receptacle"
-			(at 139.7 50.8 0)
+			(at 138.43 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2296,7 +2316,7 @@
 			)
 		)
 		(property "LCSC Part" "C46406"
-			(at 139.7 50.8 0)
+			(at 138.43 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2454,7 +2474,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:GND")
-		(at 58.42 104.14 0)
+		(at 58.42 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2462,7 +2482,7 @@
 		(dnp no)
 		(uuid "37cd80a5-53be-43d0-a73b-ff248727e656")
 		(property "Reference" "#PWR033"
-			(at 58.42 106.68 0)
+			(at 58.42 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2471,7 +2491,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 58.42 101.6 0)
+			(at 58.166 104.394 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2479,7 +2499,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 58.42 104.14 0)
+			(at 58.42 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2488,7 +2508,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 58.42 104.14 0)
+			(at 58.42 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2497,7 +2517,7 @@
 			)
 		)
 		(property "Description" "Power Ground"
-			(at 58.42 104.14 0)
+			(at 58.42 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2536,7 +2556,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 139.7 83.82 0)
+			(at 135.382 86.106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2592,7 +2612,7 @@
 		(dnp no)
 		(uuid "4a2f5a5e-7035-4b51-9ab1-1b48ead1538c")
 		(property "Reference" "J3"
-			(at 139.7 71.12 0)
+			(at 139.446 66.294 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2600,7 +2620,7 @@
 			)
 		)
 		(property "Value" "USB_A"
-			(at 139.7 81.28 0)
+			(at 130.048 71.882 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2967,7 +2987,7 @@
 			)
 		)
 		(property "Value" "22pF"
-			(at 43.18 101.6 0)
+			(at 39.116 101.854 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3092,7 +3112,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:GND")
-		(at 50.8 73.66 0)
+		(at 54.61 72.39 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3100,7 +3120,7 @@
 		(dnp no)
 		(uuid "76edfe9d-6f7c-4eb1-8a09-430fdcd74b37")
 		(property "Reference" "#PWR032"
-			(at 50.8 76.2 0)
+			(at 54.61 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3109,7 +3129,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 71.12 0)
+			(at 54.61 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3117,7 +3137,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 73.66 0)
+			(at 54.61 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3126,7 +3146,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 73.66 0)
+			(at 54.61 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3135,7 +3155,7 @@
 			)
 		)
 		(property "Description" "Power Ground"
-			(at 50.8 73.66 0)
+			(at 54.61 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3502,7 +3522,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:VBUS")
-		(at 147.32 71.12 0)
+		(at 148.59 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3510,7 +3530,7 @@
 		(dnp no)
 		(uuid "97d46a30-7ea5-47d0-8c9d-0e589e2503dc")
 		(property "Reference" "#PWR040"
-			(at 147.32 73.66 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3519,7 +3539,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 147.32 68.58 0)
+			(at 148.59 67.564 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3527,7 +3547,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 71.12 0)
+			(at 148.59 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3536,7 +3556,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 71.12 0)
+			(at 148.59 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3545,7 +3565,7 @@
 			)
 		)
 		(property "Description" "USB VBUS Power"
-			(at 147.32 71.12 0)
+			(at 148.59 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3567,7 +3587,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:C")
-		(at 50.8 55.88 0)
+		(at 49.53 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3575,7 +3595,7 @@
 		(dnp no)
 		(uuid "9ea1d110-2de8-49b4-97ba-31daae3f7b36")
 		(property "Reference" "C9"
-			(at 50.8 50.8 0)
+			(at 49.53 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3583,7 +3603,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 50.8 60.96 0)
+			(at 49.53 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3591,7 +3611,7 @@
 			)
 		)
 		(property "Footprint" "jlc_components:C0402"
-			(at 50.8 55.88 0)
+			(at 49.53 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3600,7 +3620,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 55.88 0)
+			(at 49.53 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3609,7 +3629,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 50.8 55.88 0)
+			(at 49.53 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3618,7 +3638,7 @@
 			)
 		)
 		(property "LCSC Part" "C11702"
-			(at 50.8 55.88 0)
+			(at 49.53 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3643,7 +3663,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:C")
-		(at 50.8 66.04 0)
+		(at 30.48 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3651,7 +3671,7 @@
 		(dnp no)
 		(uuid "a407ad19-cc52-4ac6-86c5-ac89d150db82")
 		(property "Reference" "C10"
-			(at 50.8 60.96 0)
+			(at 30.48 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3659,7 +3679,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 50.8 71.12 0)
+			(at 30.48 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3667,7 +3687,7 @@
 			)
 		)
 		(property "Footprint" "jlc_components:C0402"
-			(at 50.8 66.04 0)
+			(at 30.48 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3676,7 +3696,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 66.04 0)
+			(at 30.48 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3685,7 +3705,7 @@
 			)
 		)
 		(property "Description" "Capacitor"
-			(at 50.8 66.04 0)
+			(at 30.48 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3694,7 +3714,7 @@
 			)
 		)
 		(property "LCSC Part" "C11702"
-			(at 50.8 66.04 0)
+			(at 30.48 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3736,7 +3756,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 139.7 58.42 0)
+			(at 135.89 61.976 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3934,7 +3954,7 @@
 	)
 	(symbol
 		(lib_id "fcBoard:+3V3")
-		(at 50.8 48.26 0)
+		(at 50.8 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3942,7 +3962,7 @@
 		(dnp no)
 		(uuid "dbd27f38-2f7f-42ca-907a-1b574c8b11f5")
 		(property "Reference" "#PWR031"
-			(at 50.8 50.8 0)
+			(at 50.8 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3951,7 +3971,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 50.8 45.72 0)
+			(at 50.8 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3959,7 +3979,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 48.26 0)
+			(at 50.8 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3968,7 +3988,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 48.26 0)
+			(at 50.8 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3977,7 +3997,7 @@
 			)
 		)
 		(property "Description" "+3.3V Power Rail"
-			(at 50.8 48.26 0)
+			(at 50.8 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
