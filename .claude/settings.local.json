@@ -32,7 +32,12 @@
       "Bash(python -m kicad_auto_builder.cli build:*)",
       "Bash(python:*)",
       "Bash(echo:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(git mv:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\ndocs: CLI + YAML 기준 Quickstart 추가\n\n- kicad_auto_builder CLI를 공식 실행법으로 문서화\n- python -m kicad_auto_builder.cli validate/build 예시 추가\n- YAML 예제 파일 안내\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
