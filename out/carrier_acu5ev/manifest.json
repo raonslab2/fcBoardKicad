@@ -1,0 +1,42 @@
+{
+  "version": "1.4.0",
+  "project": "ACU5EV_Carrier_Base",
+  "mode": "som",
+  "generated_at": "2025-12-15T00:46:36.070335",
+  "kicad_version": 9,
+  "som": {
+    "name": "ACU5EV",
+    "connectors": [
+      {
+        "ref": "J29",
+        "pins_csv": "docs/pinmap/J29_BANK65_66.csv",
+        "pin_count": 120
+      },
+      {
+        "ref": "J30",
+        "pins_csv": "docs/pinmap/J30_BANK25_26_MGT.csv",
+        "pin_count": 120
+      },
+      {
+        "ref": "J31",
+        "pins_csv": "docs/pinmap/J31_BANK24_44.csv",
+        "pin_count": 120
+      },
+      {
+        "ref": "J32",
+        "pins_csv": "docs/pinmap/J32_MIO_POWER.csv",
+        "pin_count": 120
+      }
+    ]
+  },
+  "warnings": [],
+  "files": {
+    "symbol_lib": "out\\carrier_acu5ev\\lib\\som_connectors.kicad_sym",
+    "schematic_J29": "out\\carrier_acu5ev\\som_breakout_J29.kicad_sch",
+    "schematic_J30": "out\\carrier_acu5ev\\som_breakout_J30.kicad_sch",
+    "schematic_J31": "out\\carrier_acu5ev\\som_breakout_J31.kicad_sch",
+    "schematic_J32": "out\\carrier_acu5ev\\som_breakout_J32.kicad_sch",
+    "schematic_main": "out\\carrier_acu5ev\\ACU5EV_Carrier_Base.kicad_sch",
+    "pcb": "out\\carrier_acu5ev\\ACU5EV_Carrier_Base.kicad_pcb"
+  }
+}

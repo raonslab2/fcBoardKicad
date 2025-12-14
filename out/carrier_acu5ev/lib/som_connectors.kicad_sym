@@ -1,0 +1,4933 @@
+(kicad_symbol_lib
+  (version 20231120)
+  (generator "kicad_auto_builder")
+  (generator_version "1.5")
+  (symbol "SoM_Connector_J29"
+    (pin_names (offset 1.016))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J29"
+      (at 0 80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SoM_Connector_J29"
+      (at 0 -80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "SoM_Connector_J29_0_1"
+      (rectangle
+        (start -10.00 78.74)
+        (end 10.00 -78.74)
+        (stroke (width 0.254) (type default))
+        (fill (type background))
+      )
+    )
+    (symbol "SoM_Connector_J29_1_1"
+      (pin bidirectional line
+        (at -12.54 76.20 0)
+        (length 2.54)
+        (name "B65_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "1"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 73.66 0)
+        (length 2.54)
+        (name "B65_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "2"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 71.12 0)
+        (length 2.54)
+        (name "B65_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "3"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 68.58 0)
+        (length 2.54)
+        (name "B65_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "4"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 66.04 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "5"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 63.50 0)
+        (length 2.54)
+        (name "B65_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "6"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 60.96 0)
+        (length 2.54)
+        (name "B65_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "7"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 58.42 0)
+        (length 2.54)
+        (name "B65_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "8"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 55.88 0)
+        (length 2.54)
+        (name "B65_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "9"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 53.34 0)
+        (length 2.54)
+        (name "B65_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "10"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 50.80 0)
+        (length 2.54)
+        (name "B65_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "11"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 48.26 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "12"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 45.72 0)
+        (length 2.54)
+        (name "B65_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "13"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 43.18 0)
+        (length 2.54)
+        (name "B65_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "14"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 40.64 0)
+        (length 2.54)
+        (name "B65_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "15"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 38.10 0)
+        (length 2.54)
+        (name "B65_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "16"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 35.56 0)
+        (length 2.54)
+        (name "B65_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "17"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 33.02 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "18"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 30.48 0)
+        (length 2.54)
+        (name "B65_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "19"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 27.94 0)
+        (length 2.54)
+        (name "B65_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "20"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 25.40 0)
+        (length 2.54)
+        (name "B65_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "21"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 22.86 0)
+        (length 2.54)
+        (name "B65_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "22"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 20.32 0)
+        (length 2.54)
+        (name "B65_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "23"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 17.78 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "24"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 15.24 0)
+        (length 2.54)
+        (name "B65_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "25"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 12.70 0)
+        (length 2.54)
+        (name "B65_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "26"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 10.16 0)
+        (length 2.54)
+        (name "B65_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "27"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 7.62 0)
+        (length 2.54)
+        (name "B65_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "28"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 5.08 0)
+        (length 2.54)
+        (name "B65_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "29"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 2.54 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "30"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 0.00 0)
+        (length 2.54)
+        (name "B65_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "31"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -2.54 0)
+        (length 2.54)
+        (name "B65_L14_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "32"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -5.08 0)
+        (length 2.54)
+        (name "B65_L14_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "33"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -7.62 0)
+        (length 2.54)
+        (name "B65_L15_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "34"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -10.16 0)
+        (length 2.54)
+        (name "B65_L15_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "35"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -12.70 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "36"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -15.24 0)
+        (length 2.54)
+        (name "B65_L16_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "37"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -17.78 0)
+        (length 2.54)
+        (name "B65_L16_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "38"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -20.32 0)
+        (length 2.54)
+        (name "B65_L17_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "39"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -22.86 0)
+        (length 2.54)
+        (name "B65_L17_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "40"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -25.40 0)
+        (length 2.54)
+        (name "B65_L18_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "41"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -27.94 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "42"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -30.48 0)
+        (length 2.54)
+        (name "B65_L18_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "43"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -33.02 0)
+        (length 2.54)
+        (name "B65_L19_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "44"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -35.56 0)
+        (length 2.54)
+        (name "B65_L19_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "45"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -38.10 0)
+        (length 2.54)
+        (name "B65_L20_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "46"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -40.64 0)
+        (length 2.54)
+        (name "B65_L20_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "47"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -43.18 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "48"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -45.72 0)
+        (length 2.54)
+        (name "B65_L21_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "49"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -48.26 0)
+        (length 2.54)
+        (name "B65_L21_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "50"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -50.80 0)
+        (length 2.54)
+        (name "B65_L22_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "51"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -53.34 0)
+        (length 2.54)
+        (name "B65_L22_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "52"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -55.88 0)
+        (length 2.54)
+        (name "B65_L23_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "53"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -58.42 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "54"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -60.96 0)
+        (length 2.54)
+        (name "B65_L23_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "55"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -63.50 0)
+        (length 2.54)
+        (name "B65_L24_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "56"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -66.04 0)
+        (length 2.54)
+        (name "B65_L24_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "57"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -68.58 0)
+        (length 2.54)
+        (name "B66_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "58"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -71.12 0)
+        (length 2.54)
+        (name "B66_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "59"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -73.66 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "60"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 76.20 180)
+        (length 2.54)
+        (name "B66_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "61"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 73.66 180)
+        (length 2.54)
+        (name "B66_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "62"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 71.12 180)
+        (length 2.54)
+        (name "B66_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "63"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 68.58 180)
+        (length 2.54)
+        (name "B66_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "64"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 66.04 180)
+        (length 2.54)
+        (name "B66_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "65"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 63.50 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "66"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 60.96 180)
+        (length 2.54)
+        (name "B66_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "67"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 58.42 180)
+        (length 2.54)
+        (name "B66_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "68"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 55.88 180)
+        (length 2.54)
+        (name "B66_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "69"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 53.34 180)
+        (length 2.54)
+        (name "B66_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "70"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 50.80 180)
+        (length 2.54)
+        (name "B66_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "71"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 48.26 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "72"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 45.72 180)
+        (length 2.54)
+        (name "B66_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "73"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 43.18 180)
+        (length 2.54)
+        (name "B66_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "74"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 40.64 180)
+        (length 2.54)
+        (name "B66_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "75"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 38.10 180)
+        (length 2.54)
+        (name "B66_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "76"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 35.56 180)
+        (length 2.54)
+        (name "B66_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "77"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 33.02 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "78"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 30.48 180)
+        (length 2.54)
+        (name "B66_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "79"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 27.94 180)
+        (length 2.54)
+        (name "B66_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "80"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 25.40 180)
+        (length 2.54)
+        (name "B66_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "81"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 22.86 180)
+        (length 2.54)
+        (name "B66_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "82"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 20.32 180)
+        (length 2.54)
+        (name "B66_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "83"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 17.78 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "84"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 15.24 180)
+        (length 2.54)
+        (name "B66_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "85"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 12.70 180)
+        (length 2.54)
+        (name "B66_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "86"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 10.16 180)
+        (length 2.54)
+        (name "B66_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "87"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 7.62 180)
+        (length 2.54)
+        (name "B66_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "88"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 5.08 180)
+        (length 2.54)
+        (name "B66_L14_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "89"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 2.54 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "90"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 0.00 180)
+        (length 2.54)
+        (name "B66_L14_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "91"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -2.54 180)
+        (length 2.54)
+        (name "B66_L15_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "92"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -5.08 180)
+        (length 2.54)
+        (name "B66_L15_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "93"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -7.62 180)
+        (length 2.54)
+        (name "B66_L16_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "94"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -10.16 180)
+        (length 2.54)
+        (name "B66_L16_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "95"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -12.70 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "96"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -15.24 180)
+        (length 2.54)
+        (name "B66_L17_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "97"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -17.78 180)
+        (length 2.54)
+        (name "B66_L17_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "98"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -20.32 180)
+        (length 2.54)
+        (name "B66_L18_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "99"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -22.86 180)
+        (length 2.54)
+        (name "B66_L18_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "100"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -25.40 180)
+        (length 2.54)
+        (name "B66_L19_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "101"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -27.94 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "102"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -30.48 180)
+        (length 2.54)
+        (name "B66_L19_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "103"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -33.02 180)
+        (length 2.54)
+        (name "B66_L20_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "104"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -35.56 180)
+        (length 2.54)
+        (name "B66_L20_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "105"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -38.10 180)
+        (length 2.54)
+        (name "B66_L21_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "106"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -40.64 180)
+        (length 2.54)
+        (name "B66_L21_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "107"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -43.18 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "108"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -45.72 180)
+        (length 2.54)
+        (name "B66_L22_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "109"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -48.26 180)
+        (length 2.54)
+        (name "B66_L22_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "110"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at 12.54 -50.80 180)
+        (length 2.54)
+        (name "B66_CLK_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "111"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at 12.54 -53.34 180)
+        (length 2.54)
+        (name "B66_CLK_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "112"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -55.88 180)
+        (length 2.54)
+        (name "NC_113"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "113"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -58.42 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "114"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -60.96 180)
+        (length 2.54)
+        (name "NC_115"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "115"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -63.50 180)
+        (length 2.54)
+        (name "NC_116"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "116"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -66.04 180)
+        (length 2.54)
+        (name "NC_117"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "117"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -68.58 180)
+        (length 2.54)
+        (name "NC_118"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "118"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -71.12 180)
+        (length 2.54)
+        (name "NC_119"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "119"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -73.66 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "120"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+    )
+  )
+  (symbol "SoM_Connector_J30"
+    (pin_names (offset 1.016))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J30"
+      (at 0 80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SoM_Connector_J30"
+      (at 0 -80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "SoM_Connector_J30_0_1"
+      (rectangle
+        (start -10.00 78.74)
+        (end 10.00 -78.74)
+        (stroke (width 0.254) (type default))
+        (fill (type background))
+      )
+    )
+    (symbol "SoM_Connector_J30_1_1"
+      (pin input line
+        (at -12.54 76.20 0)
+        (length 2.54)
+        (name "MGT505_CLK0_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "1"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 73.66 0)
+        (length 2.54)
+        (name "MGT505_CLK0_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "2"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 71.12 0)
+        (length 2.54)
+        (name "MGT505_TX0_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "3"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 68.58 0)
+        (length 2.54)
+        (name "MGT505_TX0_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "4"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 66.04 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "5"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 63.50 0)
+        (length 2.54)
+        (name "MGT505_RX0_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "6"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 60.96 0)
+        (length 2.54)
+        (name "MGT505_RX0_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "7"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 58.42 0)
+        (length 2.54)
+        (name "MGT505_TX1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "8"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 55.88 0)
+        (length 2.54)
+        (name "MGT505_TX1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "9"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 53.34 0)
+        (length 2.54)
+        (name "MGT505_RX1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "10"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 50.80 0)
+        (length 2.54)
+        (name "MGT505_RX1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "11"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 48.26 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "12"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 45.72 0)
+        (length 2.54)
+        (name "MGT505_TX2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "13"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 43.18 0)
+        (length 2.54)
+        (name "MGT505_TX2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "14"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 40.64 0)
+        (length 2.54)
+        (name "MGT505_RX2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "15"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 38.10 0)
+        (length 2.54)
+        (name "MGT505_RX2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "16"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 35.56 0)
+        (length 2.54)
+        (name "MGT505_TX3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "17"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 33.02 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "18"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at -12.54 30.48 0)
+        (length 2.54)
+        (name "MGT505_TX3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "19"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 27.94 0)
+        (length 2.54)
+        (name "MGT505_RX3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "20"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 25.40 0)
+        (length 2.54)
+        (name "MGT505_RX3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "21"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 22.86 0)
+        (length 2.54)
+        (name "MGT505_CLK1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "22"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at -12.54 20.32 0)
+        (length 2.54)
+        (name "MGT505_CLK1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "23"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 17.78 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "24"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 15.24 0)
+        (length 2.54)
+        (name "B25_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "25"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 12.70 0)
+        (length 2.54)
+        (name "B25_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "26"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 10.16 0)
+        (length 2.54)
+        (name "B25_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "27"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 7.62 0)
+        (length 2.54)
+        (name "B25_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "28"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 5.08 0)
+        (length 2.54)
+        (name "B25_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "29"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 2.54 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "30"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 0.00 0)
+        (length 2.54)
+        (name "B25_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "31"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -2.54 0)
+        (length 2.54)
+        (name "B25_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "32"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -5.08 0)
+        (length 2.54)
+        (name "B25_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "33"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -7.62 0)
+        (length 2.54)
+        (name "B25_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "34"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -10.16 0)
+        (length 2.54)
+        (name "B25_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "35"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -12.70 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "36"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -15.24 0)
+        (length 2.54)
+        (name "B25_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "37"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -17.78 0)
+        (length 2.54)
+        (name "B25_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "38"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -20.32 0)
+        (length 2.54)
+        (name "B25_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "39"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -22.86 0)
+        (length 2.54)
+        (name "B25_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "40"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -25.40 0)
+        (length 2.54)
+        (name "B25_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "41"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -27.94 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "42"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -30.48 0)
+        (length 2.54)
+        (name "B25_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "43"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -33.02 0)
+        (length 2.54)
+        (name "B25_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "44"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -35.56 0)
+        (length 2.54)
+        (name "B25_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "45"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -38.10 0)
+        (length 2.54)
+        (name "B25_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "46"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -40.64 0)
+        (length 2.54)
+        (name "B25_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "47"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -43.18 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "48"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -45.72 0)
+        (length 2.54)
+        (name "B25_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "49"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -48.26 0)
+        (length 2.54)
+        (name "B25_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "50"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -50.80 0)
+        (length 2.54)
+        (name "B25_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "51"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -53.34 0)
+        (length 2.54)
+        (name "B25_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "52"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -55.88 0)
+        (length 2.54)
+        (name "B25_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "53"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -58.42 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "54"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -60.96 0)
+        (length 2.54)
+        (name "B25_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "55"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -63.50 0)
+        (length 2.54)
+        (name "B26_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "56"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -66.04 0)
+        (length 2.54)
+        (name "B26_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "57"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -68.58 0)
+        (length 2.54)
+        (name "B26_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "58"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -71.12 0)
+        (length 2.54)
+        (name "B26_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "59"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -73.66 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "60"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 76.20 180)
+        (length 2.54)
+        (name "B26_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "61"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 73.66 180)
+        (length 2.54)
+        (name "B26_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "62"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 71.12 180)
+        (length 2.54)
+        (name "B26_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "63"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 68.58 180)
+        (length 2.54)
+        (name "B26_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "64"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 66.04 180)
+        (length 2.54)
+        (name "B26_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "65"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 63.50 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "66"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 60.96 180)
+        (length 2.54)
+        (name "B26_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "67"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 58.42 180)
+        (length 2.54)
+        (name "B26_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "68"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 55.88 180)
+        (length 2.54)
+        (name "B26_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "69"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 53.34 180)
+        (length 2.54)
+        (name "B26_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "70"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 50.80 180)
+        (length 2.54)
+        (name "B26_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "71"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 48.26 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "72"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 45.72 180)
+        (length 2.54)
+        (name "B26_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "73"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 43.18 180)
+        (length 2.54)
+        (name "B26_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "74"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 40.64 180)
+        (length 2.54)
+        (name "B26_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "75"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 38.10 180)
+        (length 2.54)
+        (name "B26_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "76"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 35.56 180)
+        (length 2.54)
+        (name "B26_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "77"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 33.02 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "78"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 30.48 180)
+        (length 2.54)
+        (name "B26_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "79"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 27.94 180)
+        (length 2.54)
+        (name "B26_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "80"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 25.40 180)
+        (length 2.54)
+        (name "B26_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "81"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 22.86 180)
+        (length 2.54)
+        (name "B26_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "82"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 20.32 180)
+        (length 2.54)
+        (name "B26_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "83"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 17.78 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "84"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 15.24 180)
+        (length 2.54)
+        (name "B26_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "85"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 12.70 180)
+        (length 2.54)
+        (name "B26_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "86"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 10.16 180)
+        (length 2.54)
+        (name "NC_87"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "87"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 7.62 180)
+        (length 2.54)
+        (name "NC_88"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "88"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 5.08 180)
+        (length 2.54)
+        (name "NC_89"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "89"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 2.54 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "90"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 0.00 180)
+        (length 2.54)
+        (name "NC_91"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "91"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -2.54 180)
+        (length 2.54)
+        (name "NC_92"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "92"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -5.08 180)
+        (length 2.54)
+        (name "NC_93"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "93"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -7.62 180)
+        (length 2.54)
+        (name "NC_94"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "94"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -10.16 180)
+        (length 2.54)
+        (name "NC_95"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "95"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -12.70 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "96"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -15.24 180)
+        (length 2.54)
+        (name "NC_97"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "97"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -17.78 180)
+        (length 2.54)
+        (name "NC_98"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "98"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -20.32 180)
+        (length 2.54)
+        (name "NC_99"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "99"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -22.86 180)
+        (length 2.54)
+        (name "NC_100"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "100"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -25.40 180)
+        (length 2.54)
+        (name "NC_101"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "101"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -27.94 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "102"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -30.48 180)
+        (length 2.54)
+        (name "NC_103"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "103"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -33.02 180)
+        (length 2.54)
+        (name "NC_104"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "104"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -35.56 180)
+        (length 2.54)
+        (name "NC_105"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "105"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -38.10 180)
+        (length 2.54)
+        (name "NC_106"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "106"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -40.64 180)
+        (length 2.54)
+        (name "NC_107"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "107"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -43.18 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "108"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -45.72 180)
+        (length 2.54)
+        (name "NC_109"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "109"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -48.26 180)
+        (length 2.54)
+        (name "NC_110"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "110"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -50.80 180)
+        (length 2.54)
+        (name "NC_111"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "111"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -53.34 180)
+        (length 2.54)
+        (name "NC_112"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "112"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -55.88 180)
+        (length 2.54)
+        (name "NC_113"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "113"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -58.42 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "114"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -60.96 180)
+        (length 2.54)
+        (name "NC_115"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "115"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -63.50 180)
+        (length 2.54)
+        (name "NC_116"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "116"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -66.04 180)
+        (length 2.54)
+        (name "NC_117"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "117"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -68.58 180)
+        (length 2.54)
+        (name "NC_118"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "118"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -71.12 180)
+        (length 2.54)
+        (name "NC_119"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "119"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -73.66 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "120"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+    )
+  )
+  (symbol "SoM_Connector_J31"
+    (pin_names (offset 1.016))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J31"
+      (at 0 80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SoM_Connector_J31"
+      (at 0 -80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "SoM_Connector_J31_0_1"
+      (rectangle
+        (start -10.00 78.74)
+        (end 10.00 -78.74)
+        (stroke (width 0.254) (type default))
+        (fill (type background))
+      )
+    )
+    (symbol "SoM_Connector_J31_1_1"
+      (pin bidirectional line
+        (at -12.54 76.20 0)
+        (length 2.54)
+        (name "B24_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "1"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 73.66 0)
+        (length 2.54)
+        (name "B24_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "2"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 71.12 0)
+        (length 2.54)
+        (name "B24_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "3"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 68.58 0)
+        (length 2.54)
+        (name "B24_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "4"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 66.04 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "5"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 63.50 0)
+        (length 2.54)
+        (name "B24_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "6"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 60.96 0)
+        (length 2.54)
+        (name "B24_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "7"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 58.42 0)
+        (length 2.54)
+        (name "B24_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "8"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 55.88 0)
+        (length 2.54)
+        (name "B24_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "9"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 53.34 0)
+        (length 2.54)
+        (name "B24_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "10"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 50.80 0)
+        (length 2.54)
+        (name "B24_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "11"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 48.26 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "12"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 45.72 0)
+        (length 2.54)
+        (name "B24_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "13"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 43.18 0)
+        (length 2.54)
+        (name "B24_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "14"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 40.64 0)
+        (length 2.54)
+        (name "B24_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "15"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 38.10 0)
+        (length 2.54)
+        (name "B24_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "16"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 35.56 0)
+        (length 2.54)
+        (name "B24_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "17"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 33.02 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "18"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 30.48 0)
+        (length 2.54)
+        (name "B24_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "19"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 27.94 0)
+        (length 2.54)
+        (name "B24_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "20"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 25.40 0)
+        (length 2.54)
+        (name "B24_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "21"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 22.86 0)
+        (length 2.54)
+        (name "B24_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "22"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 20.32 0)
+        (length 2.54)
+        (name "B24_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "23"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 17.78 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "24"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 15.24 0)
+        (length 2.54)
+        (name "B24_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "25"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 12.70 0)
+        (length 2.54)
+        (name "B24_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "26"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 10.16 0)
+        (length 2.54)
+        (name "B24_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "27"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 7.62 0)
+        (length 2.54)
+        (name "B24_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "28"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 5.08 0)
+        (length 2.54)
+        (name "B24_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "29"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 2.54 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "30"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 0.00 0)
+        (length 2.54)
+        (name "B24_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "31"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -2.54 0)
+        (length 2.54)
+        (name "B44_L1_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "32"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -5.08 0)
+        (length 2.54)
+        (name "B44_L1_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "33"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -7.62 0)
+        (length 2.54)
+        (name "B44_L2_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "34"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -10.16 0)
+        (length 2.54)
+        (name "B44_L2_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "35"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -12.70 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "36"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -15.24 0)
+        (length 2.54)
+        (name "B44_L3_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "37"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -17.78 0)
+        (length 2.54)
+        (name "B44_L3_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "38"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -20.32 0)
+        (length 2.54)
+        (name "B44_L4_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "39"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -22.86 0)
+        (length 2.54)
+        (name "B44_L4_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "40"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -25.40 0)
+        (length 2.54)
+        (name "B44_L5_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "41"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -27.94 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "42"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -30.48 0)
+        (length 2.54)
+        (name "B44_L5_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "43"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -33.02 0)
+        (length 2.54)
+        (name "B44_L6_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "44"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -35.56 0)
+        (length 2.54)
+        (name "B44_L6_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "45"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -38.10 0)
+        (length 2.54)
+        (name "B44_L7_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "46"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -40.64 0)
+        (length 2.54)
+        (name "B44_L7_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "47"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -43.18 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "48"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -45.72 0)
+        (length 2.54)
+        (name "B44_L8_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "49"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -48.26 0)
+        (length 2.54)
+        (name "B44_L8_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "50"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -50.80 0)
+        (length 2.54)
+        (name "B44_L9_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "51"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -53.34 0)
+        (length 2.54)
+        (name "B44_L9_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "52"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -55.88 0)
+        (length 2.54)
+        (name "B44_L10_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "53"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -58.42 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "54"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -60.96 0)
+        (length 2.54)
+        (name "B44_L10_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "55"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -63.50 0)
+        (length 2.54)
+        (name "B44_L11_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "56"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -66.04 0)
+        (length 2.54)
+        (name "B44_L11_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "57"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -68.58 0)
+        (length 2.54)
+        (name "B44_L12_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "58"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -71.12 0)
+        (length 2.54)
+        (name "B44_L12_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "59"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -73.66 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "60"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 76.20 180)
+        (length 2.54)
+        (name "B44_L13_P"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "61"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 73.66 180)
+        (length 2.54)
+        (name "B44_L13_N"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "62"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 71.12 180)
+        (length 2.54)
+        (name "NC_63"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "63"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 68.58 180)
+        (length 2.54)
+        (name "NC_64"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "64"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 66.04 180)
+        (length 2.54)
+        (name "NC_65"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "65"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 63.50 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "66"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 60.96 180)
+        (length 2.54)
+        (name "NC_67"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "67"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 58.42 180)
+        (length 2.54)
+        (name "NC_68"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "68"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 55.88 180)
+        (length 2.54)
+        (name "NC_69"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "69"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 53.34 180)
+        (length 2.54)
+        (name "NC_70"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "70"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 50.80 180)
+        (length 2.54)
+        (name "NC_71"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "71"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 48.26 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "72"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 45.72 180)
+        (length 2.54)
+        (name "NC_73"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "73"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 43.18 180)
+        (length 2.54)
+        (name "NC_74"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "74"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 40.64 180)
+        (length 2.54)
+        (name "NC_75"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "75"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 38.10 180)
+        (length 2.54)
+        (name "NC_76"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "76"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 35.56 180)
+        (length 2.54)
+        (name "NC_77"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "77"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 33.02 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "78"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 30.48 180)
+        (length 2.54)
+        (name "NC_79"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "79"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 27.94 180)
+        (length 2.54)
+        (name "NC_80"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "80"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 25.40 180)
+        (length 2.54)
+        (name "NC_81"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "81"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 22.86 180)
+        (length 2.54)
+        (name "NC_82"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "82"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 20.32 180)
+        (length 2.54)
+        (name "NC_83"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "83"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 17.78 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "84"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 15.24 180)
+        (length 2.54)
+        (name "NC_85"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "85"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 12.70 180)
+        (length 2.54)
+        (name "NC_86"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "86"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 10.16 180)
+        (length 2.54)
+        (name "NC_87"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "87"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 7.62 180)
+        (length 2.54)
+        (name "NC_88"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "88"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 5.08 180)
+        (length 2.54)
+        (name "NC_89"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "89"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 2.54 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "90"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 0.00 180)
+        (length 2.54)
+        (name "NC_91"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "91"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -2.54 180)
+        (length 2.54)
+        (name "NC_92"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "92"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -5.08 180)
+        (length 2.54)
+        (name "NC_93"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "93"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -7.62 180)
+        (length 2.54)
+        (name "NC_94"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "94"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -10.16 180)
+        (length 2.54)
+        (name "NC_95"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "95"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -12.70 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "96"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -15.24 180)
+        (length 2.54)
+        (name "NC_97"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "97"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -17.78 180)
+        (length 2.54)
+        (name "NC_98"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "98"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -20.32 180)
+        (length 2.54)
+        (name "NC_99"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "99"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -22.86 180)
+        (length 2.54)
+        (name "NC_100"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "100"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -25.40 180)
+        (length 2.54)
+        (name "NC_101"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "101"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -27.94 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "102"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -30.48 180)
+        (length 2.54)
+        (name "NC_103"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "103"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -33.02 180)
+        (length 2.54)
+        (name "NC_104"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "104"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -35.56 180)
+        (length 2.54)
+        (name "NC_105"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "105"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -38.10 180)
+        (length 2.54)
+        (name "NC_106"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "106"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -40.64 180)
+        (length 2.54)
+        (name "NC_107"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "107"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -43.18 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "108"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -45.72 180)
+        (length 2.54)
+        (name "NC_109"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "109"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -48.26 180)
+        (length 2.54)
+        (name "NC_110"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "110"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -50.80 180)
+        (length 2.54)
+        (name "NC_111"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "111"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -53.34 180)
+        (length 2.54)
+        (name "NC_112"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "112"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -55.88 180)
+        (length 2.54)
+        (name "NC_113"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "113"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -58.42 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "114"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -60.96 180)
+        (length 2.54)
+        (name "NC_115"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "115"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -63.50 180)
+        (length 2.54)
+        (name "NC_116"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "116"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -66.04 180)
+        (length 2.54)
+        (name "NC_117"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "117"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -68.58 180)
+        (length 2.54)
+        (name "NC_118"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "118"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin no_connect line
+        (at 12.54 -71.12 180)
+        (length 2.54)
+        (name "NC_119"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "119"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -73.66 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "120"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+    )
+  )
+  (symbol "SoM_Connector_J32"
+    (pin_names (offset 1.016))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J32"
+      (at 0 80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "SoM_Connector_J32"
+      (at 0 -80.74 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "SoM_Connector_J32_0_1"
+      (rectangle
+        (start -10.00 78.74)
+        (end 10.00 -78.74)
+        (stroke (width 0.254) (type default))
+        (fill (type background))
+      )
+    )
+    (symbol "SoM_Connector_J32_1_1"
+      (pin bidirectional line
+        (at -12.54 76.20 0)
+        (length 2.54)
+        (name "MIO0"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "1"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 73.66 0)
+        (length 2.54)
+        (name "MIO1"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "2"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 71.12 0)
+        (length 2.54)
+        (name "MIO2"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "3"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 68.58 0)
+        (length 2.54)
+        (name "MIO3"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "4"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 66.04 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "5"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 63.50 0)
+        (length 2.54)
+        (name "MIO4"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "6"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 60.96 0)
+        (length 2.54)
+        (name "MIO5"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "7"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 58.42 0)
+        (length 2.54)
+        (name "MIO6"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "8"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 55.88 0)
+        (length 2.54)
+        (name "MIO7"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "9"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 53.34 0)
+        (length 2.54)
+        (name "MIO8"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "10"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 50.80 0)
+        (length 2.54)
+        (name "MIO9"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "11"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 48.26 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "12"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 45.72 0)
+        (length 2.54)
+        (name "MIO10"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "13"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 43.18 0)
+        (length 2.54)
+        (name "MIO11"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "14"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 40.64 0)
+        (length 2.54)
+        (name "MIO12"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "15"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 38.10 0)
+        (length 2.54)
+        (name "MIO13"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "16"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 35.56 0)
+        (length 2.54)
+        (name "MIO14"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "17"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 33.02 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "18"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 30.48 0)
+        (length 2.54)
+        (name "MIO15"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "19"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 27.94 0)
+        (length 2.54)
+        (name "MIO16"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "20"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 25.40 0)
+        (length 2.54)
+        (name "MIO17"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "21"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 22.86 0)
+        (length 2.54)
+        (name "MIO18"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "22"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 20.32 0)
+        (length 2.54)
+        (name "MIO19"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "23"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 17.78 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "24"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 15.24 0)
+        (length 2.54)
+        (name "MIO20"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "25"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 12.70 0)
+        (length 2.54)
+        (name "MIO21"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "26"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 10.16 0)
+        (length 2.54)
+        (name "MIO22"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "27"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 7.62 0)
+        (length 2.54)
+        (name "MIO23"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "28"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 5.08 0)
+        (length 2.54)
+        (name "MIO24"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "29"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 2.54 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "30"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 0.00 0)
+        (length 2.54)
+        (name "MIO25"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "31"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -2.54 0)
+        (length 2.54)
+        (name "MIO26"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "32"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -5.08 0)
+        (length 2.54)
+        (name "MIO27"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "33"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -7.62 0)
+        (length 2.54)
+        (name "MIO28"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "34"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -10.16 0)
+        (length 2.54)
+        (name "MIO29"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "35"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -12.70 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "36"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -15.24 0)
+        (length 2.54)
+        (name "MIO30"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "37"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -17.78 0)
+        (length 2.54)
+        (name "MIO31"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "38"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -20.32 0)
+        (length 2.54)
+        (name "MIO32"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "39"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -22.86 0)
+        (length 2.54)
+        (name "MIO33"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "40"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -25.40 0)
+        (length 2.54)
+        (name "MIO34"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "41"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -27.94 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "42"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -30.48 0)
+        (length 2.54)
+        (name "MIO35"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "43"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -33.02 0)
+        (length 2.54)
+        (name "MIO36"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "44"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -35.56 0)
+        (length 2.54)
+        (name "MIO37"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "45"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -38.10 0)
+        (length 2.54)
+        (name "MIO38"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "46"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -40.64 0)
+        (length 2.54)
+        (name "MIO39"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "47"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -43.18 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "48"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -45.72 0)
+        (length 2.54)
+        (name "MIO40"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "49"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -48.26 0)
+        (length 2.54)
+        (name "MIO41"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "50"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -50.80 0)
+        (length 2.54)
+        (name "MIO42"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "51"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -53.34 0)
+        (length 2.54)
+        (name "MIO43"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "52"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -55.88 0)
+        (length 2.54)
+        (name "MIO44"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "53"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -58.42 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "54"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -60.96 0)
+        (length 2.54)
+        (name "MIO45"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "55"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -63.50 0)
+        (length 2.54)
+        (name "MIO46"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "56"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -66.04 0)
+        (length 2.54)
+        (name "MIO47"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "57"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -68.58 0)
+        (length 2.54)
+        (name "MIO48"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "58"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at -12.54 -71.12 0)
+        (length 2.54)
+        (name "MIO49"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "59"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at -12.54 -73.66 0)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "60"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 76.20 180)
+        (length 2.54)
+        (name "MIO50"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "61"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 73.66 180)
+        (length 2.54)
+        (name "MIO51"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "62"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 71.12 180)
+        (length 2.54)
+        (name "MIO52"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "63"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 68.58 180)
+        (length 2.54)
+        (name "MIO53"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "64"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 66.04 180)
+        (length 2.54)
+        (name "MIO54"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "65"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 63.50 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "66"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 60.96 180)
+        (length 2.54)
+        (name "MIO55"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "67"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 58.42 180)
+        (length 2.54)
+        (name "MIO56"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "68"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 55.88 180)
+        (length 2.54)
+        (name "MIO57"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "69"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 53.34 180)
+        (length 2.54)
+        (name "MIO58"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "70"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 50.80 180)
+        (length 2.54)
+        (name "MIO59"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "71"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 48.26 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "72"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 45.72 180)
+        (length 2.54)
+        (name "MIO60"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "73"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 43.18 180)
+        (length 2.54)
+        (name "MIO61"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "74"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 40.64 180)
+        (length 2.54)
+        (name "MIO62"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "75"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 38.10 180)
+        (length 2.54)
+        (name "MIO63"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "76"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 35.56 180)
+        (length 2.54)
+        (name "MIO64"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "77"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 33.02 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "78"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 30.48 180)
+        (length 2.54)
+        (name "MIO65"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "79"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 27.94 180)
+        (length 2.54)
+        (name "MIO66"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "80"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 25.40 180)
+        (length 2.54)
+        (name "MIO67"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "81"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 22.86 180)
+        (length 2.54)
+        (name "MIO68"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "82"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 20.32 180)
+        (length 2.54)
+        (name "MIO69"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "83"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 17.78 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "84"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 15.24 180)
+        (length 2.54)
+        (name "MIO70"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "85"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 12.70 180)
+        (length 2.54)
+        (name "MIO71"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "86"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 10.16 180)
+        (length 2.54)
+        (name "MIO72"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "87"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 7.62 180)
+        (length 2.54)
+        (name "MIO73"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "88"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 5.08 180)
+        (length 2.54)
+        (name "MIO74"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "89"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 2.54 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "90"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 0.00 180)
+        (length 2.54)
+        (name "MIO75"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "91"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -2.54 180)
+        (length 2.54)
+        (name "MIO76"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "92"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin bidirectional line
+        (at 12.54 -5.08 180)
+        (length 2.54)
+        (name "MIO77"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "93"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at 12.54 -7.62 180)
+        (length 2.54)
+        (name "PS_DONE"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "94"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin output line
+        (at 12.54 -10.16 180)
+        (length 2.54)
+        (name "PS_ERR"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "95"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -12.70 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "96"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at 12.54 -15.24 180)
+        (length 2.54)
+        (name "PS_POR_B"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "97"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin input line
+        (at 12.54 -17.78 180)
+        (length 2.54)
+        (name "PS_SRST_B"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "98"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -20.32 180)
+        (length 2.54)
+        (name "VCCO_65"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "99"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -22.86 180)
+        (length 2.54)
+        (name "VCCO_66"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "100"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -25.40 180)
+        (length 2.54)
+        (name "VCCO_65"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "101"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -27.94 180)
+        (length 2.54)
+        (name "VCCO_66"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "102"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -30.48 180)
+        (length 2.54)
+        (name "VCCO_65"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "103"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -33.02 180)
+        (length 2.54)
+        (name "VCCO_66"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "104"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -35.56 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "105"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -38.10 180)
+        (length 2.54)
+        (name "GND"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "106"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -40.64 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "107"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -43.18 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "108"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -45.72 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "109"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -48.26 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "110"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -50.80 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "111"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -53.34 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "112"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -55.88 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "113"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -58.42 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "114"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -60.96 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "115"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -63.50 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "116"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -66.04 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "117"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -68.58 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "118"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -71.12 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "119"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+      (pin power_in line
+        (at 12.54 -73.66 180)
+        (length 2.54)
+        (name "P12V"
+          (effects (font (size 1.0 1.0)))
+        )
+        (number "120"
+          (effects (font (size 1.0 1.0)))
+        )
+      )
+    )
+  )
+)
