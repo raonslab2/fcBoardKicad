@@ -1,9 +1,16 @@
 # ACU5EV SoM Carrier Board - 기본 구성
-# 1차 구현: Breakout 회로도 + 최소 PCB
+# v1.6: 메인 프로젝트 적용 모드
 
 project:
   name: "ACU5EV_Carrier_Base"
   kicad_version: 9
+
+  # v1.6: 메인 프로젝트 적용 모드 (fcBoard에 직접 적용)
+  apply_to_main_project: true
+  target_project_dir: "D:/git2/fcBoardKicad"
+  target_project_name: "fcBoard"
+
+  # (선택) out_dir은 더 이상 메인 출력용 아님
   out_dir: "out/carrier_acu5ev"
 
 som:

@@ -1,11 +1,12 @@
 """
-KiCad Builder - 라이브러리 및 회로도 생성 v1.5
+KiCad Builder - 라이브러리 및 회로도 생성 v1.6
 
 심볼/풋프린트 라이브러리 병합 및 회로도 자동 생성.
 와이어 자동 생성 기능 포함 (그리드 스냅 + L자 라우팅).
 v1.2: 계층 시트 지원
 v1.3: BOM 고도화, 버전 통합, 타이틀 블록 동적 생성, ports 확장
 v1.5: SoM 커넥터 Breakout 시트 생성 지원
+v1.6: 메인 프로젝트 적용 모드 (apply_to_main_project)
 """
 
 import csv
@@ -49,10 +50,49 @@ class KicadBuilder:
         self.config = config
         self.parts = resolved_parts
 
-        # 출력 디렉토리 생성
-        self.output_dir = Path(config.out_dir)
+        # v1.6: 적용 모드에 따른 출력 경로 결정
+        if config.apply_to_main_project:
+            # 메인 프로젝트에 직접 적용
+            self.output_dir = Path(config.target_project_dir)
+            self.target_basename = config.target_project_name
+            self.apply_mode = True
+            logger.info(f"[APPLY MODE] 대상: {self.output_dir / self.target_basename}.*")
+        else:
+            # 기존 방식: out_dir에 생성
+            self.output_dir = Path(config.out_dir)
+            self.target_basename = config.name
+            self.apply_mode = False
+
         self.lib_dir = self.output_dir / "lib"
         self.lib_dir.mkdir(parents=True, exist_ok=True)
+
+        # 백업 디렉토리
+        self.backup_dir = self.output_dir / "backups"
+
+    def _backup_existing_files(self, files_to_backup: list[Path]) -> Optional[Path]:
+        """기존 파일들을 백업합니다 (v1.6).
+
+        Args:
+            files_to_backup: 백업할 파일 경로 목록
+
+        Returns:
+            백업 디렉토리 경로 (백업한 경우) 또는 None
+        """
+        existing_files = [f for f in files_to_backup if f.exists()]
+        if not existing_files:
+            return None
+
+        # 백업 폴더 생성: backups/YYYYMMDD_HHMMSS/
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_subdir = self.backup_dir / timestamp
+        backup_subdir.mkdir(parents=True, exist_ok=True)
+
+        for f in existing_files:
+            dest = backup_subdir / f.name
+            shutil.copy2(f, dest)
+            logger.info(f"[BACKUP] {f.name} -> backups/{timestamp}/")
+
+        return backup_subdir
 
     def _get_title_block(self, title: str = None, is_sub_sheet: bool = False) -> TitleBlockInfo:
         """타이틀 블록 정보를 생성합니다.
@@ -948,6 +988,16 @@ class KicadBuilder:
         logger.info("SoM 모드 빌드 시작")
         warnings = warnings or []
 
+        # v1.6: 적용 모드에서 기존 파일 백업
+        if self.apply_mode:
+            main_sch = self.output_dir / f"{self.target_basename}.kicad_sch"
+            main_pcb = self.output_dir / f"{self.target_basename}.kicad_pcb"
+            breakout_files = [
+                self.output_dir / f"som_breakout_{conn.ref}.kicad_sch"
+                for conn in self.config.som.connectors
+            ]
+            self._backup_existing_files([main_sch, main_pcb] + breakout_files)
+
         # 1. SoM 커넥터 심볼 라이브러리 생성
         sym_lib_path = self.build_som_symbol_library()
         logger.info(f"[OK] SoM 심볼 라이브러리: {sym_lib_path}")
@@ -995,7 +1045,39 @@ class KicadBuilder:
         output_path = self.lib_dir / "som_connectors.kicad_sym"
         output_path.write_text(library_content, encoding='utf-8')
 
+        # v1.6: 적용 모드에서 sym-lib-table 자동 업데이트
+        if self.apply_mode:
+            self._update_sym_lib_table()
+
         return output_path
+
+    def _update_sym_lib_table(self):
+        """sym-lib-table에 som_connectors 라이브러리를 추가합니다 (v1.6)."""
+        sym_lib_table = self.output_dir / "sym-lib-table"
+
+        # som_connectors 라이브러리 엔트리
+        lib_entry = '  (lib (name "som_connectors")(type "KiCad")(uri "${KIPRJMOD}/lib/som_connectors.kicad_sym")(options "")(descr "SoM Connector Symbols (Auto-generated)"))'
+
+        if sym_lib_table.exists():
+            content = sym_lib_table.read_text(encoding='utf-8')
+            # 이미 등록되어 있으면 스킵
+            if 'som_connectors' in content:
+                logger.info("  sym-lib-table: som_connectors 이미 등록됨")
+                return
+
+            # 마지막 ) 앞에 엔트리 추가
+            if content.strip().endswith(')'):
+                new_content = content.rstrip().rstrip(')') + '\n' + lib_entry + '\n)'
+                sym_lib_table.write_text(new_content, encoding='utf-8')
+                logger.info("  sym-lib-table: som_connectors 추가됨")
+        else:
+            # 새 파일 생성
+            new_content = f'''(sym_lib_table
+  (version 7)
+{lib_entry}
+)'''
+            sym_lib_table.write_text(new_content, encoding='utf-8')
+            logger.info("  sym-lib-table: 새로 생성됨")
 
     def build_breakout_sheets(self) -> dict[str, Path]:
         """SoM Breakout 시트들을 생성합니다.
@@ -1227,7 +1309,8 @@ class KicadBuilder:
 {title_text}
 )'''
 
-        output_path = self.output_dir / f"{self.config.name}.kicad_sch"
+        # v1.6: target_basename 사용 (적용 모드에서는 fcBoard.kicad_sch)
+        output_path = self.output_dir / f"{self.target_basename}.kicad_sch"
         output_path.write_text(schematic, encoding='utf-8')
 
         return output_path
@@ -1337,7 +1420,7 @@ class KicadBuilder:
 
         # PCB 생성
         pcb_content = PCBTemplate.create_pcb(
-            project_name=self.config.name,
+            project_name=self.target_basename,  # v1.6: target_basename 사용
             board_width=pcb_config.board_width,
             board_height=pcb_config.board_height,
             connectors=connectors,
@@ -1345,7 +1428,8 @@ class KicadBuilder:
             generator_version=__version__,
         )
 
-        output_path = self.output_dir / f"{self.config.name}.kicad_pcb"
+        # v1.6: target_basename 사용 (적용 모드에서는 fcBoard.kicad_pcb)
+        output_path = self.output_dir / f"{self.target_basename}.kicad_pcb"
         output_path.write_text(pcb_content, encoding='utf-8')
 
         logger.info(f"  PCB 생성: {pcb_config.board_width}x{pcb_config.board_height}mm, "

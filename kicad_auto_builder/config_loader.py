@@ -1,11 +1,12 @@
 """
-Config Loader - YAML/JSON 설정 파일 파서 v1.5
+Config Loader - YAML/JSON 설정 파일 파서 v1.6
 
 YAML 파일에서 프로젝트 설정과 부품 목록을 로드합니다.
 v1.2: sheets 지원 추가 (계층 시트 생성)
 v1.3: BOM 고도화, title_block 옵션, ports 확장
 v1.4: 스키마 검증 강화, 친절한 에러 메시지
 v1.5: SoM 커넥터 + PCB 생성 지원
+v1.6: 메인 프로젝트 적용 모드 (apply_to_main_project)
 """
 
 import logging
@@ -115,6 +116,11 @@ class ProjectConfig:
     # v1.5: SoM 및 PCB 설정
     som: Optional[SoMSpec] = None     # SoM 커넥터 설정
     pcb: Optional[PCBSpec] = None     # PCB 생성 설정
+
+    # v1.6: 메인 프로젝트 적용 모드
+    apply_to_main_project: bool = False           # 적용 모드 활성화
+    target_project_dir: Optional[str] = None      # 대상 KiCad 프로젝트 디렉토리
+    target_project_name: Optional[str] = None     # 대상 프로젝트 파일명 (fcBoard)
 
     # 추가 옵션
     cache_dir: str = "cache"          # easyeda2kicad 캐시 디렉토리
@@ -336,6 +342,41 @@ def load_config(config_path: str | Path) -> ProjectConfig:
             pcb_spec._mounting_hole_positions = mounting_holes_data
         logger.info(f"PCB 생성 활성화: {pcb_spec.board_width}x{pcb_spec.board_height}mm")
 
+    # v1.6: 메인 프로젝트 적용 모드 파싱
+    apply_to_main = project_data.get('apply_to_main_project', False)
+    target_project_dir = project_data.get('target_project_dir')
+    target_project_name = project_data.get('target_project_name')
+
+    # 적용 모드 유효성 검사
+    if apply_to_main:
+        if not target_project_dir:
+            raise ConfigValidationError(
+                "apply_to_main_project가 true이면 target_project_dir는 필수입니다",
+                field="project.target_project_dir",
+                hint="target_project_dir: 'D:/git2/fcBoardKicad'"
+            )
+        if not target_project_name:
+            raise ConfigValidationError(
+                "apply_to_main_project가 true이면 target_project_name은 필수입니다",
+                field="project.target_project_name",
+                hint="target_project_name: 'fcBoard'"
+            )
+        # 대상 디렉토리 존재 확인
+        target_dir = Path(target_project_dir)
+        if not target_dir.exists():
+            raise ConfigValidationError(
+                f"target_project_dir가 존재하지 않습니다: {target_project_dir}",
+                field="project.target_project_dir"
+            )
+        # .kicad_pro 파일 존재 확인
+        kicad_pro = target_dir / f"{target_project_name}.kicad_pro"
+        if not kicad_pro.exists():
+            logger.warning(f"KiCad 프로젝트 파일이 없습니다: {kicad_pro}")
+
+        logger.info(f"APPLY MODE: true")
+        logger.info(f"TARGET DIR: {target_project_dir}")
+        logger.info(f"TARGET NAME: {target_project_name}")
+
     config = ProjectConfig(
         name=project_data['name'],
         kicad_version=project_data.get('kicad_version', 8),
@@ -346,6 +387,9 @@ def load_config(config_path: str | Path) -> ProjectConfig:
         title_block=title_block,
         som=som_spec,
         pcb=pcb_spec,
+        apply_to_main_project=apply_to_main,
+        target_project_dir=target_project_dir,
+        target_project_name=target_project_name,
         cache_dir=project_data.get('cache_dir', 'cache'),
         prefer_kicad_lib=project_data.get('prefer_kicad_lib', False),
     )

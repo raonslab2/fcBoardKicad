@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "fcBoard")(type "KiCad")(uri "${KIPRJMOD}/libraries/fcBoard.kicad_sym")(options "")(descr "ACU5EV SoM Carrier Board Symbols"))
   (lib (name "jlc_components")(type "KiCad")(uri "${KIPRJMOD}/jlc_lib_output/jlc_components.kicad_sym")(options "")(descr "JLCPCB/LCSC Components"))
+  (lib (name "som_connectors")(type "KiCad")(uri "${KIPRJMOD}/lib/som_connectors.kicad_sym")(options "")(descr "SoM Connector Symbols (Auto-generated)"))
 )
