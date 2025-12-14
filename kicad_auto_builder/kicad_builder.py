@@ -931,3 +931,424 @@ class KicadBuilder:
         """심볼에 탭 들여쓰기를 추가합니다."""
         lines = symbol.strip().split('\n')
         return '\n'.join('\t\t' + line for line in lines)
+
+    # =========================================================================
+    # v1.5: SoM 모드 - Breakout 시트 생성
+    # =========================================================================
+
+    def _build_som_mode(self, warnings: list[str] = None) -> dict:
+        """SoM 모드 빌드를 실행합니다.
+
+        Args:
+            warnings: 검증 경고 목록
+
+        Returns:
+            생성된 파일 경로 딕셔너리
+        """
+        logger.info("SoM 모드 빌드 시작")
+        warnings = warnings or []
+
+        # 1. SoM 커넥터 심볼 라이브러리 생성
+        sym_lib_path = self.build_som_symbol_library()
+        logger.info(f"[OK] SoM 심볼 라이브러리: {sym_lib_path}")
+
+        # 2. Breakout 시트 생성 (main + 4개 커넥터)
+        sch_paths = self.build_breakout_sheets()
+        for name, path in sch_paths.items():
+            logger.info(f"[OK] 회로도 ({name}): {path}")
+
+        # 3. PCB 생성 (pcb 설정이 있을 경우)
+        pcb_path = None
+        if self.config.pcb:
+            pcb_path = self.build_pcb()
+            logger.info(f"[OK] PCB: {pcb_path}")
+
+        # 4. Manifest 생성
+        result = {
+            "symbol_lib": sym_lib_path,
+            "schematics": sch_paths,
+            "main_schematic": sch_paths.get("main"),
+            "pcb": pcb_path,
+        }
+        manifest_path = self._build_som_manifest(result, warnings)
+        logger.info(f"[OK] Manifest: {manifest_path}")
+        result["manifest"] = manifest_path
+
+        logger.info("=" * 60)
+        logger.info("SoM 모드 빌드 완료!")
+        logger.info("=" * 60)
+
+        return result
+
+    def build_som_symbol_library(self) -> Path:
+        """SoM 커넥터 심볼 라이브러리를 생성합니다.
+
+        Returns:
+            생성된 .kicad_sym 파일 경로
+        """
+        from .som_loader import generate_connector_library
+
+        # SoMSpec에서 라이브러리 생성
+        base_dir = Path(self.config.yaml_path).parent if hasattr(self.config, 'yaml_path') else Path.cwd()
+        library_content = generate_connector_library(self.config.som, base_dir)
+
+        output_path = self.lib_dir / "som_connectors.kicad_sym"
+        output_path.write_text(library_content, encoding='utf-8')
+
+        return output_path
+
+    def build_breakout_sheets(self) -> dict[str, Path]:
+        """SoM Breakout 시트들을 생성합니다.
+
+        Returns:
+            {"main": Path, "J29": Path, "J30": Path, ...}
+        """
+        results = {}
+        base_dir = Path(self.config.yaml_path).parent if hasattr(self.config, 'yaml_path') else Path.cwd()
+
+        # 각 커넥터별 breakout 시트 생성
+        for conn in self.config.som.connectors:
+            # CSV에서 핀맵 로드 (아직 안 됐으면)
+            if not conn.pins:
+                conn.pins = load_pinmap_csv(conn.pins_csv, base_dir)
+
+            sheet_path = self._create_breakout_sheet(conn)
+            results[conn.ref] = sheet_path
+
+        # 메인 시트 생성 (서브시트 참조 포함)
+        main_path = self._create_main_sheet()
+        results["main"] = main_path
+
+        return results
+
+    def _create_breakout_sheet(self, conn) -> Path:
+        """단일 커넥터 Breakout 시트를 생성합니다.
+
+        Args:
+            conn: SoMConnectorSpec (ref, pins_csv, pins 포함)
+
+        Returns:
+            생성된 .kicad_sch 파일 경로
+        """
+        import uuid
+
+        ref = conn.ref
+        pins = conn.pins
+        pin_count = len(pins)
+
+        # 커넥터 심볼 크기 계산
+        pins_per_side = (pin_count + 1) // 2
+        pin_spacing = 2.54
+        symbol_height = (pins_per_side + 2) * pin_spacing
+        symbol_width = 20.0
+
+        # 좌표 계산
+        connector_x = 50.0
+        connector_y = 50.0 + symbol_height / 2
+
+        # lib_symbols 섹션 - 커넥터 심볼 포함
+        symbol_name = f"SoM_Connector_{ref}"
+        connector_symbol = generate_connector_symbol(ref, pins, symbol_name)
+        lib_symbols = self._indent_symbol(connector_symbol)
+
+        # 커넥터 인스턴스 생성
+        connector_uuid = str(uuid.uuid4())
+        connector_instance = f'''  (symbol
+    (lib_id "som_connectors:{symbol_name}")
+    (at {connector_x:.2f} {connector_y:.2f} 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "{connector_uuid}")
+    (property "Reference" "{ref}"
+      (at {connector_x:.2f} {connector_y - symbol_height/2 - 5:.2f} 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "{symbol_name}"
+      (at {connector_x:.2f} {connector_y + symbol_height/2 + 3:.2f} 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at {connector_x:.2f} {connector_y:.2f} 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at {connector_x:.2f} {connector_y:.2f} 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )'''
+
+        # NetLabel 생성 (각 핀에 대해)
+        labels = []
+        label_x_left = connector_x - symbol_width / 2 - 10.0  # 커넥터 왼쪽
+        label_x_right = connector_x + symbol_width / 2 + 10.0  # 커넥터 오른쪽
+
+        for i, pin in enumerate(pins):
+            # 신호 이름 정규화
+            signal = sanitize_signal_name(pin.signal)
+
+            # NC 핀은 라벨 생성 안 함
+            if signal == "NC" or pin.pin_type == "NC":
+                continue
+
+            # 핀 위치에 따라 라벨 위치 결정
+            if i < pins_per_side:
+                # 좌측 핀 -> 왼쪽에 라벨
+                label_x = label_x_left
+                label_y = connector_y - symbol_height / 2 + (i + 1) * pin_spacing
+                rotation = 0
+            else:
+                # 우측 핀 -> 오른쪽에 라벨
+                label_x = label_x_right
+                label_y = connector_y - symbol_height / 2 + (i - pins_per_side + 1) * pin_spacing
+                rotation = 180
+
+            label_uuid = str(uuid.uuid4())
+            label = f'''  (global_label "{signal}"
+    (shape bidirectional)
+    (at {label_x:.2f} {label_y:.2f} {rotation})
+    (effects (font (size 1.0 1.0)) (justify {"right" if rotation == 0 else "left"}))
+    (uuid "{label_uuid}")
+    (property "Intersheetrefs" "${{INTERSHEET_REFS}}"
+      (at 0 0 0)
+      (effects (font (size 1.0 1.0)) hide)
+    )
+  )'''
+            labels.append(label)
+
+        # 타이틀 블록
+        title_block = self._get_title_block(title=f"SoM Breakout - {ref}", is_sub_sheet=True)
+
+        # 회로도 생성
+        schematic = f'''(kicad_sch
+  (version 20231120)
+  (generator "kicad_auto_builder")
+  (generator_version "{__version__}")
+  (uuid "{str(uuid.uuid4())}")
+  (paper "A3")
+  (title_block
+    (title "{title_block.title}")
+    (date "{title_block.date}")
+    (rev "{title_block.rev}")
+    (company "{title_block.company}")
+    (comment 1 "{title_block.comment1}")
+    (comment 2 "{title_block.comment2 or ''}")
+  )
+  (lib_symbols
+{lib_symbols}
+  )
+{connector_instance}
+{chr(10).join(labels)}
+)'''
+
+        output_path = self.output_dir / f"som_breakout_{ref}.kicad_sch"
+        output_path.write_text(schematic, encoding='utf-8')
+
+        logger.info(f"  Breakout sheet {ref}: {pin_count}핀, {len(labels)} NetLabels")
+        return output_path
+
+    def _create_main_sheet(self) -> Path:
+        """메인 시트를 생성합니다 (서브시트 참조 포함).
+
+        Returns:
+            생성된 .kicad_sch 파일 경로
+        """
+        import uuid
+
+        # 서브시트 심볼 배치
+        sheet_symbols = []
+        x, y = 50.0, 50.0
+
+        for i, conn in enumerate(self.config.som.connectors):
+            ref = conn.ref
+            filename = f"som_breakout_{ref}.kicad_sch"
+            pin_count = len(conn.pins) if conn.pins else 120
+
+            # 시트 크기 계산
+            height = max(30.0, pin_count * 0.3)
+            width = 40.0
+
+            sheet_uuid = str(uuid.uuid4())
+            sheet_symbol = f'''  (sheet
+    (at {x:.2f} {y:.2f})
+    (size {width:.2f} {height:.2f})
+    (fields_autoplaced yes)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid "{sheet_uuid}")
+    (property "Sheetname" "{ref}_Breakout"
+      (at {x:.2f} {y - 2:.2f} 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "{filename}"
+      (at {x:.2f} {y + height + 2:.2f} 0)
+      (effects (font (size 1.0 1.0)) (justify left top))
+    )
+  )'''
+            sheet_symbols.append(sheet_symbol)
+
+            # 다음 시트 위치 (가로로 배치, 2개씩)
+            x += 60.0
+            if (i + 1) % 2 == 0:
+                x = 50.0
+                y += 80.0
+
+        # 타이틀 텍스트
+        title_text = f'''  (text "{self.config.name}\\n\\nSoM Carrier Board\\nConnectors: {len(self.config.som.connectors)}"
+    (exclude_from_sim no)
+    (at 25.0 25.0 0)
+    (effects (font (size 2.0 2.0)) (justify left))
+    (uuid "{str(uuid.uuid4())}")
+  )'''
+
+        # 타이틀 블록
+        title_block = self._get_title_block()
+
+        # 메인 회로도 생성
+        schematic = f'''(kicad_sch
+  (version 20231120)
+  (generator "kicad_auto_builder")
+  (generator_version "{__version__}")
+  (uuid "{str(uuid.uuid4())}")
+  (paper "A3")
+  (title_block
+    (title "{title_block.title}")
+    (date "{title_block.date}")
+    (rev "{title_block.rev}")
+    (company "{title_block.company}")
+    (comment 1 "{title_block.comment1}")
+    (comment 2 "{title_block.comment2 or ''}")
+  )
+  (lib_symbols
+  )
+{chr(10).join(sheet_symbols)}
+{title_text}
+)'''
+
+        output_path = self.output_dir / f"{self.config.name}.kicad_sch"
+        output_path.write_text(schematic, encoding='utf-8')
+
+        return output_path
+
+    def _build_som_manifest(self, generated_files: dict, warnings: list[str]) -> Path:
+        """SoM 모드 빌드 manifest를 생성합니다.
+
+        Args:
+            generated_files: 생성된 파일 경로 딕셔너리
+            warnings: 검증 경고 목록
+
+        Returns:
+            manifest.json 파일 경로
+        """
+        # 커넥터 정보
+        connectors_info = []
+        for conn in self.config.som.connectors:
+            pin_count = len(conn.pins) if conn.pins else 0
+            connectors_info.append({
+                "ref": conn.ref,
+                "pins_csv": conn.pins_csv,
+                "pin_count": pin_count,
+            })
+
+        # 생성된 파일 목록
+        files = {}
+        if "symbol_lib" in generated_files:
+            files["symbol_lib"] = str(generated_files["symbol_lib"])
+        if "schematics" in generated_files:
+            for name, path in generated_files["schematics"].items():
+                files[f"schematic_{name}"] = str(path)
+
+        manifest = {
+            "version": __version__,
+            "project": self.config.name,
+            "mode": "som",
+            "generated_at": datetime.now().isoformat(),
+            "kicad_version": self.config.kicad_version,
+            "som": {
+                "name": self.config.som.name,
+                "connectors": connectors_info,
+            },
+            "warnings": warnings,
+            "files": files,
+        }
+
+        # PCB 파일 추가
+        if "pcb" in generated_files and generated_files["pcb"]:
+            files["pcb"] = str(generated_files["pcb"])
+
+        output_path = self.output_dir / "manifest.json"
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+        return output_path
+
+    def build_pcb(self) -> Path:
+        """최소 PCB 파일을 생성합니다 (v1.5).
+
+        Returns:
+            생성된 .kicad_pcb 파일 경로
+        """
+        from .templates.pcb import PCBTemplate, ConnectorPlacement, MountingHoleSpec
+
+        pcb_config = self.config.pcb
+
+        # 커넥터 배치 정보
+        connectors = []
+        for conn in self.config.som.connectors:
+            ref = conn.ref
+            pos = pcb_config.connectors.get(ref, {"x": 50, "y": 50})
+            placement = ConnectorPlacement(
+                ref=ref,
+                x=pos.get("x", 50),
+                y=pos.get("y", 50),
+                rotation=pos.get("rotation", 0),
+            )
+            connectors.append(placement)
+
+        # 마운팅 홀
+        mounting_holes = []
+        # _mounting_hole_positions가 있으면 사용 (config_loader에서 저장)
+        hole_positions = getattr(pcb_config, '_mounting_hole_positions', None)
+        if hole_positions:
+            for hole_config in hole_positions:
+                if isinstance(hole_config, dict):
+                    hole = MountingHoleSpec(
+                        x=hole_config.get("x", 0),
+                        y=hole_config.get("y", 0),
+                        diameter=hole_config.get("diameter", 3.2),
+                    )
+                    mounting_holes.append(hole)
+
+        # 기본 마운팅 홀 (좌표가 없는 경우 코너에 배치)
+        if not mounting_holes:
+            margin = 5.0
+            w = pcb_config.board_width
+            h = pcb_config.board_height
+            default_positions = [
+                (margin, margin),
+                (w - margin, margin),
+                (margin, h - margin),
+                (w - margin, h - margin),
+            ]
+            for x, y in default_positions[:pcb_config.mounting_holes]:
+                mounting_holes.append(MountingHoleSpec(x=x, y=y))
+
+        # PCB 생성
+        pcb_content = PCBTemplate.create_pcb(
+            project_name=self.config.name,
+            board_width=pcb_config.board_width,
+            board_height=pcb_config.board_height,
+            connectors=connectors,
+            mounting_holes=mounting_holes,
+            generator_version=__version__,
+        )
+
+        output_path = self.output_dir / f"{self.config.name}.kicad_pcb"
+        output_path.write_text(pcb_content, encoding='utf-8')
+
+        logger.info(f"  PCB 생성: {pcb_config.board_width}x{pcb_config.board_height}mm, "
+                    f"{len(connectors)} connectors, {len(mounting_holes)} holes")
+
+        return output_path
